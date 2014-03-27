@@ -15,11 +15,7 @@ H = X*inv(X'*X)*X';
 pi = diag(H)./p;
 
 bar(sort(pi))
-%plot(1:N,diag(H)/p,1:N,pi)
-%legend('H','pi');
-%% Draw from random uniform distribution
-
-%% Draw from Leverage distribution
+%% Calculate parameters and find log(squared error)
 maxSampleSize = 2*p;
 stepSize = 2;
 R = (p+1):stepSize:(p+maxSampleSize);
