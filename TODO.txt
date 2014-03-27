@@ -1,0 +1,22 @@
+Opgaver
+
+#1) Exact reproduction af experiment i Ma et al: side 15:
+#t-fordeling, vi har allerede "GA", forsøg med "T3", "T1"
+    Kode DONE
+    Flotte plots Næsten DONE
+    Skrive et afsnit om det
+        Nødvendig teori
+        Reference til Ma et al
+        Sammenligning
+    Skal vi lave 
+        log(variance)
+        log(squared bias)
+
+
+2)  generalisere d\hat(y) / dy til logistic regression (lkh)
+    Lars ser på dette
+    Vi kan også se på det, er det muligt
+
+3) Lav logistic regression, hvor vi bruger leverage-scores fra linear regression
+    Hvordan er de sammenlignet med uniform?
+    Hvilken data skal vi bruge?

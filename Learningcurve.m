@@ -28,7 +28,6 @@ for i = 1:length(R)
         [Bw ,Ew(rep,i)]  = SubsampleLS( X,y,pi,r );
         [Bu ,Eu(rep,i)] = SubsampleLS( X,y, ones(N,1)/N, r );
     end
-    %plot(
 end
 %%
 boxplot(Eu,'colors','r','plotstyle','compact')
