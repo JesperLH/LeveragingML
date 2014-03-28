@@ -25,7 +25,7 @@ Eu = [];
 for i = 1:length(R)
     parfor rep=1:30
         r = R(i);
-        [Bw ,Ew(rep,i)]  = SubsampleLS( X,y,pi,r );
+        [Bw ,Ew(rep,i)] = SubsampleLS( X,y,pi,r );
         [Bu ,Eu(rep,i)] = SubsampleLS( X,y, ones(N,1)/N, r );
     end
 end
