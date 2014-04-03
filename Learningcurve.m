@@ -38,5 +38,5 @@ xlabel '# of samps over d '
 %legend( 'H', 'U')
 title(sprintf('N = %i, d = %i, noise = %1.2f \nLeveraging sampling blue \nUniform sampling red',N,p,noise))
 %title 'error'
-axis auto
+%axis auto
 hold off
