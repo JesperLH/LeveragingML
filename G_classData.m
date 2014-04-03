@@ -2,9 +2,9 @@ clear all
 close all
 clc
 
-p = 2; % number of dimensions
+p = 10; % number of dimensions
 N = 1000; % number of datapoints
-r = 100; % sample size
+r = 20; % sample size
 type = 'T3';
 clusterDistribution = 0.5;
 
@@ -55,7 +55,7 @@ end
 
 R = randperm(N);
 
-X = X(R,1:2);
+X = X(R,1:size(X,2));
 t = t(R);
 
 %% "Logistic" regression
