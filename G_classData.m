@@ -2,13 +2,13 @@ clear all
 close all
 clc
 
-p = 10; % number of dimensions
-N = 1000; % number of datapoints
-r = 20; % sample size
+p = 50; % number of dimensions
+N = 10000; % number of datapoints
+r = 100; % sample size
 type = 'T3';
-clusterDistribution = 0.5;
+clusterDistribution = 0.2;
 
-distance = 0.9; % manual konstant
+distance = 1.3; % manual konstant
 
 %% Covariance matrix
 
@@ -64,17 +64,17 @@ t = t(R);
 %Same as for linear regression, but multiplied by targets (t)
 H = X*inv(X'*X)*X'; 
 
-%figure
-%bar(sort(diag(H).*t));
+figure
+bar(sort(diag(H).*t));
 
 %Finding the distribution, we take abs((H)
 pi = abs(diag(H))./sum(abs(diag(H)));
 if (p == 2) 
-    [ w_est, Err , w_estH , ErrH ] = SubsampleLogReg( X,t,pi,r , true);
-    [ w_estU, ErrU , w_estHU , ErrHU ] = SubsampleLogReg(X,t,ones(N,1)/N,r,true);
+    [w_est, w_estH, logSumErr, logSumErrH , correct, correctH] = SubsampleLogReg( X,t,pi,r , true);
+    [w_estU, w_estHU, logSumErrU, logSumErrHU , correctU, correctHU] = SubsampleLogReg(X,t,ones(N,1)/N,r,true);
 else
-    [ w_est, Err , w_estH , ErrH ] = SubsampleLogReg( X,t,pi,r , false);
-    [ w_estU, ErrU , w_estHU , ErrHU ] = SubsampleLogReg(X,t,ones(N,1)/N,r,false);
+    [w_est, w_estH, logSumErr, logSumErrH , correct, correctH] = SubsampleLogReg( X,t,pi,r , true);
+    [w_estU, w_estHU, logSumErrU, logSumErrHU , correctU, correctHU] = SubsampleLogReg(X,t,ones(N,1)/N,r,true);
 end
-[Err ErrH]
-[ErrU ErrHU]
+[correct correctH; correctU correctHU]
+[logSumErr logSumErrH; logSumErrU logSumErrHU]
