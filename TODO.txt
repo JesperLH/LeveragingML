@@ -19,4 +19,5 @@ Opgaver
 
 3) Lav logistic regression, hvor vi bruger leverage-scores fra linear regression
     Hvordan er de sammenlignet med uniform?
-    Hvilken data skal vi bruge?
+    Data done! (G_classData)
+	giver to clusters med tilhørende labels.

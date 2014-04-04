@@ -1,0 +1,17 @@
+The leverage scores are defined as the influence the dependent variable of a datapoint has on the predicted value for itself.
+This can be written as: d y_hat/dy
+For linear regression this value has a closed form expression.
+
+w = (X'*X)^(-1)*X'*y
+and 
+y_hat = X*w = X*(X'*X)^(-1)*X'*y
+y_hat = H*y where H = X*(X'*X)^(-1)*X'
+
+and the leverage scores is then:
+H_ii = X_i*(X'*X)^(-1)*X_i
+
+By sampling from a distribution proportional to these leverage scores the most important points are sampled first 
+and the accuracy of the resulting model is greater compared to just sampling uniformly from the datapoints.
+
+Also notice that H is independant of y so this can be done unsupervised and be a method that can replace active learning.
+
