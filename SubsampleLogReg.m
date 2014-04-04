@@ -1,4 +1,4 @@
-function [ w_est, Err , w_estH , ErrH ] = SubsampleLogReg( X,t,pi,r , showPlots)
+function [ w_est, w_estH, logSumErr, logSumErrH , correct, correctH ] = SubsampleLogReg( X,t,pi,r , showPlots)
 %SubsampleLogReg makes a logistic model, based on r-samples, selected 
 % acording to the probability distribution pi, and tests the model on
 % the whole dataset.
@@ -10,7 +10,7 @@ function [ w_est, Err , w_estH , ErrH ] = SubsampleLogReg( X,t,pi,r , showPlots)
 %
 n = numel(t);
 N = size(X,1);
-if (size(X,2) ~= 2) showPlots = false; end
+
 %% sampling from pi
 pi = cumsum(pi);
 samp = rand(1,r);
@@ -57,7 +57,7 @@ w_est = glmfit(xSamp, ySamp0, 'binomial');
 % Evaluate the logistic regression for the new data object
 P = glmval(w_est, X, 'logit');
 
-PHomebrew = 1-1./(1+exp(-X*B));
+PHomebrew = 1./(1+exp(-X*B));
 
 if showPlots
     figure
@@ -91,5 +91,14 @@ end
 %Return values
 w_estH = B;
 %w_est already set
+logSumErr = log(sum(P));
+logSumErrH = log(sum(PHomebrew));
+
+P(P < 0.5) = -1;
+P(P > 0.5) = 1;
+correct = sum(P == t);
+PHomebrew(PHomebrew < 0.5) = -1;
+PHomebrew(PHomebrew > 0.5) = 1;
+correctH = sum(PHomebrew == t);
 
 end
