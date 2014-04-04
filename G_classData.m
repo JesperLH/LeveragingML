@@ -73,7 +73,6 @@ if (p == 2)
     [ w_est, Err , w_estH , ErrH ] = SubsampleLogReg( X,t,pi,r , true);
     [ w_estU, ErrU , w_estHU , ErrHU ] = SubsampleLogReg(X,t,ones(N,1)/N,r,true);
 else
-    %SubsampleLogReg(X,t,pi,r,false); %Leverage
     [ w_est, Err , w_estH , ErrH ] = SubsampleLogReg( X,t,pi,r , false);
     [ w_estU, ErrU , w_estHU , ErrHU ] = SubsampleLogReg(X,t,ones(N,1)/N,r,false);
 end

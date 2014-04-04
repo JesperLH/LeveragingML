@@ -49,17 +49,38 @@ sqErr = log(norm(t-X*B,2)); %Euclidian
 ySamp0 = t(idx);
 ySamp0(ySamp < 0) = 0;
 w_est = glmfit(xSamp, ySamp0, 'binomial');
+%%%test on entire data!!!!!
+%t0 = t; t0(t<0) = 0;
+%w_est = glmfit(X, t0, 'binomial');
+%%%
 
 % Evaluate the logistic regression for the new data object
 P = glmval(w_est, X, 'logit');
 
-temp = X*B;
-temp(temp>0) = 2;
-temp(temp<0) = -1;
+PHomebrew = 1-1./(1+exp(-X*B));
 
 if showPlots
     figure
-    plot(1:N,P,'.b',1:N,temp,'.r');
+    subplot 311
+    plot(1:N,P,'.b',1:N,PHomebrew,'.r');
+    title('Logistic regression in Matlab vs. Homebrew');
+    xlabel('Observations sorted acoording to probability of beloing to class 1')
+    ylabel('Estimated target value, class 1 is > 0, class 2 < 0')
+    legend('Log-reg Matlab','Homebrew');
+    
+    %Sorted acoording to PHomebrew
+    subplot 312
+    [igno index] = sort(PHomebrew); clear igno;
+    plot(1:N,P(index),'.b',1:N,PHomebrew(index),'.r');
+    title('Logistic regression in Matlab vs. Homebrew');
+    xlabel('Observations sorted acoording to probability of beloing to class 1')
+    ylabel('Estimated target value, class 1 is > 0, class 2 < 0')
+    legend('Log-reg Matlab','Homebrew');
+    
+    %Sorted acoording to P
+    subplot 313
+    [igno index] = sort(P); clear igno;
+    plot(1:N,P(index),'.b',1:N,PHomebrew(index),'.r');
     title('Logistic regression in Matlab vs. Homebrew');
     xlabel('Observations sorted acoording to probability of beloing to class 1')
     ylabel('Estimated target value, class 1 is > 0, class 2 < 0')
@@ -70,11 +91,5 @@ end
 %Return values
 w_estH = B;
 %w_est already set
-P = round(P);
-P(P < 1) = -1;
-Err = 1-sum(P == t)/size(X,1);
-
-temp(temp>0) = 1;
-ErrH = 1-sum(temp == t)/size(X,1);
 
 end
