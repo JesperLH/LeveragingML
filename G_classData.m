@@ -2,11 +2,11 @@ clear all
 close all
 clc
 
-p = 50; % number of dimensions
-N = 10000; % number of datapoints
-r = 100; % sample size
+p = 2; % number of dimensions
+N = 1000; % number of datapoints
+r = 10; % sample size
 type = 'T3';
-clusterDistribution = 0.2;
+clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
 
@@ -62,7 +62,7 @@ t = t(R);
 
 %The "leverage" distribution
 %Same as for linear regression, but multiplied by targets (t)
-H = X*inv(X'*X)*X'; 
+H = X*inv(X'*X)*X';
 
 figure
 bar(sort(diag(H).*t));
@@ -78,3 +78,10 @@ else
 end
 [correct correctH; correctU correctHU]
 [logSumErr logSumErrH; logSumErrU logSumErrHU]
+
+y = t;
+y(t<0) = 0;
+l=glmval(glmfit(X,y,'binomial'),X,'logit');
+l(l<0.5) = 0;
+l(l>0.5) = 1;
+sum(l == y)

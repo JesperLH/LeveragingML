@@ -12,12 +12,13 @@ n = numel(t);
 N = size(X,1);
 
 %% sampling from pi
-pi = cumsum(pi);
-samp = rand(1,r);
-idx = zeros(r,1);
-for i=1:r
-    idx(i) = find(pi>=samp(i),1,'first');
-end
+[sample idx] = WRS(X,pi,r);
+%pi = cumsum(pi);
+%samp = rand(1,r);
+%idx = zeros(r,1);
+%for i=1:r
+%    idx(i) = find(pi>=samp(i),1,'first');
+%end
 
 %% Generating D
 
