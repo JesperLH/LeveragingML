@@ -5,12 +5,13 @@ function [ B, sqErr ] = SubsampleLS( X,y,pi,r )
 n = numel(y);
 
 %% sampling from pi
-pi = cumsum(pi);
-samp = rand(1,r);
-idx = zeros(r,1);
-for i=1:r
-    idx(i) = find(pi>=samp(i),1,'first');
-end
+%pi = cumsum(pi);
+%samp = rand(1,r);
+%idx = zeros(r,1);
+%for i=1:r
+%    idx(i) = find(pi>=samp(i),1,'first');
+%end
+[sample idx] = WRS(X,pi,r);
 
 %% Generating D
 
