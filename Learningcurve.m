@@ -4,7 +4,7 @@ close all
 clc
 N = 1000;
 p = 10; %Dimensions, must be >= 20
-r = 0; %Initialise
+r = 10; %Initialise
 noise = 0.5;
 
 %[X,y] = generateData(N,p,'GA');
