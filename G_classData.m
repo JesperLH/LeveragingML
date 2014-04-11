@@ -70,11 +70,11 @@ bar(sort(diag(H).*t));
 %Finding the distribution, we take abs((H)
 pi = abs(diag(H))./sum(abs(diag(H)));
 if (p == 2) 
-    [w_est, w_estH, logSumErr, logSumErrH , correct, correctH] = SubsampleLogReg( X,t,pi,r , true);
-    [w_estU, w_estHU, logSumErrU, logSumErrHU , correctU, correctHU] = SubsampleLogReg(X,t,ones(N,1)/N,r,true);
+    [w_est, w_estH, logSumErr, logSumErrH , correct, correctH] = SubsampleLogReg( X,t,pi,r);
+    [w_estU, w_estHU, logSumErrU, logSumErrHU , correctU, correctHU] = SubsampleLogReg(X,t,ones(N,1)/N,r);
 else
-    [w_est, w_estH, logSumErr, logSumErrH , correct, correctH] = SubsampleLogReg( X,t,pi,r , true);
-    [w_estU, w_estHU, logSumErrU, logSumErrHU , correctU, correctHU] = SubsampleLogReg(X,t,ones(N,1)/N,r,true);
+    [w_est, w_estH, logSumErr, logSumErrH , correct, correctH] = SubsampleLogReg( X,t,pi,r);
+    [w_estU, w_estHU, logSumErrU, logSumErrHU , correctU, correctHU] = SubsampleLogReg(X,t,ones(N,1)/N,r);
 end
 [correct correctH; correctU correctHU]
 [logSumErr logSumErrH; logSumErrU logSumErrHU]
