@@ -23,18 +23,12 @@ bar(sort(diag(H).*t));
 
 %%Finding the distribution, we take abs((H)
 pi = abs(diag(H))./sum(abs(diag(H)));
-if (p == 2) 
-    [Plin, Pglm, idx] = SubsampleLogReg( X,t,pi,r);
-    [PlinU, PglmU, idxU] = SubsampleLogReg(X,t,ones(N,1)/N,r);
-else
-    [Plin, Pglm, idx] = SubsampleLogReg( X,t,pi,r);
-    [PlinU, PglmU, idxU] = SubsampleLogReg(X,t,ones(N,1)/N,r);
-end
+[Plin, Pglm, idx] = SubsampleLogReg( X,t,pi,r);
 
 
 %% Ilustrates the example if two-dimensional
 
-if size(X,2) == 2 && showPlots
+if size(X,2) == 2 
     illustrate2D2Class(X,t,idx);
 end
 

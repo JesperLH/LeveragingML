@@ -3,10 +3,10 @@ clear all
 close all
 clc
 
-p = 20; % number of dimensions
-N = 10000; % number of datapoints
+p = 10; % number of dimensions
+N = 1000; % number of datapoints
 r = 20; % sample size
-type = 'T3';
+type = 'GA';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
@@ -34,9 +34,9 @@ Eu = [];
 for i = 1:length(R)
     parfor rep=1:30
         r = R(i);
-        [ ~,P, ~ ] = SubsampleLogReg( X,t,pi,r);
+        [~,P] = SubsampleLogReg( X,t,pi,r);
         Ew(rep,i) = class_error( P,t );
-        [ ~,PU, ~ ] = SubsampleLogReg( X,t,ones(1,N)./N,r);
+        [~,PU] = SubsampleLogReg( X,t,ones(1,N)./N,r);
         Eu(rep,i)  = class_error( PU,t );
     end
 end

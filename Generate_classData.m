@@ -12,7 +12,9 @@ end
 %% Difference between clusters
 
 D = randn(1,p);
-D = D./norm(D)*2*distance;
+D = D./norm(D);
+
+D = D*sigma*distance;
 
 
 switch type

@@ -13,7 +13,7 @@ end
 u = rand(size(X,1),1);
 k = u.^(1./w);
 
-[k ,index] = sort(k,'descend');
+[~,index] = sort(k,'descend');
 sample = X(index(1:r),:);
 index = index(1:r);
 end

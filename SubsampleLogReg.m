@@ -8,52 +8,61 @@ function [ Plin, Pglm, idx ] = SubsampleLogReg( X,t,pi,r)
 % pi : is the probability distribution
 % showPlots : Whether to draw plots or not 
 %
-n = numel(t);
 N = size(X,1);
 
 %% sampling from pi
-picum = cumsum(pi);
-samp = rand(1,r);
-idx = zeros(r,1);
-for i=1:r
-    idx(i) = find(picum>=samp(i),1,'first');
-end
+
+[~, idx1] = WRS(X(t==1),pi(t==1),round(r/2));
+[~, idx2] = WRS(X(t==-1),pi(t==-1),r-round(r/2));
+
+idx = [idx1; idx2];
+
+
+
+% picum = cumsum(pi);
+% samp = rand(1,r);
+% idx = zeros(r,1);
+% for i=1:r
+%     idx(i) = find(picum>=samp(i),1,'first');
+% end
 
 %% Generating D
 
 D = diag(1./sqrt(r*pi(idx)));
 %Du = diag(ones(1,r)*sqrt(n/r));
-Sx = zeros(n,r);
+Sx = zeros(N,r);
 for i = 1:length(idx);
    Sx(idx(i),i) = 1;
 end
 
-
-
-%% Solving the weighted LS
 ySamp = D*Sx'*t;
 xSamp = D*Sx'*X;
 
-B = xSamp\ySamp; %Same, but faster
 
-%% Finding the log of the squared error
-%sqErr = log(norm(t-X*B,2)); %Euclidian
-%E = sum((y-X*B).^2);
-
-
-% exercise 5.2.6
+% exercise 5.2.6 ?
 %% Fit logistic regression model and evaluate
-ySamp0 = t(idx);
-ySamp0(ySamp < 0) = 0;
-w_est = glmfit(xSamp, ySamp0, 'binomial');
+if nargout>1
+ ySampBin = t(idx);
+ ySampBin(ySampBin < 0) = 0;
+w_est = glmfit(xSamp, ySampBin, 'binomial');
 %%%test on entire data!!!!!
 %t0 = t; t0(t<0) = 0;
 %w_est = glmfit(X, t0, 'binomial');
 %%%
 
+
 % Evaluate the logistic regression for the new data object
 Pglm = glmval(w_est, X, 'logit');
+end
 
-Plin = 1./(1+exp(-X*B));
+
+%% Solving the weighted LS
+
+
+B = [ones(r,1) xSamp]\ySamp; %Same, but faster
+
+
+
+Plin = 1./(1+exp(-[ones(N,1) X]*B));
 
 end

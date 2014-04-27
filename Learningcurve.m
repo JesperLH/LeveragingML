@@ -5,7 +5,6 @@ clc
 N = 1000;
 p = 10; %Dimensions, must be >= 20
 r = 10; %Initialise
-noise = 0.5;
 
 %[X,y] = generateData(N,p,'GA');
 %[X,y] = generateData(N,p,'T1');
@@ -16,9 +15,7 @@ pi = diag(H)./p;
 
 bar(sort(pi))
 %% Calculate parameters and find log(squared error)
-maxSampleSize = 2*p;
-stepSize = 2;
-R = (p+1):stepSize:(p+maxSampleSize);
+R = [(p+1):(p+10) (p+20):50:(N/2)];
 Ew = [];
 Eu = [];
 %hold on
