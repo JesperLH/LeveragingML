@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%
+%       MUST HAVE             %
+%%%%%%%%%%%%%%%%%%%%
+\usepackage[danish]{babel} % dansk ordeling
+\usepackage[utf8]{inputenc} % Read signs
+
+\usepackage{amsthm,mathtools,amssymb,nicefrac,array} % Math
+\numberwithin{equation}{section} % Equations are given on the form 
+													  % (Section #, equation # in that section 
+%NOT WORKING! \usepackage{eqref} % Add brackets around the reference ex (5) 
+\usepackage{hyperref} % Adds \autoref{•} which makes a 
+									%hyperlink to the item referenced
+\usepackage{float,graphicx, subfigure} %Pictures and tables
+\usepackage{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+
+\usepackage{lastpage} % Side x af y
+%%%%%%%%%%%%%%%%%%%%
+%            Possibly              %
+%%%%%%%%%%%%%%%%%%%%
+\usepackage[hang,small,bf]{caption} %Fancy figure captions
+%\usepackage{a4wide} %Width of page increases
+\usepackage{xcolor} % Possiblity of color text and boxes
+								 % http://en.wikibooks.org/wiki/LaTeX/Colors
+
+\usepackage{varioref} % If the object to be referenced is in the same page,
+									% it works just like \ref; if the object is far away it will
+									% print something like "5 on page 25", i.e. it adds the
+									% page number automatically. If the object is close, it
+									% can use more refined sentences like "on the next page" 
+									% or "on the facing page" automatically, according to the 
+									% context and the document class.
+
+%%%%%%%%%%%%%%%%%%%%
+%   Things to check out     %
+%%%%%%%%%%%%%%%%%%%%
+%\usepackage[sc]{mathpazo} % Palatino
+%\usepackage[scaled]{helvet} % Helvetica
+
+
+%%%%%%%%%%%%%%%%%%%%
+%       Has no effect           %
+%%%%%%%%%%%%%%%%%%%%
+%\usepackage{lmodern}
+%\usepackage{setspace}
+
+
+
+
+%\usepackage[noend]{algorithmic}
+%\usepackage[thmmarks]{ntheorem}
+%\usepackage{algorithm}
+
+
+\usepackage{pdfpages}
+\usepackage{array}
+\hypersetup{ pdfborder = {0 0 0} }
+\usepackage{fancyhdr}
+
+\usepackage{multicol}
+\usepackage{charter}
+%\usepackage[absolute]{textpos}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+%\lhead{\footnotesize s103435} 
+%\rhead{\footnotesize \today}
+%\fancyfoot[R]{\footnotesize Side \thepage\ af \pageref{LastPage}}
+%\fancyfoot[L]{\footnotesize Technical University of Denmark}
+%\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\renewcommand{\contentsname}{Contents} %Changes
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+%\lhead{\footnotesize \rightmark} 
+%\lhead{\footnotesize s103270, s103228, s103435} 
+%\rhead{\footnotesize \today}
+\fancyhead[L]{\rightmark}
+%\fancyhead[R]{Jesper Løve Hinrich}
+
+\fancyfoot[L]{Technical University of Denmark}
+\fancyfoot[R]{\footnotesize Page \thepage{} of \pageref{LastPage}}
