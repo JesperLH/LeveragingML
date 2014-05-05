@@ -1,3 +1,7 @@
 *.asv~
 *.m~
 *.txt~
+*.gz
+*.out
+*.log
+*.aux

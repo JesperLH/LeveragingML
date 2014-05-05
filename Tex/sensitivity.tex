@@ -1,0 +1,39 @@
+
+\section{The derivative of prediction or Sensitivity}
+We wish to find the effect that a datapoint's class has on the predicted class for that datapoint.
+\begin{equation}
+\frac{\delta \hat{Y}_n}{\delta Y_n}
+\end{equation}
+
+Our prediction is 
+\begin{equation}
+p(y|\bar{x},\bar{w})
+\end{equation}
+where $\bar{w}$ is subject to 
+\begin{equation}
+\label{optimum}
+\frac{\delta L}{\delta\bar{w}}=0
+\end{equation}
+Which means that we have found a locally optimal solution.
+
+We now assume that when we move $y$ by a small amount $\delta y$ then \ref{optimum} still holds.
+
+Essentially assuming some smoothness around the optimum.
+
+Using this and the fact that \ref{optimum} depends both directly and indirectly on y we see that
+
+\begin{eqnarray*}
+&\frac{\delta}{\delta y} \frac{\delta L}{\delta w} = 0\\
+\Downarrow & \\
+&\frac{\delta^2 L}{\delta y \delta \bar{w}} + \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y}= 0
+\end{eqnarray*}
+
+and form this we can isolate
+
+\begin{equation}
+\frac{\delta \bar{w}}{\delta y} = - \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}} 
+\end{equation}
+
+
+
+
