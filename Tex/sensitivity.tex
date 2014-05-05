@@ -2,12 +2,13 @@
 \section{The derivative of prediction or Sensitivity}
 We wish to find the effect that a datapoint's class has on the predicted class for that datapoint.
 \begin{equation}
+\label{dyhatdy}
 \frac{\delta \hat{Y}_n}{\delta Y_n}
 \end{equation}
 
 Our prediction is 
 \begin{equation}
-p(y|\bar{x},\bar{w})
+ \hat{Y}_n = p(y|\bar{x},\bar{w})
 \end{equation}
 where $\bar{w}$ is subject to 
 \begin{equation}
@@ -28,12 +29,22 @@ Using this and the fact that \ref{optimum} depends both directly and indirectly 
 &\frac{\delta^2 L}{\delta y \delta \bar{w}} + \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y}= 0
 \end{eqnarray*}
 
-and form this we can isolate
+and from this we can isolate
 
 \begin{equation}
+\label{dwdy}
 \frac{\delta \bar{w}}{\delta y} = - \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}} 
 \end{equation}
 
+Rewriting \ref{dyhatdy} we get
 
+\begin{equation}
+\frac{\delta \hat{Y}_n}{\delta Y_n} = \frac{\delta p(y|\bar{x},\bar{w})}{\delta Y_n} =  \frac{\delta p(y|\bar{x},\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y}
+\end{equation}
 
+And inserting \ref{dwdy} 
+
+\begin{equation}
+\frac{\delta p(y|\bar{x},\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y} = - \frac{\delta p(y|\bar{x},\bar{w})}{\delta \bar{w}^T} \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}}
+\end{equation}
 

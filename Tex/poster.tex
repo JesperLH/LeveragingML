@@ -1,0 +1,56 @@
+\documentclass{beamer}
+
+\usetheme[department=compute]{DTU}
+
+\usepackage[orientation=landscape,size=a0,scale=1.5,debug]{beamerposter}             
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.9}
+%\usepackage{booktabs}
+\usepackage{siunitx}
+
+
+\title{DTU Beamer Template}
+\author{Remus M. Prunescu}
+\institute{\LaTeX\ Support Group, Technical University of Denmark (DTU)}
+
+\newcommand{\tabitem}{{\color{dtured}$\bullet$} }
+\newenvironment{pblock}{\begin{minipage}[b]{\linewidth}
+	\begin{block}}{\end{block} 	\end{minipage}}
+
+
+\begin{document}
+\begin{multicols}{4}
+
+\frame{
+	\frametitle{Installation}
+	
+
+	\begin{pblock}{\large Unix and Mac}
+		\begin{itemize}
+			\item Unzip the bundle to \texttt{\textasciitilde/texmf/}.
+		\end{itemize}
+	\end{pblock}
+	
+	\begin{block}{Windows}
+		\begin{itemize}
+			\item Unzip the bundle to any location.
+			\item Open MiKTeX settings.
+			\item Add location to root folders.
+			\item Refresh FNDB.
+		\end{itemize}
+	\end{block}
+
+}
+
+\end{multicols}
+\end{document}
