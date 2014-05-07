@@ -36,15 +36,19 @@ and from this we can isolate
 \frac{\delta \bar{w}}{\delta y} = - \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}} 
 \end{equation}
 
-Rewriting \ref{dyhatdy} we get
+Rewriting \eqref{dyhatdy} we get
 
 \begin{equation}
-\frac{\delta \hat{Y}_n}{\delta Y_n} = \frac{\delta p(y|\bar{x},\bar{w})}{\delta Y_n} =  \frac{\delta p(y|\bar{x},\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y}
+\frac{\delta \hat{Y}_n}{\delta Y_n} = \frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta Y_n} =  \frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y}
 \end{equation}
 
-And inserting \ref{dwdy} 
+And inserting \eqref{dwdy} 
 
 \begin{equation}
-\frac{\delta p(y|\bar{x},\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y} = - \frac{\delta p(y|\bar{x},\bar{w})}{\delta \bar{w}^T} \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}}
+\frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y} = - \frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}}
 \end{equation}
+
+And this is our leverage score for this 
+
+
 

@@ -5,33 +5,33 @@ Let $\mathcal{L}_\infty$ be the log-likelihood function for a distribution, now 
 \begin{equation}
 \mathcal{L_N} = \frac{1}{N} \sum_{n=1}^N \ell_n \qquad \bar{w} \, s.t. \, \frac{\delta \mathcal{L}}{\delta \bar{w}} = \bar{0} \label{eq:ra1}
 \end{equation}
-Where $\ell_n$ is the log-likelihood of the $n^{th}$ observation. And $\bar{w}$ is the optimal \textbf{(true?)} weights for the distribution, then we combine the expressions from \eqref{eq:ra1}, such that for the optimal weights the following must be fulfilled:
+Where $\ell_n$ is the log-likelihood of the $n^{th}$ observation. And $\bar{w}$ is the true weights for the distribution, then we combine the expressions from \eqref{eq:ra1}, such that for the true weights the following must be fulfilled:
 
 \begin{equation}
 \frac{1}{N} \sum_{n = 1}^N \frac{\delta \ell_n}{\delta \bar{w}} = 0 \label{eq:ra2}
 \end{equation}
 
 \emph{(Skal vi lige skrive lidt om at $\Delta w = w-w_0$ og er en lille forskydelse i vægtene? Eller er det en lille forskydelse?) }
-For each of the $N$ observations, we can approximate the log-likelihood of the $n^{th}$ observation as:
+For each of the $N$ observations, we can approximate the log-likelihood of the $n^{th}$ observation with this taylor expansion:
 
 \begin{equation}
-\ell_n(\Delta \bar{w}) = 
+\ell_n(\bar{w}) = 
 \ell_n\left(\bar{w}_0 \right) + 
 \left. \frac{\delta \ell_n}{\delta \bar{w}} \right|_{\bar{w}_0} \Delta \bar{w} + 
 \frac{1}{2} Tr \left[ \left. \frac{\delta \ell_n}{\delta \bar{w} \delta \bar{w}^T} \right|_{\bar{w}_0} \Delta \bar{w} \Delta \bar{w}^T \right] \label{eq:loglihood-oneObs}
 \end{equation}
-Or for the entire log-likelihood function:
+Or for the entire log-likelihood function: \textbf{Where did the trace go ?}
 \begin{equation}
-\mathcal{L}_N(\Delta \bar{w}) = 
-\mathcal{L}_\infty\left(\bar{w}_0\right) + 
+\mathcal{L}_N(\bar{w}) = 
+\mathcal{L}_N\left(\bar{w}_0\right) + 
 \left(\left.\frac{\delta \mathcal{L}_N}{\delta \bar{w}}\right|_{\bar{w}_0} \right)^T \cdot \Delta \bar{w} +
 \frac{1}{2} \Delta \bar{w}^T \left( \left. \frac{\delta^2 \mathcal{L}_N}{\delta \bar{w} \delta \bar{w}^T}\right|_{\bar{w}_0} \right) \Delta \bar{w} + R \label{eq:entireLogLike}
 \end{equation}
-Where $R$ is the error of the approximation. Furthermore, we define the functions $\bar{\bar{H}}_N = \left. \frac{\delta^2 \mathcal{L}_N}{\delta \bar{w} \delta \bar{w}^T}\right|_{\bar{w}_0}$, and $\bar{g} = \left.\frac{\delta \mathcal{L}_N}{\delta \bar{w}}\right|_{\bar{w}_0}$. And evaluate the condition on $\bar{w}$, stated in \eqref{eq:ra1}:
+Where $R$ is the error of the approximation and assumed to be 0. Furthermore, we define $\bar{\bar{H}}_N = \left. \frac{\delta^2 \mathcal{L}_N}{\delta \bar{w} \delta \bar{w}^T}\right|_{\bar{w}_0}$, and $\bar{g}:N = \left.\frac{\delta \mathcal{L}_N}{\delta \bar{w}}\right|_{\bar{w}_0}$. And evaluate condition \eqref{eq:ra1} on $\bar{w}$:
 \begin{equation}
 \frac{\delta \mathcal{L_N}}{\delta \bar{w}} = \bar{g}_N+\bar{\bar{H}}_N \Delta \bar{w} = \bar{0}
 \end{equation}
-We replace $\Delta \bar{w}$ with $\hat{\Delta \bar{w}}$  as $N$ is a finite number, thus only approximating $\Delta \bar{w}$. Isolating $\hat{\Delta \bar{w}}$, and using Ljung [REFERENCE?], we get:
+We replace $\Delta \bar{w}$ with $\hat{\Delta \bar{w}}$  as $N$ is a finite number, thus only approximating $\Delta \bar{w}$. Isolating $\hat{\Delta \bar{w}}$, and using Ljung \textbf{[REFERENCE?]}, we get: \textbf{Is this to soon to involve Ljung?}
 \begin{equation}
 \hat{\Delta \bar{w}} = - \bar{\bar{H}}_N^{-1} \cdot \bar{g}_N \overbrace{=}^{Ljung} -\bar{\bar{H}}
 _0^{-1} \cdot \bar{g}_{\bar{w}} \left( \bar{w}_0 \right)
@@ -39,14 +39,17 @@ _0^{-1} \cdot \bar{g}_{\bar{w}} \left( \bar{w}_0 \right)
 \emph{(Forklaring af at $H_0$ er uafhængig af datasæt, mens $g$ nu er afhængig af $w$ evalueret i $w_0$)}
 Besides getting an estimate for $\hat{\Delta \bar{w}}$, we can find the mean of the distribution:
 \[
-\left\langle \hat{\Delta \bar{w}} \right\rangle = - \bar{\bar{H}}_0^{-1} \left\langle \bar{g}_w \right\rangle (\bar{w}_0) = 0
+\left\langle \hat{\Delta \bar{w}} \right\rangle = - \bar{\bar{H}}_0^{-1} \bar{g}_0 = 0
 \]
 As $\delta \bar{w} = \bar{w}-\bar{w}_0$ ??mistet tråden?
 
 \subsection{Covariance of $\bar{w}$ - distribution}
 
+
+\textbf{Why do we do this???}
+
 \begin{equation}
-\left\langle \delta \bar{w} \delta \bar{w}^T \right\rangle_{D_N} = 
+\left\langle \delta \bar{w} \delta \bar{w}^T \right\rangle_{N} = 
 \left\langle \bar{\bar{H}}^{-1} \bar{g} \bar{g}^T \bar{\bar{H}}^{-1} \right\rangle
 \overbrace{=}^{Ljung} \bar{\bar{H}}^{-1}_0 \left\langle \bar{g}\bar{g}^T \right\rangle \bar{\bar{H}}^{-1}_0 + R'
 \end{equation}
@@ -54,7 +57,7 @@ With error $R' = O\left(\frac{1}{N}\right) \approx 0$, for large $N$. We look at
 \begin{align}
 \left\langle \bar{g} \bar{g}^T \right\rangle_N &= 
 \frac{1}{N^2}\sum_{n, n' = 1}^N \left\langle \left. \frac{\delta \ell_n}{\delta_n \bar{w}} \right|_{\bar{w}_0} \left.\frac{\delta \ell_{n'}}{\delta_n \bar{w}} \right|_{\bar{w}_0} \right\rangle\\
- & = \frac{1}{N^2} \left(\sum_{n \neq n'} \left\langle \left. \frac{\delta \ell_n}{\delta \bar{w}} \right|_{\bar{w}_0} \right\rangle \cdot \left\langle \left. \frac{\delta \ell_{n'}}{\delta \bar{w}^T} \right|_{\bar{w}_0} \right\rangle 
+ & = \frac{1}{N^2} \left(\sum_{n \neq n'} \underbrace{\left\langle \left. \frac{\delta \ell_n}{\delta \bar{w}} \right|_{\bar{w}_0} \right\rangle \cdot \left\langle \left. \frac{\delta \ell_{n'}}{\delta \bar{w}^T} \right|_{\bar{w}_0} \right\rangle }_0
  + \sum_{n =1 }^N \left\langle \left. \frac{\delta \ell_n}{\delta \bar{w}} \right|_{\bar{w}_0} \left. \frac{\delta \ell_n}{\delta \bar{w}^T} \right|_{\bar{w}_0}  \right\rangle \right)
 \end{align}
 Due to the assumption of independence, only the $N$ diagonal elements are non-zero. So;
