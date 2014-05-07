@@ -9,5 +9,12 @@
 \input{sensitivity.tex}
 \input{asymptotics.tex}
 
+\subsection{Uncertainty of prediction}
+For a number of weight-vectors $\bar{w}$, we take the mean of predictions based on these weight-vectors;
+\begin{equation}
+\left\langle p \left(y \middle| \bar{x}, \bar{w} \right) \right\rangle \approx p \left(y \middle| \bar{x}, \hat{\bar{w}} \right) = p \left(y \middle| \bar{x}, \mathbf{E}(\bar{w}) \right)
+\end{equation}
+We now introduce 
+
 
 \end{document}

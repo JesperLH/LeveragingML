@@ -1,83 +1,50 @@
 \section{Randomised algorithm}
-\emph{Uncertianty based on asymptotic liklihood and $\bar{w}$-distribution}\\
+<<<<<<< HEAD
+\emph{Uncertainty based on asymptotic likelihood and $\bar{w}$-distribution}\\
+=======
+\emph{Uncertainty based on asymptotic liklihood and $\overline{w}$-distribution}\\
+>>>>>>> FETCH_HEAD
 Let $\mathcal{L}_\infty$ be the log-likelihood function for a distribution, now let $\mathcal{L}_N$ denote the log-likelihood function based on $N$ observations from this distribution. Furthermore, let $N$ be a large number, for which $L_N \approx L_\infty$. 
 
 \begin{equation}
-\mathcal{L_N} = \frac{1}{N} \sum_{n=1}^N \ell_n \qquad \bar{w} \, s.t. \, \frac{\delta \mathcal{L}}{\delta \bar{w}} = \bar{0} \label{eq:ra1}
+\mathcal{L_N} = \frac{1}{N} \sum_{n=1}^N \ell_n \qquad \overline{w} \, s.t. \, \frac{\delta \mathcal{L}}{\delta \overline{w}} = \overline{0} \label{eq:ra1}
 \end{equation}
-Where $\ell_n$ is the log-likelihood of the $n^{th}$ observation. And $\bar{w}$ is the optimal \textbf{(true?)} weights for the distribution, then we combine the expressions from \eqref{eq:ra1}, such that for the optimal weights the following must be fulfilled:
+Where $\ell_n$ is the log-likelihood of the $n^{th}$ observation. And $\overline{w}$ is the optimal \textbf{(true?)} weights for the distribution, then we combine the expressions from \eqref{eq:ra1}, such that for the optimal weights the following must be fulfilled:
 
 \begin{equation}
-\frac{1}{N} \sum_{n = 1}^N \frac{\delta \ell_n}{\delta \bar{w}} = 0 \label{eq:ra2}
+\frac{1}{N} \sum_{n = 1}^N \frac{\delta \ell_n}{\delta \overline{w}} = 0 \label{eq:ra2}
 \end{equation}
 
 \emph{(Skal vi lige skrive lidt om at $\Delta w = w-w_0$ og er en lille forskydelse i vægtene? Eller er det en lille forskydelse?) }
-For each of the $N$ observations, we can write the log-likelihood of the $n^{th}$ observation as:
+For each of the $N$ observations, we can approximate the log-likelihood of the $n^{th}$ observation as:
 
 \begin{equation}
-\ell_n(\Delta \bar{w}) = 
-\ell_n\left(\bar{w}_0 \right) + 
-\left. \frac{\delta \ell_n}{\delta \bar{w}} \right|_{\bar{w}_0} \Delta \bar{w} + 
-\frac{1}{2} Tr \left[ \left. \frac{\delta \ell_n}{\delta \bar{w} \delta \bar{w}^T} \right|_{\bar{w}_0} \Delta \bar{w} \Delta \bar{w}^T \right] \label{eq:loglihood-oneObs}
+\ell_n(\Delta \overline{w}) = 
+\ell_n\left(\overline{w}_0 \right) + 
+\left. \frac{\delta \ell_n}{\delta \overline{w}} \right|_{\overline{w}_0} \Delta \overline{w} + 
+\frac{1}{2} Tr \left[ \left. \frac{\delta \ell_n}{\delta \overline{w} \delta \overline{w}^T} \right|_{\overline{w}_0} \Delta \overline{w} \Delta \overline{w}^T \right] \label{eq:loglihood-oneObs}
 \end{equation}
 Or for the entire log-likelihood function:
 \begin{equation}
-\mathcal{L}_N(\Delta \bar{w}) = 
-\mathcal{L}_\infty\left(\bar{w}_0\right) + 
-\left(\left.\frac{\delta \mathcal{L}_N}{\delta \bar{w}}\right|_{\bar{w}_0} \right)^T \cdot \Delta \bar{w} +
-\frac{1}{2} \Delta \bar{w}^T \left( \left. \frac{\delta^2 \mathcal{L}_N}{\delta \bar{w} \delta \bar{w}^T}\right|_{\bar{w}_0} \right) \Delta \bar{w} + R \label{eq:entireLogLike}
+\mathcal{L}_N(\Delta \overline{w}) = 
+\mathcal{L}_\infty\left(\overline{w}_0\right) + 
+\left(\left.\frac{\delta \mathcal{L}_N}{\delta \overline{w}}\right|_{\overline{w}_0} \right)^T \cdot \Delta \overline{w} +
+\frac{1}{2} \Delta \overline{w}^T \left( \left. \frac{\delta^2 \mathcal{L}_N}{\delta \overline{w} \delta \overline{w}^T}\right|_{\overline{w}_0} \right) \Delta \overline{w} + R \label{eq:entireLogLike}
 \end{equation}
-Where $R$ is the error of the approximation. Furthermore, we define the functions $\bar{\bar{H}}_N = \left. \frac{\delta^2 \mathcal{L}_N}{\delta \bar{w} \delta \bar{w}^T}\right|_{\bar{w}_0}$, and $\bar{g} = \left.\frac{\delta \mathcal{L}_N}{\delta \bar{w}}\right|_{\bar{w}_0}$. And evaluate the condition on $\bar{w}$, stated in \eqref{eq:ra1}:
+Where $R$ is the error of the approximation. Furthermore, we define the functions $\overline{\overline{H}}_N = \left. \frac{\delta^2 \mathcal{L}_N}{\delta \overline{w} \delta \overline{w}^T}\right|_{\overline{w}_0}$, and $\overline{g} = \left.\frac{\delta \mathcal{L}_N}{\delta \overline{w}}\right|_{\overline{w}_0}$. And evaluate the condition on $\overline{w}$, stated in \eqref{eq:ra1}:
 \begin{equation}
-\frac{\delta \mathcal{L_N}}{\delta \bar{w}} = \bar{g}_N+\bar{\bar{H}}_N \Delta \bar{w} = \bar{0}
+\frac{\delta \mathcal{L_N}}{\delta \overline{w}} = \overline{g}_N+\overline{\overline{H}}_N \Delta \overline{w} = \overline{0}
 \end{equation}
-We replace $\Delta \bar{w}$ with $\hat{\Delta \bar{w}}$  as $N$ is a finite number, thus only approximating $\Delta \bar{w}$. Isolating $\hat{\Delta \bar{w}}$, and using Ljung [REFERENCE?], we get:
+We replace $\Delta \overline{w}$ with $\hat{\Delta \overline{w}}$  as $N$ is a finite number, thus only approximating $\Delta \overline{w}$. Isolating $\hat{\Delta \overline{w}}$, and using Ljung [REFERENCE?] [too soon ?], we get:
 \begin{equation}
-\hat{\Delta \bar{w}} = - \bar{\bar{H}}_N^{-1} \cdot \bar{g}_N \overbrace{=}^{Ljung} -\bar{\bar{H}}
-_0^{-1} \cdot \bar{g}_{\bar{w}} \left( \bar{w}_0 \right)
+\hat{\Delta \overline{w}} = - \overline{\overline{H}}_N^{-1} \cdot \overline{g}_N \overbrace{=}^{Ljung} -\overline{\overline{H}}
+_0^{-1} \cdot \overline{g}_{\overline{w}} \left( \overline{w}_0 \right)
 \end{equation}
 \emph{(Forklaring af at $H_0$ er uafhængig af datasæt, mens $g$ nu er afhængig af $w$ evalueret i $w_0$)}
-Besides getting an estimate for $\hat{\Delta \bar{w}}$, we can find the mean of the distribution:
+Besides getting an estimate for $\hat{\Delta \overline{w}}$, we can find the mean of the distribution:
 \[
-\left\langle \hat{\Delta \bar{w}} \right\rangle = - \bar{\bar{H}}_0^{-1} \left\langle \bar{g}_w \right\rangle (\bar{w}_0) = 0
+\left\langle \hat{\Delta \overline{w}} \right\rangle = - \overline{\overline{H}}_0^{-1} \left\langle \overline{g}_w \right\rangle (\overline{w}_0)
 \]
-As $\delta \bar{w} = \bar{w}-\bar{w}_0$ ??mistet tråden?
 
-\subsection{Covariance of $\bar{w}$ - distribution}
+\subsection*{Nu skal vi prøve at kombinere flere datasets}
 
-\begin{equation}
-\left\langle \delta \bar{w} \delta \bar{w}^T \right\rangle_{D_N} = 
-\left\langle \bar{\bar{H}}^{-1} \bar{g} \bar{g}^T \bar{\bar{H}}^{-1} \right\rangle
-\overbrace{=}^{Ljung} \bar{\bar{H}}^{-1}_0 \left\langle \bar{g}\bar{g}^T \right\rangle \bar{\bar{H}}^{-1}_0 + R'
-\end{equation}
-With error $R' = O\left(\frac{1}{N}\right) \approx 0$, for large $N$. We look at the covariance of the gradient function
-\begin{align}
-\left\langle \bar{g} \bar{g}^T \right\rangle_N &= 
-\frac{1}{N^2}\sum_{n, n' = 1}^N \left\langle \left. \frac{\delta \ell_n}{\delta_n \bar{w}} \right|_{\bar{w}_0} \left.\frac{\delta \ell_{n'}}{\delta_n \bar{w}} \right|_{\bar{w}_0} \right\rangle\\
- & = \frac{1}{N^2} \left(\sum_{n \neq n'} \left\langle \left. \frac{\delta \ell_n}{\delta \bar{w}} \right|_{\bar{w}_0} \right\rangle \cdot \left\langle \left. \frac{\delta \ell_{n'}}{\delta \bar{w}^T} \right|_{\bar{w}_0} \right\rangle 
- + \sum_{n =1 }^N \left\langle \left. \frac{\delta \ell_n}{\delta \bar{w}} \right|_{\bar{w}_0} \left. \frac{\delta \ell_n}{\delta \bar{w}^T} \right|_{\bar{w}_0}  \right\rangle \right)
-\end{align}
-Due to the assumption of independence, only the $N$ diagonal elements are non-zero. So;
-\begin{equation}
-\left\langle \bar{g} \bar{g}^T \right\rangle_N = \frac{1}{N} \left\langle \left. \frac{\delta \mathcal{L}}{\delta \bar{w}} \right|_{\bar{w}_0} \left. \frac{\delta \mathcal{L}}{\delta \bar{w}^T} \right|_{\bar{w}_0}  \right\rangle \label{eq:gg}
-\end{equation}
-
-
-\subsection{Proof that $\left\langle \left. \frac{\delta \mathcal{L}}{\delta \bar{w}} \right|_{\bar{w}_0} \left. \frac{\delta \mathcal{L}}{\delta \bar{w}^T} \right|_{\bar{w}_0}  \right\rangle = \bar{\bar{H}}_0$ }
-Tekst test
-\begin{equation}
-\left\langle \bar{g} \bar{g}^T \right\rangle_N = 
-\frac{1}{N^2} \sum_{n = 1}^N \int_{\Omega} 
-\left. \frac{\delta \ell_n({\bar{x})}}{\delta \bar{w}} \right|_{\bar{w}_0}
-\left. \frac{\delta \ell_n({\bar{x})}}{\delta \bar{w}} \right|_{\bar{w}_0}
-p(\bar{x}) \delta x \label{eq:ggx}
-\end{equation}
-From \eqref{eq:gg} and \eqref{eq:ggx}, and setting $ \ell_n({\bar{x})} = p(\bar{x})$:
-\begin{align}
-\left.\bar{\bar{H}} \right|_{\bar{w}_0} &= 
-\frac{1}{N} \sum_{n = 1}^N \int_{\Omega} 
-\frac{\delta}{\delta \bar{w} \delta \bar{w}^T}
-- \log p\left(\bar{x} \middle| \bar{w} \right) p(\bar{x}) \delta x\\
- &= \frac{1}{N} \sum_{n = 1}^N \int_{\Omega} - \frac{\delta}{\delta \bar{w}} \frac{1}{p\left(\bar{x}\right)}\frac{\delta }{\delta \bar{w}^T} p(\bar{x} | \bar{w}) p(\bar{x}) \delta \bar{x}\\
-\end{align}
-Now if $p(\bar{x}|\bar{w}_0) = p(x)$, then
