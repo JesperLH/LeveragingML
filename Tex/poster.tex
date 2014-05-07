@@ -2,7 +2,7 @@
 
 \usetheme[department=compute]{DTU}
 
-\usepackage[orientation=landscape,size=a0,scale=1.5,debug]{beamerposter}             
+\usepackage[orientation=landscape,size=a1,scale=2,debug]{beamerposter}             
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt % This is the amount of white space between the columns in the poster
@@ -19,37 +19,38 @@
 \usepackage{siunitx}
 
 
-\title{DTU Beamer Template}
-\author{Remus M. Prunescu}
-\institute{\LaTeX\ Support Group, Technical University of Denmark (DTU)}
+\title{Leverage based sampling for classification }
+\author{Julian Kopka Larsen and Jesper Løve Hinrich}
+\institute{DTU Compute}
 
 \newcommand{\tabitem}{{\color{dtured}$\bullet$} }
 \newenvironment{pblock}{\begin{minipage}[b]{\linewidth}
 	\begin{block}}{\end{block} 	\end{minipage}}
-
+\newcommand{\imblock}{\includegraphics[width=\linewidth]}
 
 \begin{document}
-\begin{multicols}{4}
+\begin{multicols}{3}
 
 \frame{
-	\frametitle{Installation}
+	\frametitle{Leverage based sampling for classification}
 	
 
-	\begin{pblock}{\large Unix and Mac}
-		\begin{itemize}
-			\item Unzip the bundle to \texttt{\textasciitilde/texmf/}.
-		\end{itemize}
+	\begin{pblock}{Introduction}
+	We introduce a method for ....
 	\end{pblock}
 	
-	\begin{block}{Windows}
-		\begin{itemize}
-			\item Unzip the bundle to any location.
-			\item Open MiKTeX settings.
-			\item Add location to root folders.
-			\item Refresh FNDB.
-		\end{itemize}
-	\end{block}
-
+	\begin{pblock}{Motivation}
+	The importance of sampling methods are initiated by very large datasets where it is not feasible to use all of the available data. This is illustrated by the rise in online access to online video data. These data contain many frames that are basically the same and therefore redundant. 
+	\end{pblock}
+	\begin{pblock}{What is leveraging}
+	A sampling scheme based on covariances between datapoints. We define a probability distribution representing the "importance" of each datapoint and then sampling from that..  
+	Shown by Ma et al. [1] to perform better than uniform on Least-Squares approximation on non-normal data.
+	\end{pblock}
+	\imblock{../T1.png}
+	\begin{pblock}{Replicating their results}
+	A sampling scheme based on covariances between datapoints. We define a probability distribution representing the "importance" of each datapoint and then sampling from that..  
+	Shown by Ma et al. [1] to perform better than uniform on Least-Squares approximation on non-normal data.
+	\end{pblock}
 }
 
 \end{multicols}
