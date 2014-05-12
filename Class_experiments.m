@@ -19,9 +19,12 @@ Generate_classData;
 H = X*inv(X'*X)*X'; 
 
 figure
-bar(sort(diag(H).*t));
+bar(sort(log(diag(H)).*t))
+xlabel('Observations')
+ylabel('log( h_{i i} ) multiplied by t_i ')
+axis tight
 
-%%Finding the distribution, we take abs((H)
+%% Finding the distribution, we take abs((H)
 pi = abs(diag(H))./sum(abs(diag(H)));
 [Plin, Pglm, idx] = SubsampleLogReg( X,t,pi,r);
 
@@ -29,7 +32,14 @@ pi = abs(diag(H))./sum(abs(diag(H)));
 %% Ilustrates the example if two-dimensional
 
 if size(X,2) == 2 
+    %Illustration for LS-leverage-based distribution on classification
     illustrate2D2Class(X,t,idx);
+    
+    [~ , ~, idxUniform] = SubsampleLogReg( X,t,ones(N,1),r);
+    illustrate2D2Class(X,t,idxUniform);
+    
+    
+    
 end
 
     figure
