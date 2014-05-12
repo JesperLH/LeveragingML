@@ -5,7 +5,7 @@ clc
 
 p = 2; % number of dimensions
 N = 1000; % number of datapoints
-r = 20; % sample size
+r = 30; % sample size
 type = 'T3';
 clusterDistribution = 0.5;
 
@@ -37,9 +37,6 @@ if size(X,2) == 2
     
     [~ , ~, idxUniform] = SubsampleLogReg( X,t,ones(N,1),r);
     illustrate2D2Class(X,t,idxUniform);
-    
-    
-    
 end
 
     figure

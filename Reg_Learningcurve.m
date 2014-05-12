@@ -3,7 +3,7 @@ clear all
 close all
 clc
 N = 1000;
-p = 10; %Dimensions, must be >= 20
+p = 30; %Dimensions, must be >= 20
 r = 10; %Initialise
 
 %[X,y] = generateData(N,p,'GA');

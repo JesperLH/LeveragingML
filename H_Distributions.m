@@ -1,3 +1,6 @@
+%%Plots (bar-plots) the H-distribution for LS-regression
+%   on dataset GA, T3, T1
+
 clear all
 close all
 clc
