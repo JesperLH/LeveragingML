@@ -65,7 +65,9 @@ title(sprintf('N = %i, d = %i \nLeveraging sampling blue \nUniform sampling red'
 %axis auto
 hold off
 
-%%
+%% %
+% Learning curves, based on mean and .25 and .75 quantile
+%%%
 figure
 lev = quantile((Ew),[0.25 0.5 .75])
 uni = quantile((Eu),[0.25 0.5 .75])
@@ -79,7 +81,7 @@ plot(xAxis, lev(1, :) ,'--b', xAxis, lev(3,:),'--b')
 plot(xAxis, uni(1, :) ,'--r', xAxis, uni(3,:),'--r')
 
 %title(sprintf('Classification for %s distribution \n N = %i , p = %i',type,N,p), 'fontweight','bold','fontsize',16)
-title(sprintf('%s',type), 'fontweight','bold','fontsize',16)
+title(sprintf('%s',type), 'fontweight','bold','fontsize',64)
 legend('Mean Lev', 'Mean Uni', 'q25 Lev', 'q75 Lev', 'q25 Uni', 'q75 Uni')
 ylabel('#Miss-classifications','fontsize', 14)
 xlabel('#Samples','fontsize', 14)
