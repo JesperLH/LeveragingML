@@ -2,7 +2,7 @@
 
 \usetheme[department=compute]{DTU}
 
-\usepackage[orientation=landscape,size=a1,scale=2,debug]{beamerposter}             
+\usepackage[orientation=landscape,size=a1,scale=1.6,debug]{beamerposter}             
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt % This is the amount of white space between the columns in the poster
@@ -26,12 +26,14 @@
 \newcommand{\tabitem}{{\color{dtured}$\bullet$} }
 \newenvironment{pblock}{\begin{minipage}[b]{\linewidth}
 	\begin{block}}{\end{block} 	\end{minipage}}
-\newcommand{\imblock}{\includegraphics[width=\linewidth]}
+\newcommand{\imblock}[1]{
+\includegraphics[width=\linewidth]{#1}}
 
 \begin{document}
-\begin{multicols}{3}
+\begin{columns}[t]
+    \begin{column}{.3\linewidth}
 
-\frame{
+
 	\frametitle{Leverage based sampling for classification}
 	
 
@@ -46,12 +48,18 @@
 	A sampling scheme based on covariances between datapoints. We define a probability distribution representing the "importance" of each datapoint and then sampling from that..  
 	Shown by Ma et al. [1] to perform better than uniform on Least-Squares approximation on non-normal data.
 	\end{pblock}
-	\imblock{../T1.png}
+	    \end{column}
+    \begin{column}{.3\linewidth}
+
+
 	\begin{pblock}{Replicating their results}
-	A sampling scheme based on covariances between datapoints. We define a probability distribution representing the "importance" of each datapoint and then sampling from that..  
+
 	Shown by Ma et al. [1] to perform better than uniform on Least-Squares approximation on non-normal data.
 	\end{pblock}
-}
-
-\end{multicols}
+	
+	\imblock{../T1.png}
+	
+	
+    \end{column}
+  \end{columns}
 \end{document}
