@@ -6,7 +6,7 @@ clc
 p = 10; % number of dimensions
 N = 1000; % number of datapoints
 r = 20; % sample size
-type = 'GA';
+type = 'T1';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
@@ -21,6 +21,18 @@ pi = diag(H)./sum(diag(H));
 % H-dist
 figure
 bar(abs(sort(pi.*t)));
+
+figure
+
+[~, idxSort] = sort(pi.*t);
+piLog = log(pi).*t;
+bar(piLog(idxSort));
+
+figure
+[~, idxSort] = sort(pi.*t);
+maxPi = abs(min(log(pi)));
+piLog = (maxPi-abs(log(pi)));
+bar(piLog(idxSort));
 
 
 
