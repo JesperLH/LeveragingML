@@ -54,13 +54,13 @@
 
 
 	\begin{pblock}{Datasets}
-	\includegraphics[width=.3\linewidth]{../Data_distributions.png}
+	\includegraphics[width=\linewidth]{../Data_distributions.png}
 	
 	
 	\end{pblock}
 	
 	\begin{pblock}{Leveraging in general}
-	
+	For any leveraging we want
 	\end{pblock}
 	
 	\end{column}
@@ -68,10 +68,10 @@
 
 
 	\begin{pblock}{LS-based Distribution}	
-	We wish to find the effect that a datapoint's class has on the predicted class for that datapoint.
+	We seek to find the effect that a datapoint's class has on the predicted class for that datapoint.
 	    \begin{equation}
 	    \label{dyhatdy}
-	    \frac{\delta \hat{Y}_n}{\delta Y_n}
+	    \frac{\delta \hat{y}_n}{\delta y_n}
 	    \end{equation}
 	There is a closed form solution which is linear in $y$
 		\begin{equation*}
@@ -79,7 +79,7 @@
 		\end{equation*}
 	And prediction is also linear
 		\begin{equation*}
-			\hat{Y}_n = X_n*\hat{\beta}
+			\hat{y}_n = X_n*\hat{\beta}
 		\end{equation*}
 	Therefore \eqref{dyhatdy} is the coefficient
 		\begin{equation*}
@@ -89,7 +89,7 @@
 	\end{pblock}
 
 	\begin{pblock}{Test results}
-	\includegraphics[width=\linewidth]{T1.png}
+	\includegraphics[width=.3\linewidth]{T1.png}
 	N=1000 p=10
 	\end{pblock}
 
@@ -103,7 +103,7 @@
     	The target is again \eqref{dyhatdy} 
     	\begin{equation*}
     	\label{optimum}
-    	 \hat{Y}_n = p(y|\bar{x},\bar{w}) \quad \bar{w} \  \text{s.t.} \ \frac{\delta L}{\delta\bar{w}}=0
+    	 \hat{y}_n = p(y|\bar{x},\bar{w}) \quad \bar{w} \  \text{s.t.} \ \frac{\delta L}{\delta\bar{w}}=0
     	\end{equation*}
     	Since \ref{optimum} depends both directly and indirectly on $y$ we see that
     	\begin{eqnarray*}
