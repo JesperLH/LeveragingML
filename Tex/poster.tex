@@ -2,7 +2,7 @@
 
 \usetheme[department=compute]{DTU}
 
-\usepackage[orientation=landscape,size=a1,scale=1.6,debug]{beamerposter}             
+\usepackage[orientation=landscape,size=a1,scale=1.2,debug]{beamerposter}             
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt % This is the amount of white space between the columns in the poster
@@ -25,7 +25,7 @@
 
 \newcommand{\tabitem}{{\color{dtured}$\bullet$} }
 \newenvironment{pblock}{\begin{minipage}[b]{\linewidth}
-	\begin{block}}{\end{block} 	\end{minipage}}
+	\begin{block}}{\end{block} 	\end{minipage}\vspace*{20pt}}
 \newcommand{\imblock}[1]{
 \includegraphics[width=\linewidth]{#1}}
 
@@ -37,34 +37,96 @@
 
 
 
-	
-
-	\begin{pblock}{Introduction}
-	We investigate a method for sampling the
+	\begin{pblock}{Contribution}
+	We validate the results of leverage based sampling for LS-regression, shown by Ma et al. [1]. We explore the possibility of using the leverage based sampling distribution from LS-regression on 2 class classification, and introduce two new approaches for sampling form an leverage distribution (important points).
 	\end{pblock}
 	
 	\begin{pblock}{Motivation}
-	The importance of sampling methods are initiated by very large datasets where it is not feasible to use all of the available data. This is illustrated by the rise in online access to online video data. These data contain many frames that are basically the same and therefore redundant. 
+	The importance of sampling methods are initiated by very large datasets where it is not feasible to use all of the available data. This is illustrated by the rise in online access to video data. These data contain many frames that are basically the same and therefore redundant. 
 	\end{pblock}
-	\begin{pblock}{What is leveraging}
-	A sampling scheme based on covariances between datapoints. We define a probability distribution representing the "importance" of each datapoint and then sampling from that..  
-	Shown by Ma et al. [1] to perform better than uniform on Least-Squares approximation on non-normal data.
+
+	\begin{pblock}{Research Questions}	
+	\begin{itemize}
+	\item Will the regression based sampling distribution improve our performance in classification?
+	\item Can leverage based sampling be generalized to classification?
+	\end{itemize}
 	\end{pblock}
-	    \end{column}
+
+
+	\begin{pblock}{Datasets}
+	\includegraphics[width=\linewidth]{../Data_distributions.png}
+	\end{pblock}
+
+	\begin{pblock}{LS-based Distribution}
+	Linear regression
+	\end{pblock}	
+	
+	\begin{pblock}{Test results}
+		bla
+	\end{pblock}
+
+	\end{column}
     \begin{column}{.3\linewidth}
 
-
-	\begin{pblock}{Replicating their results}
-
-	Shown by Ma et al. [1] to perform better than uniform on Least-Squares approximation on non-normal data.
-	\end{pblock}
 	
-	\includegraphics[width=\linewidth]{../Data_distributions.png}
+	\begin{pblock}{Sensitivity Based Distribution}
+	We wish to find the effect that a datapoint's class has on the predicted class for that datapoint.
+	\begin{equation}
+	\label{dyhatdy}
+	\frac{\delta \hat{Y}_n}{\delta Y_n}
+	\end{equation}
+	
+	Our prediction is 
+	\begin{equation}
+	\label{optimum}
+	 \hat{Y}_n = p(y|\bar{x},\bar{w}) \quad \bar{w} \  \text{s.t.} \ \frac{\delta L}{\delta\bar{w}}=0
+	\end{equation}
+	
+	Since \ref{optimum} depends both directly and indirectly on $y$ we see that
+	
+	\begin{eqnarray*}
+	&\frac{\delta}{\delta y} \frac{\delta L}{\delta w} = 0\\
+	\Downarrow & \\
+	&\frac{\delta^2 L}{\delta y \delta \bar{w}} + \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y}= 0
+	\end{eqnarray*}
+	
+	and from this we can get our leverage score \eqref{dyhatdy}
+	
+	\begin{equation}
+	\frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y} = - \frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}}
+	\end{equation}
+	\end{pblock}
 	
 	
     \end{column}
     \begin{column}{.3\linewidth}
+    
+    \begin{pblock}{Uncertainty Based Distribution}
+    	bla
+    	\end{pblock}
+    
+    
+    	\begin{pblock}{Conclution}
+		itr doesnt work because the classification doesnt gain much from the collective distribution of both classes.
+		
+    	\end{pblock}
+    
     \end{column}
   \end{columns}
+\hspace{.015\linewidth}
+  \begin{minipage}{.97\linewidth}
+  \begin{block}{Process}
+  khjasdælkasdflækjdsafælkjasd
+  asdlkølksadf\\
+  asdf\\
+  asdf\\
+  asdf\\
+  asdf\\
+   asdf\\ 
+   asdf\\
+     asdf\\
+  
+  \end{block}
+  \end{minipage}
   }
 \end{document}

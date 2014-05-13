@@ -29,7 +29,7 @@ axis([xmin xmax ymin ymax])
 hold on
 %In the same plot, plot circles around the sample points.
 %Different colors are used, so to better distingues in large datasets.
-plot(xSamp(t(idx) == -1,1),xSamp(t(idx) == -1,2),'ok','markerSize',10);
+plot(xSamp(t(idx) == -1,1),xSamp(t(idx) == -1,2),'om','markerSize',10);
 plot(xSamp(t(idx) == 1,1),xSamp(t(idx) == 1,2),'ok','markerSize',10);
 hold off
 legend('Class 1','Class 2', 'S-class 1', 'S-class 2');
