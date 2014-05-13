@@ -5,7 +5,7 @@ clc
 
 p = 10; % number of dimensions
 N = 1000; % number of datapoints
-type = 'GA';
+type = 'T3';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
