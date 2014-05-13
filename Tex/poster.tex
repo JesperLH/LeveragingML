@@ -2,7 +2,7 @@
 
 \usetheme[department=compute]{DTU}
 
-\usepackage[orientation=landscape,size=a1,scale=1.2,debug]{beamerposter}             
+\usepackage[orientation=landscape,size=a0,scale=1.8,debug]{beamerposter}             
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt % This is the amount of white space between the columns in the poster
@@ -29,21 +29,27 @@
 \newcommand{\imblock}[1]{
 \includegraphics[width=\linewidth]{#1}}
 
+\setbeamerfont{frametitle}{size=\Huge}
+
+
 \begin{document}
 \frame{
-	\frametitle{Leverage based sampling for classification}
-\begin{columns}[t]
+
+\frametitle{Leverage based sampling for classification \\ \small{Jesper Hinrich Løve and Julian Kopka Larsen \\Supervised by Lars Kai Hansen}}
+
+	
+\begin{columns}[T]
     \begin{column}{.3\linewidth}
 
-
-
-	\begin{block}{Abstract}
-	We validate the results of leverage based sampling for LS-regression, shown by Ma et al. [1]. We explore the possibility of using the leverage based sampling distribution from LS-regression on 2 class classification, and introduce two new approaches for sampling form an leverage distribution (important points).
-	\end{block}
-	
-	\begin{pblock}{Motivation}
-	The importance of sampling methods are initiated by very large datasets where it is not feasible to use all of the available data. This is illustrated by the rise in online access to video data. These data contain many frames that are basically the same and therefore redundant. 
-	\end{pblock}
+		\begin{block}{Abstract}
+			We validate the results of leverage based sampling for LS-regression, shown by Ma et al. [1]. We explore the possibility of using the leverage based sampling distribution from LS-regression on 2 class classification, and introduce a %two
+			 new approach for sampling from an leverage distribution (important points).
+		\end{block}
+			
+		\begin{pblock}{Motivation}
+			The importance of sampling methods is initiated by very large datasets where it is not feasible to use all of the available data. This is illustrated by the rise in online access to video data. These data contain many frames that are basically the same and therefore redundant. 
+		\end{pblock}	
+			
 
 	\begin{pblock}{Research Questions}	
 	\begin{itemize}
@@ -52,19 +58,34 @@
 	\end{itemize}
 	\end{pblock}
 
+	\begin{pblock}{Leveraging in general}
+	For any leveraging we want to find for each datapoint a leverage-score representing the importance of the point. This we can normalize into a distribution to sample from.
+	\end{pblock}
 
 	\begin{pblock}{Datasets}
 	\includegraphics[width=\linewidth]{../Data_distributions.png}
 	
+	These datasets are drawn from distributions defined in Ma et al. [1] and have: 
+	\begin{itemize}
+	\item GA: Nearly uniform leverage-scores
+	\item T3: Mildly non-uniform leverage-scores
+	\item T1: Very non-uniform leverage-scores
+	\end{itemize}  
 	
 	\end{pblock}
 	
-	\begin{pblock}{Leveraging in general}
-	For any leveraging we want
-	\end{pblock}
 	
 	\end{column}
-    \begin{column}{.3\linewidth}
+	
+	\begin{column}{.69\linewidth}
+			\begin{block}{Process}
+				\includegraphics[width=\linewidth]{ThoughModel.png}
+			\end{block}
+	
+	
+	\begin{columns}[t]
+	
+    	\begin{column}{.5\linewidth}
 
 
 	\begin{pblock}{LS-based Distribution}	
@@ -75,28 +96,27 @@
 	    \end{equation}
 	There is a closed form solution which is linear in $y$
 		\begin{equation*}
-			\hat{\beta}_{OLS} = \left( X^T X \right)^{-1} X^T y
+			\hat{\beta}_{OLS} = \left( X^T X \right)^{-1} X^T y \quad \text{where} \quad \hat{y}_n = X_n*\hat{\beta}
 		\end{equation*}
-	And prediction is also linear
+		
+	Therefore the leverage-score \eqref{dyhatdy} is the coefficient
 		\begin{equation*}
-			\hat{y}_n = X_n*\hat{\beta}
-		\end{equation*}
-	Therefore \eqref{dyhatdy} is the coefficient
-		\begin{equation*}
-			\frac{\delta \hat{Y}_n}{\delta Y_n} = X \left( X^T X \right)^{-1} X^T
+			\frac{\delta \hat{y}_n}{\delta y_n} = X \left( X^T X \right)^{-1} X^T
 		\end{equation*}
 	
 	\end{pblock}
 
 	\begin{pblock}{Test results}
-	\includegraphics[width=.3\linewidth]{T1.png}
-	N=1000 p=10
+	We compared logistic regression when sampling from a LS-distribution (blue) vs. a uniform-distribution (red). The mean, 25th and 75th quantile are plotted.
+	\includegraphics[width=.33\linewidth]{GA.png}	\includegraphics[width=.33\linewidth]{T3.png}	\includegraphics[width=.33\linewidth]{T1.png}\\
+	It clearly shows that a LS-distribution sample scheme, does not outperform a uniform-distribution for classification. The results shown are for dimension $p = 10$ and $N = 1000$ datapoints, but it is consistent when varying $p$ and $N$. 
+
 	\end{pblock}
 
 	
 	
     \end{column}
-    \begin{column}{.3\linewidth}
+    \begin{column}{.5\linewidth}
     
     
     	\begin{pblock}{Sensitivity Based Distribution}
@@ -112,34 +132,33 @@
     	&\frac{\delta^2 L}{\delta y \delta \bar{w}} + \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y}= 0
     	\end{eqnarray*}
     	
-    	and from this we can get our leverage score \eqref{dyhatdy}
+    	and from this we can get our leverage-score \eqref{dyhatdy}
     	
     	\begin{equation*}
-    	\frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y} = - \frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}}
+    		\frac{\delta \hat{y}_n}{\delta y_n}=\frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \frac{\delta \bar{w}}{\delta y} = - \frac{\delta p(y|\bar{x}_n,\bar{w})}{\delta \bar{w}^T} \left[ \frac{\delta^2 L}{\delta \bar{w} \delta \bar{w}^T} \right]^{-1} \frac{\delta^2 L}{\delta y \delta \bar{w}}
     	\end{equation*}
+    	
+    	When evaluating this model, weights trained on a small training-set is used. This is expected to be better than LS-based sampling since it introduces dependence on class information.
     	\end{pblock}
     	
     
-    \begin{pblock}{Uncertainty Based Distribution}
-    	bla
-    	\end{pblock}
+   % \begin{pblock}{Uncertainty Based Distribution}
+   % 	bla
+   % \end{pblock}
     
+    
+    \begin{pblock}{Conclusion}
+    The LS-based leverage sampling gives no advantage over uniform sampling and generally performs worse. LS-distribution is based on what is important for linear regression, it does not have an advantage in finding important points for classification.
+    \end{pblock}
+    			
+    \begin{pblock}{References}
+   		[1] Ma et. al. \emph{A Statistical Perspective on Algorithmic Leveraging} 2013
+    \end{pblock}
     
     \end{column}
+    \end{columns}
+    \end{column}
   \end{columns}
-\begin{columns}
-	\begin{column}{.61\linewidth}
-		\begin{block}{Process}
-			\includegraphics[width=\linewidth]{ThoughModel.png}
-		  
-		\end{block}
-	\end{column}
-	\begin{column}{.3\linewidth}
-			\begin{block}{Conclusion}
-				itr doesnt work because the classification doesnt gain much from the collective distribution of both classes.
-			\end{block}
-	\end{column}
-\end{columns}	
 	
-  }
+}
 \end{document}
