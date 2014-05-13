@@ -10,6 +10,12 @@ if (size(w,2) > 1)
     w = w';
 end
 
+if sum(w)~=1
+    w = w./sum(w);
+end
+    
+    
+
 u = rand(size(X,1),1);
 k = u.^(1./w);
 

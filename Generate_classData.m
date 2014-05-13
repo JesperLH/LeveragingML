@@ -45,7 +45,7 @@ end
 
 %% Random permutation for more realism
 
-R = randperm(N);
+%R = randperm(N);
 
-X = X(R,1:size(X,2));
-t = t(R);
+%X = X(R,1:size(X,2));
+%t = t(R);

@@ -5,8 +5,8 @@ clc
 
 p = 2; % number of dimensions
 N = 1000; % number of datapoints
-r = 30; % sample size
-type = 'T3';
+r = 10; % sample size
+type = 'T1';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
@@ -35,7 +35,7 @@ if size(X,2) == 2
     %Illustration for LS-leverage-based distribution on classification
     illustrate2D2Class(X,t,idx);
     
-    [~ , ~, idxUniform] = SubsampleLogReg( X,t,ones(N,1),r);
+    [~ , ~, idxUniform] = SubsampleLogReg( X,t,ones(N,1)/N,r);
     illustrate2D2Class(X,t,idxUniform);
 end
 

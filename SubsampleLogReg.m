@@ -15,7 +15,7 @@ N = size(X,1);
 [~, idx1] = WRS(X(t==1),pi(t==1),round(r/2));
 [~, idx2] = WRS(X(t==-1),pi(t==-1),r-round(r/2));
 
-idx = [idx1; idx2];
+idx = [idx1; idx2+round(size(X,1)/2)];
 
 
 
