@@ -6,7 +6,7 @@ clc
 p = 2; % number of dimensions
 N = 1000; % number of datapoints
 r = 10; % sample size
-type = 'T1';
+type = 'T3';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
