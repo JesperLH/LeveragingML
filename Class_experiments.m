@@ -4,7 +4,7 @@ close all
 clc
 
 p = 2; % number of dimensions
-N = 1000; % number of datapoints
+N = 100; % number of datapoints
 r = 10; % sample size
 type = 'T3';
 clusterDistribution = 0.5;
@@ -28,15 +28,18 @@ axis tight
 pi = abs(diag(H))./sum(abs(diag(H)));
 [Plin, Pglm, idx] = SubsampleLogReg( X,t,pi,r);
 
+%uniform sampling
+[~ , ~, idxUniform] = SubsampleLogReg( X,t,ones(N,1)/N,r);
 
 %% Ilustrates the example if two-dimensional
 
 if size(X,2) == 2 
     %Illustration for LS-leverage-based distribution on classification
     illustrate2D2Class(X,t,idx);
+    title(sprintf('%s - Lev',type), 'fontweight','bold','fontsize',64)
     
-    [~ , ~, idxUniform] = SubsampleLogReg( X,t,ones(N,1)/N,r);
     illustrate2D2Class(X,t,idxUniform);
+    title(sprintf('%s - Uni',type), 'fontweight','bold','fontsize',64)
 end
 
     figure
