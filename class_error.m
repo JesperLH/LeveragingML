@@ -6,7 +6,7 @@ function [ E ] = class_error( p,t )
 
 
 
-p(p < 0.5) = -1;
+p(p <= 0.5) = -1;
 p(p > 0.5) = 1;
 E = numel(t) - sum(p == t);
 

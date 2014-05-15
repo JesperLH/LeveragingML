@@ -36,7 +36,7 @@ X = X+D;
 t = [-ones(N1,1); ones(N2,1)];
 
 
-if (size(X,2) == 2)
+if false%(size(X,2) == 2)
     figure
     plot(X(1:N1,1),X(1:N1,2),'.b',X(N2+1:N,1),X(N2+1:N,2),'.r')
     legend('Class 1', 'Class 2');
