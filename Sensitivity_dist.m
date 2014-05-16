@@ -35,10 +35,7 @@ X = [ones(N,1) X];
 %% calculating the score
 
 
-ewx = exp(X*w0');
 newx = exp(-X*w0');
-
-yh = 1./(1+newx);
 
 yhdw = X.*repmat(newx./(newx+1).^2,[1,p+1]);
 
@@ -75,6 +72,10 @@ pi = yhdy;
 pi = abs(pi);
 
 pi = pi./sum(pi);
+
+if any(isnan(pi))
+   pi 
+end
 
 
 end

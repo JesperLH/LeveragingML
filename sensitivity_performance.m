@@ -17,17 +17,17 @@ Generate_classData;
 %% Calculate parameters and find log(squared error)
 maxSampleSize = round(20*log(p));
 stepSize = 1;
-R = (p+1):stepSize:(p+maxSampleSize);
+R = 100; %(p+1):stepSize:(p+maxSampleSize);
 Ew = [];
 Eu = [];
 %hold on
 for i = 1:length(R)
     r = R(i);
-    parfor rep=1:30
+    for rep=1:30
         pi = Sensitivity_dist(X,t,r);
-        [~,P] = SubsampleLogReg( X,t,pi,r);
+        [P] = SubsampleLogReg( X,t,pi,r);
         Ew(rep,i) = class_error( P,t );
-        [~,PU] = SubsampleLogReg( X,t,ones(1,N)./N,r);
+        [PU] = SubsampleLogReg( X,t,ones(1,N)./N,r);
         Eu(rep,i)  = class_error( PU,t );
     end
 end

@@ -43,11 +43,11 @@ Ew = [];
 Eu = [];
 %hold on
 for i = 1:length(R)
-    parfor rep=1:30
+    parfor rep=1:35
         r = R(i);
-        [~,P] = SubsampleLogReg( X,t,pi,r);
+        [P] = SubsampleLogReg( X,t,pi,r);
         Ew(rep,i) = class_error( P,t );
-        [~,PU] = SubsampleLogReg( X,t,ones(1,N)./N,r);
+        [PU] = SubsampleLogReg( X,t,ones(1,N)./N,r);
         Eu(rep,i)  = class_error( PU,t );
     end
 end

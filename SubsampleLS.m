@@ -25,11 +25,11 @@ end
 
 
 %% Solving the weighted LS
-%ySamp = D*Sx'*y;
-%xSamp = D*Sx'*X;
+ySamp = D*Sx'*y;
+xSamp = D*Sx'*X;
 
-ySamp = y(idx);
-xSamp = X(idx,:);
+%ySamp = y(idx);
+%xSamp = X(idx,:);
 
 %B = (xSamp'*xSamp)^(-1)*xSamp'*ySamp;
 B = xSamp\ySamp; %Same, but faster
