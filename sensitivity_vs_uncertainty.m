@@ -3,7 +3,7 @@ clear all
 close all
 clc
 
-p = 50; % number of dimensions
+p = 10; % number of dimensions
 N = 5000; % number of datapoints
 type = 'T1';
 clusterDistribution = 0.5;

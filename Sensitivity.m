@@ -7,7 +7,7 @@ p = size(X,2);
 
 %% "Sensitivity" regression
 
-r_init = max(round(r/2),p);
+r_init = max(round(r/6)*2,4);
 
 % sampling small initial uniformly
 [~, idx1] = WRS(X(t==1),ones(N/2,1),round(r_init/2));
@@ -79,6 +79,8 @@ end
 
 ip = setdiff(find(t==1),idx_init);
 in = setdiff(find(t==-1),idx_init);
+
+r = r - numel(idx_init);
 
 [~, idx1] = WRS(X(ip),pi(ip),round(r/2));
 [~, idx2] = WRS(X(in),pi(in),r-round(r/2));
