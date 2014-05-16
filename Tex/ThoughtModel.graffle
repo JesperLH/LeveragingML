@@ -44,7 +44,7 @@
 	<key>Creator</key>
 	<string>Jesper Løve Hinrich</string>
 	<key>DisplayScale</key>
-	<string>1 0/72 in = 1 0/72 in</string>
+	<string>1 0/72 in = 1.0000 in</string>
 	<key>GraphDocumentVersion</key>
 	<integer>8</integer>
 	<key>GraphicsList</key>
@@ -56,6 +56,127 @@
 			<array>
 				<dict>
 					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>ID</key>
+					<integer>130</integer>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPoint</key>
+					<string>{0, 0}</string>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{447.21503, 118.64777}</string>
+						<string>{477.29092, 118.20038}</string>
+						<string>{503.29092, 119.20038}</string>
+						<string>{498.21503, 119.38226}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>2</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+						</dict>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>ID</key>
+					<integer>131</integer>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPoint</key>
+					<string>{0, 0}</string>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{447, 183.44739}</string>
+						<string>{477.0759, 183}</string>
+						<string>{503.0759, 184}</string>
+						<string>{498, 184.18188}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>2</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+						</dict>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>ID</key>
+					<integer>132</integer>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPoint</key>
+					<string>{0, 0}</string>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{280.01813, 184.40617}</string>
+						<string>{310.09406, 183.95879}</string>
+						<string>{336.09406, 184.95879}</string>
+						<string>{342.92792, 185.14067}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>LineType</key>
+							<integer>2</integer>
+							<key>TailArrow</key>
+							<string>0</string>
+						</dict>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{344.24139, 162.09944}, {101.97363, 44.900566}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>133</integer>
+					<key>Shape</key>
+					<string>Circle</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf400
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs24 \cf0 Logistic Regression}</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
 					<string>Group</string>
 					<key>Graphics</key>
 					<array>
@@ -65,7 +186,7 @@
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
-							<integer>108</integer>
+							<integer>135</integer>
 							<key>Shape</key>
 							<string>Rectangle</string>
 							<key>Style</key>
@@ -109,7 +230,7 @@
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>ID</key>
-							<integer>109</integer>
+							<integer>136</integer>
 							<key>Shape</key>
 							<string>Rectangle</string>
 							<key>Style</key>
@@ -149,7 +270,7 @@
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>ID</key>
-							<integer>110</integer>
+							<integer>137</integer>
 							<key>Points</key>
 							<array>
 								<string>{530.44714, 109.40304}</string>
@@ -190,7 +311,7 @@
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>ID</key>
-							<integer>111</integer>
+							<integer>138</integer>
 							<key>Points</key>
 							<array>
 								<string>{528.47797, 121.93633}</string>
@@ -228,7 +349,7 @@
 							<key>Tail</key>
 							<dict>
 								<key>ID</key>
-								<integer>112</integer>
+								<integer>139</integer>
 								<key>Position</key>
 								<real>0.13702285289764404</real>
 							</dict>
@@ -237,7 +358,7 @@
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>ID</key>
-							<integer>112</integer>
+							<integer>139</integer>
 							<key>Points</key>
 							<array>
 								<string>{528.47797, 100.4426}</string>
@@ -259,7 +380,7 @@
 						</dict>
 					</array>
 					<key>ID</key>
-					<integer>107</integer>
+					<integer>134</integer>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -267,12 +388,10 @@
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
-						<integer>119</integer>
-						<key>Info</key>
-						<integer>4</integer>
+						<integer>146</integer>
 					</dict>
 					<key>ID</key>
-					<integer>113</integer>
+					<integer>140</integer>
 					<key>OrthogonalBarAutomatic</key>
 					<true/>
 					<key>OrthogonalBarPoint</key>
@@ -281,10 +400,10 @@
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{435.05707, 150.02214}</string>
-						<string>{446.59238, 149.8725}</string>
-						<string>{458.50009, 149.8725}</string>
-						<string>{474.80438, 149.87248}</string>
+						<string>{280.9241, 116.44739}</string>
+						<string>{311, 116}</string>
+						<string>{337, 117}</string>
+						<string>{343.83386, 117.18188}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -301,7 +420,7 @@
 					<key>Tail</key>
 					<dict>
 						<key>ID</key>
-						<integer>121</integer>
+						<integer>148</integer>
 					</dict>
 				</dict>
 				<dict>
@@ -310,98 +429,16 @@
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
-						<integer>121</integer>
+						<integer>147</integer>
 					</dict>
 					<key>ID</key>
-					<integer>114</integer>
+					<integer>141</integer>
 					<key>OrthogonalBarAutomatic</key>
 					<true/>
 					<key>OrthogonalBarPoint</key>
 					<string>{0, 0}</string>
 					<key>OrthogonalBarPosition</key>
-					<real>0.8416748046875</real>
-					<key>Points</key>
-					<array>
-						<string>{280.20145, 185.95035}</string>
-						<string>{305.68478, 187.61751}</string>
-						<string>{327.51541, 182.5168}</string>
-						<string>{348.92834, 171.47832}</string>
-					</array>
-					<key>Style</key>
-					<dict>
-						<key>stroke</key>
-						<dict>
-							<key>HeadArrow</key>
-							<string>FilledArrow</string>
-							<key>LineType</key>
-							<integer>2</integer>
-							<key>TailArrow</key>
-							<string>0</string>
-						</dict>
-					</dict>
-					<key>Tail</key>
-					<dict>
-						<key>ID</key>
-						<integer>122</integer>
-					</dict>
-				</dict>
-				<dict>
-					<key>Class</key>
-					<string>LineGraphic</string>
-					<key>Head</key>
-					<dict>
-						<key>ID</key>
-						<integer>121</integer>
-					</dict>
-					<key>ID</key>
-					<integer>115</integer>
-					<key>OrthogonalBarAutomatic</key>
-					<true/>
-					<key>OrthogonalBarPoint</key>
-					<string>{0, 0}</string>
-					<key>OrthogonalBarPosition</key>
-					<real>2.9614410400390625</real>
-					<key>Points</key>
-					<array>
-						<string>{280.92322, 115.27425}</string>
-						<string>{310.64609, 114.16776}</string>
-						<string>{329.49997, 119.26845}</string>
-						<string>{349.06006, 129.50414}</string>
-					</array>
-					<key>Style</key>
-					<dict>
-						<key>stroke</key>
-						<dict>
-							<key>HeadArrow</key>
-							<string>FilledArrow</string>
-							<key>LineType</key>
-							<integer>2</integer>
-							<key>TailArrow</key>
-							<string>0</string>
-						</dict>
-					</dict>
-					<key>Tail</key>
-					<dict>
-						<key>ID</key>
-						<integer>123</integer>
-					</dict>
-				</dict>
-				<dict>
-					<key>Class</key>
-					<string>LineGraphic</string>
-					<key>Head</key>
-					<dict>
-						<key>ID</key>
-						<integer>122</integer>
-					</dict>
-					<key>ID</key>
-					<integer>116</integer>
-					<key>OrthogonalBarAutomatic</key>
-					<true/>
-					<key>OrthogonalBarPoint</key>
-					<string>{0, 0}</string>
-					<key>OrthogonalBarPosition</key>
-					<real>12.24163818359375</real>
+					<real>12.241634368896484</real>
 					<key>Points</key>
 					<array>
 						<string>{108.97382, 149.87248}</string>
@@ -424,7 +461,7 @@
 					<key>Tail</key>
 					<dict>
 						<key>ID</key>
-						<integer>120</integer>
+						<integer>145</integer>
 					</dict>
 				</dict>
 				<dict>
@@ -433,16 +470,16 @@
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
-						<integer>123</integer>
+						<integer>148</integer>
 					</dict>
 					<key>ID</key>
-					<integer>117</integer>
+					<integer>142</integer>
 					<key>OrthogonalBarAutomatic</key>
 					<true/>
 					<key>OrthogonalBarPoint</key>
 					<string>{0, 0}</string>
 					<key>OrthogonalBarPosition</key>
-					<real>12.24163818359375</real>
+					<real>12.241634368896484</real>
 					<key>Points</key>
 					<array>
 						<string>{108.97382, 149.87248}</string>
@@ -465,7 +502,7 @@
 					<key>Tail</key>
 					<dict>
 						<key>ID</key>
-						<integer>120</integer>
+						<integer>145</integer>
 					</dict>
 				</dict>
 				<dict>
@@ -474,7 +511,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>118</integer>
+					<integer>143</integer>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
@@ -518,7 +555,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>119</integer>
+					<integer>144</integer>
 					<key>Magnets</key>
 					<array>
 						<string>{0, 1}</string>
@@ -529,7 +566,13 @@
 					<key>Shape</key>
 					<string>DisplayShape</string>
 					<key>Style</key>
-					<dict/>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
 					<key>Text</key>
 					<dict>
 						<key>VerticalPad</key>
@@ -542,7 +585,7 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>120</integer>
+					<integer>145</integer>
 					<key>Magnets</key>
 					<array>
 						<string>{0, 1}</string>
@@ -553,7 +596,13 @@
 					<key>Shape</key>
 					<string>Cylinder</string>
 					<key>Style</key>
-					<dict/>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
 					<key>Text</key>
 					<dict>
 						<key>Align</key>
@@ -572,15 +621,21 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{344.24139, 106.09944}, {90.31955, 89.0299}}</string>
+					<string>{{344.24139, 96.099426}, {101.97363, 44.900566}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>121</integer>
+					<integer>146</integer>
 					<key>Shape</key>
 					<string>Circle</string>
 					<key>Style</key>
-					<dict/>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
@@ -598,11 +653,16 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>122</integer>
+					<integer>147</integer>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
 					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
 						<key>stroke</key>
 						<dict>
 							<key>Color</key>
@@ -635,11 +695,16 @@
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>123</integer>
+					<integer>148</integer>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
 					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
 						<key>stroke</key>
 						<dict>
 							<key>Color</key>
@@ -668,7 +733,7 @@
 				</dict>
 			</array>
 			<key>ID</key>
-			<integer>106</integer>
+			<integer>129</integer>
 		</dict>
 	</array>
 	<key>GridInfo</key>
@@ -718,7 +783,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-05-13 13:30:46 +0000</string>
+	<string>2014-05-16 12:33:04 +0000</string>
 	<key>Modifier</key>
 	<string>Jesper Løve Hinrich</string>
 	<key>NotesVisible</key>
