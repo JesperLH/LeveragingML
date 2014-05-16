@@ -5,7 +5,7 @@ clc
 
 p = 10; % number of dimensions
 N = 1000; % number of datapoints
-type = 'T1';
+type = 'GA';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
@@ -58,10 +58,15 @@ plot(xAxis, lev(1, :) ,'--b', xAxis, lev(3,:),'--b')
 plot(xAxis, uni(1, :) ,'--r', xAxis, uni(3,:),'--r')
 
 %title(sprintf('Classification for %s distribution \n N = %i , p = %i',type,N,p), 'fontweight','bold','fontsize',16)
-title(sprintf('Sensitivity %s',type), 'fontweight','bold','fontsize',64)
-legend('Mean Lev', 'Mean Uni', 'q25 Lev', 'q75 Lev', 'q25 Uni', 'q75 Uni')
-ylabel('#Miss-classifications','fontsize', 14)
-xlabel('#Samples','fontsize', 14)
+title(sprintf('%s',type), 'fontweight','bold','fontsize',64)
+hleg = legend('Mean Lev', 'Mean Uni', 'q25 Lev', 'q75 Lev', 'q25 Uni', 'q75 Uni');
+set(hleg,'fontsize',20)
+set(gca, 'xcolor', [0 0 0],'ycolor', [0 0 0],'color', 'none');
+set(gcf, 'color', 'none','inverthardcopy', 'off');
+
+ylabel('#Miss-classifications','fontsize', 18)
+xlabel('#Samples','fontsize', 18)
+
 xlim([xAxis(1) xAxis(end)])
 
 hold off

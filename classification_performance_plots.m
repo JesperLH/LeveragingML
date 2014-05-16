@@ -5,7 +5,7 @@ clc
 
 p = 10; % number of dimensions
 N = 1000; % number of datapoints
-type = 'GA';
+type = 'T1';
 clusterDistribution = 0.5;
 maxSampleSize = 50;%round(20*log(p));
 
@@ -71,9 +71,13 @@ plot(xAxis, uni(1, :) ,'--r', xAxis, uni(3,:),'--r')
 %title(sprintf('Classification for %s distribution \n N = %i , p = %i',type,N,p), 'fontweight','bold','fontsize',16)
 title(sprintf('%s',type), 'fontweight','bold','fontsize',64)
 hleg = legend('Mean Lev', 'Mean Uni', 'q25 Lev', 'q75 Lev', 'q25 Uni', 'q75 Uni')
-set(hleg,'fontsize',16)
-ylabel('#Miss-classifications','fontsize', 16)
-xlabel('#Samples','fontsize', 16)
+set(hleg,'fontsize',20)
+set(gca, 'xcolor', [0 0 0],'ycolor', [0 0 0],'color', 'none');
+set(gcf, 'color', 'none','inverthardcopy', 'off');
+
+ylabel('#Miss-classifications','fontsize', 18)
+xlabel('#Samples','fontsize', 18)
+
 xlim([xAxis(1) xAxis(end)])
 
 hold off

@@ -1,17 +1,17 @@
 %!PS-Adobe-2.0
 %%Creator: dvips(k) 5.98 Copyright 2009 Radical Eye Software
 %%Title: 643_poster.dvi
-%%CreationDate: Fri May 16 15:50:51 2014
+%%CreationDate: Fri May 16 16:16:37 2014
 %%Pages: 1
 %%PageOrder: Ascend
 %%BoundingBox: 0 0 3402 2594
-%%DocumentFonts: CMBX12 CMR17 CMTI12 CMSY10 Times-Roman Times-Bold
-%%+ CMMI12 CMEX10 CMR12
+%%DocumentFonts: CMBX12 CMR17 CMTI12 CMSY10 Helvetica Helvetica-Bold
+%%+ Times-Roman Times-Bold CMMI12 CMEX10 CMR12
 %%EndComments
 %DVIPSWebPage: (www.radicaleye.com)
 %DVIPSCommandLine: /usr/texbin/dvips -o 643_poster.ps 643_poster.dvi
 %DVIPSParameters: dpi=600
-%DVIPSSource:  TeX output 2014.05.16:1550
+%DVIPSSource:  TeX output 2014.05.16:1616
 %%BeginProcSet: tex.pro 0 0
 %!
 /TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
@@ -2121,6 +2121,328 @@ end
 2 dict dup /PageSize [2594 3370] put dup /ImagingBBox null put
 setpagedevice
 %%EndFeature
+
+%%EndProcSet
+%%BeginProcSet: texnansi.enc 0 0
+% @psencodingfile{
+%   date = "22apr09",
+%   filename = "texnansi.enc",
+%   email = "tex-fonts@tug.org",
+%   author = "Y&Y, Inc.",
+%   version = "1.1",
+%   codetable = "ISO/ASCII",
+%   docstring = "texnansi (aka LY1) encoding vector for Type 1 fonts to
+%                be used with TeX, following ASCII and Windows ANSI."
+% }
+%
+% The idea is to have all 228 characters normally included in Type 1 text
+% fonts (plus a few more) available for typesetting.  This is effectively
+% the character set in Adobe Standard Encoding, ISO Latin 1, plus a few more.
+%
+% Character code assignments were made as follows:
+%
+% (1) The character layout largely matches `ASCII' in the 32 -- 126 range,
+% except for `circumflex' in 94 and `tilde' in 126, to match `TeX text'
+% (`asciicircumflex' and `asciitilde' appear in 158 and 142 instead).
+%
+% (2) The character layout matches `Windows ANSI' in almost all places,
+% except for `quoteright' in 39 and `quoteleft' in 96 to match ASCII
+% (`quotesingle' and `grave' appear in 129 and 18 instead).
+%
+% (3) The character layout matches `TeX typewriter' used by CM text fonts
+% in most places (except for discordant positions such as hungarumlaut
+% (instead of braceright), dotaccent (instead of underscore) etc.
+%
+% (4) Remaining characters are assigned arbitrarily to the `control character'
+% range (0 -- 31), avoiding 0, 9, 10 and 13 in case we meet dumb software
+% - similarly one should really avoid 127 and 128 if possible.
+% In addition, the 8 open slots in Windows ANSI between 128 and 159 are used.
+%
+% (5) Y&Y Lucida Bright includes some extra ligatures and such; ff, ffi, ffl,
+% and `dotlessj,' these are included 11 -- 15, and 17.
+%
+% (6) Hyphen appears both at 45 and 173 for compatibility with both ASCII
+% and Windows ANSI.
+%
+% (7) It doesn't really matter where ligatures appear (both real, such as ffi,
+% and pseudo such as ---) since these should not be accessed directly, only
+% via ligature information in the TFM file.
+%
+% SAMPLE USAGE (in `psfonts.map' file for DVIPS):
+% 
+% lbr LucidaBright "TeXnANSIEncoding ReEncodeFont" <texnansi.enc <lbr.pfb
+%
+% This tells DVIPS that the font called `lbr' in TeX has PostScript 
+% FontName `LucidaBright.'  It also asks DVIPS to expand the file `lbr.pfb'
+% into PFA form, to include the attached `texnansi.enc' encoding vector,
+% and to then actually reencode the font based on that encoding vector.
+%
+% Revised 2009 April 20 with doc changes only (Uni20AC -> uni20ac).
+% Revised 2009 March 9 with doc changes only.
+% Revised 1996 June 1 by adding second position for `fl' to avoid Acrobat bug.
+% Revised 1996 June 1 by adding second position for `fraction' for same reason.
+% Revised 1997 Oct 1 by adding cwm (used in boundary char TFM code).
+% Revised 1998 Mar 1 by adding Unicode for Euro character.
+% emacs-page
+% 
+/TeXnANSIEncoding [     % now 256 chars follow
+/.notdef                % 0x00 0
+/Euro                   % 0x01 1 /uni20AC
+/.notdef                % 0x02 2
+/.notdef                % 0x03 3
+/fraction               % 0x04 4
+/dotaccent              % 0x05 5
+/hungarumlaut           % 0x06 6
+/ogonek                 % 0x07 7
+/fl                     % 0x08 8
+/.notdef                % 0x09 9 /fraction at 4, backward compatibility only
+/cwm                    % 0x0A 10 not used, except boundary char internally
+/ff                     % 0x0B 11
+/fi                     % 0x0C 12
+/.notdef                % 0x0D 13 /fl at 8, backward compatibility only
+/ffi                    % 0x0E 14
+/ffl                    % 0x0F 15
+/dotlessi               % 0x10 16
+/dotlessj               % 0x11 17
+/grave                  % 0x12 18
+/acute                  % 0x13 19
+/caron                  % 0x14 20
+/breve                  % 0x15 21
+/macron                 % 0x16 22
+/ring                   % 0x17 23
+/cedilla                % 0x18 24
+/germandbls             % 0x19 25
+/ae                     % 0x1A 26
+/oe                     % 0x1B 27
+/oslash                 % 0x1C 28
+/AE                     % 0x1D 29
+/OE                     % 0x1E 30
+/Oslash                 % 0x1F 31
+/space                  % 0x20 32 /suppress in TeX text
+/exclam                 % 0x21 33
+/quotedbl               % 0x22 34 /quotedblright in TeX text
+/numbersign             % 0x23 35
+/dollar                 % 0x24 36
+/percent                % 0x25 37
+/ampersand              % 0x26 38
+/quoteright             % 0x27 39 /quotesingle in ANSI
+/parenleft              % 0x28 40
+/parenright             % 0x29 41
+/asterisk               % 0x2A 42
+/plus                   % 0x2B 43
+/comma                  % 0x2C 44
+/hyphen                 % 0x2D 45
+/period                 % 0x2E 46
+/slash                  % 0x2F 47
+/zero                   % 0x30 48
+/one                    % 0x31 49
+/two                    % 0x32 50
+/three                  % 0x33 51
+/four                   % 0x34 52
+/five                   % 0x35 53
+/six                    % 0x36 54
+/seven                  % 0x37 55
+/eight                  % 0x38 56
+/nine                   % 0x39 57
+/colon                  % 0x3A 58
+/semicolon              % 0x3B 59
+/less                   % 0x3C 60 /exclamdown in Tex text
+/equal                  % 0x3D 61
+/greater                % 0x3E 62 /questiondown in TeX text
+/question               % 0x3F 63
+/at                     % 0x40 64
+/A                      % 0x41 65
+/B                      % 0x42 66
+/C                      % 0x43 67
+/D                      % 0x44 68
+/E                      % 0x45 69
+/F                      % 0x46 70
+/G                      % 0x47 71
+/H                      % 0x48 72
+/I                      % 0x49 73
+/J                      % 0x4A 74
+/K                      % 0x4B 75
+/L                      % 0x4C 76
+/M                      % 0x4D 77
+/N                      % 0x4E 78
+/O                      % 0x4F 79
+/P                      % 0x50 80
+/Q                      % 0x51 81
+/R                      % 0x52 82
+/S                      % 0x53 83
+/T                      % 0x54 84
+/U                      % 0x55 85
+/V                      % 0x56 86
+/W                      % 0x57 87
+/X                      % 0x58 88
+/Y                      % 0x59 89
+/Z                      % 0x5A 90
+/bracketleft            % 0x5B 91
+/backslash              % 0x5C 92 /quotedblleft in TeX text
+/bracketright           % 0x5D 93
+/circumflex             % 0x5E 94 /asciicircum in ASCII
+/underscore             % 0x5F 95 /dotaccent in TeX text
+/quoteleft              % 0x60 96 /grave accent in ANSI
+/a                      % 0x61 97
+/b                      % 0x62 98
+/c                      % 0x63 99
+/d                      % 0x64 100
+/e                      % 0x65 101
+/f                      % 0x66 102
+/g                      % 0x67 103
+/h                      % 0x68 104
+/i                      % 0x69 105
+/j                      % 0x6A 106
+/k                      % 0x6B 107
+/l                      % 0x6C 108
+/m                      % 0x6D 109
+/n                      % 0x6E 110
+/o                      % 0x6F 111
+/p                      % 0x70 112
+/q                      % 0x71 113
+/r                      % 0x72 114
+/s                      % 0x73 115
+/t                      % 0x74 116
+/u                      % 0x75 117
+/v                      % 0x76 118
+/w                      % 0x77 119
+/x                      % 0x78 120
+/y                      % 0x79 121
+/z                      % 0x7A 122
+/braceleft              % 0x7B 123 /endash in TeX text
+/bar                    % 0x7C 124 /emdash in TeX test
+/braceright             % 0x7D 125 /hungarumlaut in TeX text
+/tilde                  % 0x7E 126 /asciitilde in ASCII
+/dieresis               % 0x7F 127 also at 168
+/Lslash                 % 0x80 128 position is unfortunate, but too late to fix
+/quotesingle            % 0x81 129
+/quotesinglbase         % 0x82 130
+/florin                 % 0x83 131
+/quotedblbase           % 0x84 132
+/ellipsis               % 0x85 133
+/dagger                 % 0x86 134
+/daggerdbl              % 0x87 135
+/circumflex             % 0x88 136
+/perthousand            % 0x89 137
+/Scaron                 % 0x8A 138
+/guilsinglleft          % 0x8B 139
+/OE                     % 0x8C 140
+/Zcaron                 % 0x8D 141
+/asciicircum            % 0x8E 142
+/minus                  % 0x8F 143
+/lslash                 % 0x90 144
+/quoteleft              % 0x91 145
+/quoteright             % 0x92 146
+/quotedblleft           % 0x93 147
+/quotedblright          % 0x94 148
+/bullet                 % 0x95 149
+/endash                 % 0x96 150
+/emdash                 % 0x97 151
+/tilde                  % 0x98 152
+/trademark              % 0x99 153
+/scaron                 % 0x9A 154
+/guilsinglright         % 0x9B 155
+/oe                     % 0x9C 156
+/zcaron                 % 0x9D 157
+/asciitilde             % 0x9E 158
+/Ydieresis              % 0x9F 159
+/nbspace                % 0xA0 160 no break space
+/exclamdown             % 0xA1 161
+/cent                   % 0xA2 162
+/sterling               % 0xA3 163
+/currency               % 0xA4 164
+/yen                    % 0xA5 165
+/brokenbar              % 0xA6 166
+/section                % 0xA7 167
+/dieresis               % 0xA8 168
+/copyright              % 0xA9 169
+/ordfeminine            % 0xAA 170
+/guillemotleft          % 0xAB 171
+/logicalnot             % 0xAC 172
+/sfthyphen              % 0xAD 173 /hyphen (hanging hyphen)
+/registered             % 0xAE 174
+/macron                 % 0xAF 175
+/degree                 % 0xB0 176
+/plusminus              % 0xB1 177
+/twosuperior            % 0xB2 178
+/threesuperior          % 0xB3 179
+/acute                  % 0xB4 180
+/mu                     % 0xB5 181
+/paragraph              % 0xB6 182
+/periodcentered         % 0xB7 183
+/cedilla                % 0xB8 184
+/onesuperior            % 0xB9 185
+/ordmasculine           % 0xBA 186
+/guillemotright         % 0xBB 187
+/onequarter             % 0xBC 188
+/onehalf                % 0xBD 189
+/threequarters          % 0xBE 190
+/questiondown           % 0xBF 191
+/Agrave                 % 0xC0 192
+/Aacute                 % 0xC1 193
+/Acircumflex            % 0xC2 194
+/Atilde                 % 0xC3 195
+/Adieresis              % 0xC4 196
+/Aring                  % 0xC5 197
+/AE                     % 0xC6 198
+/Ccedilla               % 0xC7 199
+/Egrave                 % 0xC8 200
+/Eacute                 % 0xC9 201
+/Ecircumflex            % 0xCA 202
+/Edieresis              % 0xCB 203
+/Igrave                 % 0xCC 204
+/Iacute                 % 0xCD 205
+/Icircumflex            % 0xCE 206
+/Idieresis              % 0xCF 207
+/Eth                    % 0xD0 208
+/Ntilde                 % 0xD1 209
+/Ograve                 % 0xD2 210
+/Oacute                 % 0xD3 211
+/Ocircumflex            % 0xD4 212
+/Otilde                 % 0xD5 213
+/Odieresis              % 0xD6 214
+/multiply               % 0xD7 215 OE in T1
+/Oslash                 % 0xD8 216
+/Ugrave                 % 0xD9 217
+/Uacute                 % 0xDA 218
+/Ucircumflex            % 0xDB 219
+/Udieresis              % 0xDC 220
+/Yacute                 % 0xDD 221
+/Thorn                  % 0xDE 222
+/germandbls             % 0xDF 223
+/agrave                 % 0xE0 224
+/aacute                 % 0xE1 225
+/acircumflex            % 0xE2 226
+/atilde                 % 0xE3 227
+/adieresis              % 0xE4 228
+/aring                  % 0xE5 229
+/ae                     % 0xE6 230
+/ccedilla               % 0xE7 231
+/egrave                 % 0xE8 232
+/eacute                 % 0xE9 233
+/ecircumflex            % 0xEA 234
+/edieresis              % 0xEB 235
+/igrave                 % 0xEC 236
+/iacute                 % 0xED 237
+/icircumflex            % 0xEE 238
+/idieresis              % 0xEF 239
+/eth                    % 0xF0 240
+/ntilde                 % 0xF1 241
+/ograve                 % 0xF2 242
+/oacute                 % 0xF3 243
+/ocircumflex            % 0xF4 244
+/otilde                 % 0xF5 245
+/odieresis              % 0xF6 246
+/divide                 % 0xF7 247 oe in T1
+/oslash                 % 0xF8 248
+/ugrave                 % 0xF9 249
+/uacute                 % 0xFA 250
+/ucircumflex            % 0xFB 251
+/udieresis              % 0xFC 252
+/yacute                 % 0xFD 253
+/thorn                  % 0xFE 254
+/ydieresis              % 0xFF 255 germandbls in T1
+] def
 
 %%EndProcSet
 %%BeginProcSet: 8r.enc 0 0
@@ -25757,16 +26079,16 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial 0 TeXcolorgray 0 TeXcolorgray
 0 TeXcolorgray 0 TeXcolorgray 2948 w Fi(Abstract)269
-3639 y Fk(W)-16 b(e)86 b(v)-11 b(alidate)85 b(the)h(results)g(of)f(lev)
+3610 y Fk(W)-16 b(e)86 b(v)-11 b(alidate)85 b(the)h(results)g(of)f(lev)
 -5 b(erage)85 b(based)g(sampling)g(for)h(LS-regression,)e(sho)-5
 b(wn)85 b(b)-5 b(y)85 b(Ma)h(et)g(al.)f([1].)g(W)-16
-b(e)269 3888 y(explore)57 b(the)g(p)5 b(ossibilit)-5
+b(e)269 3859 y(explore)57 b(the)g(p)5 b(ossibilit)-5
 b(y)56 b(of)h(using)g(the)g(lev)-5 b(erage)56 b(based)h(sampling)f
 (distribution)f(from)j(LS-regression)f(on)g(2)g(class)269
-4138 y(classi\014cation,)73 b(and)h(in)-5 b(tro)5 b(duce)73
+4109 y(classi\014cation,)73 b(and)h(in)-5 b(tro)5 b(duce)73
 b(a)i(new)g(approac)-5 b(h)72 b(for)j(sampling)f(from)h(an)f(lev)-5
 b(erage)74 b(distribution)f(\(imp)5 b(ortan)-5 b(t)269
-4387 y(p)5 b(oin)-5 b(ts\).)1039 5103 y @beginspecial
+4358 y(p)5 b(oin)-5 b(ts\).)1039 5050 y @beginspecial
 @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 19.38318 neg 836.54453 36.66093 .5 Frame  gsave
@@ -25780,15 +26102,15 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial 0 TeXcolorgray 0 TeXcolorgray
 0 TeXcolorgray 0 TeXcolorgray 2835 w Fi(Motiv)-13 b(ation)269
-5767 y Fk(The)78 b(imp)5 b(ortance)78 b(of)g(sampling)f(metho)5
+5692 y Fk(The)78 b(imp)5 b(ortance)78 b(of)g(sampling)f(metho)5
 b(ds)78 b(is)h(initiated)d(b)-5 b(y)77 b(v)-5 b(ery)79
 b(large)e(datasets)i(where)f(it)g(is)g(not)g(feasible)f(to)269
-6016 y(use)64 b(all)f(of)h(the)f(a)-5 b(v)-11 b(ailable)61
+5941 y(use)64 b(all)f(of)h(the)f(a)-5 b(v)-11 b(ailable)61
 b(data.)i(This)g(is)h(illustrated)e(b)-5 b(y)63 b(the)h(rise)g(in)f
 (online)f(access)i(to)g(video)e(data.)h(These)h(data)269
-6265 y(con)-5 b(tain)60 b(man)-5 b(y)62 b(frames)h(that)f(are)g
+6190 y(con)-5 b(tain)60 b(man)-5 b(y)62 b(frames)h(that)f(are)g
 (basically)f(the)h(same)g(and)f(therefore)h(redundan)-5
-b(t.)1039 6968 y @beginspecial @setspecial
+b(t.)1039 6870 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 24.22093 neg 836.54453 36.45363 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -25801,7 +26123,7 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray
-2972 w Fi(Concept)269 9611 y @beginspecial 0 @llx 0 @lly
+2972 w Fi(Concept)269 9489 y @beginspecial 0 @llx 0 @lly
 665 @urx 175 @ury 9490 @rwi @setspecial
 %%BeginDocument: images/ThoughtModel.eps
 %!PS-Adobe-3.0 EPSF-3.0
@@ -27192,7 +27514,7 @@ end
 %%EOF
 
 %%EndDocument
- @endspecial 1039 10276 a @beginspecial @setspecial
+ @endspecial 1039 10131 a @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 24.22093 neg 836.54453 36.66093 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -27206,12 +27528,12 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
 @endspecial
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray
 2402 w(Researc)f(h)77 b(Questions)p 0 TeXcolorgray 332
-11051 a Fj(\017)p 0 TeXcolorgray 42 w Fk(Will)61 b(the)h(regression)g
+10854 a Fj(\017)p 0 TeXcolorgray 42 w Fk(Will)61 b(the)h(regression)g
 (based)f(sampling)g(distribution)e(impro)-5 b(v)g(e)61
 b(our)h(p)5 b(erformance)62 b(in)f(classi\014cation?)p
-0 TeXcolorgray 332 11362 a Fj(\017)p 0 TeXcolorgray 42
+0 TeXcolorgray 332 11153 a Fj(\017)p 0 TeXcolorgray 42
 w Fk(Can)g(lev)-5 b(erage)62 b(based)f(sampling)g(b)5
-b(e)62 b(generalized)e(to)i(classi\014cation?)1039 12150
+b(e)62 b(generalized)e(to)i(classi\014cation?)1039 11883
 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 19.38318 neg 836.54453 36.45363 .5 Frame  gsave
@@ -27225,19 +27547,19 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial 0 TeXcolorgray
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 2955 w Fi(Datasets)269
-14683 y @beginspecial 25 @llx 185 @lly 585 @urx 605 @ury
-3196 @rwi @setspecial
-%%BeginDocument: images/GA.eps
+15478 y @beginspecial -144 @llx 256 @lly 740 @urx 584
+@ury 9989 @rwi @setspecial
+%%BeginDocument: images/Data_distributions.pdf
 %!PS-Adobe-3.0 EPSF-3.0
-%%Creator: MATLAB, The MathWorks, Inc. Version 8.2.0.701 (R2013b). Operating System: Darwin 12.5.0 Darwin Kernel Version 12.5.0: Sun Sep 29 13:33:47 PDT 2013; root:xnu-2050.48.12~1/RELEASE_X86_64 x86_64.
-%%Title: /Users/Brille_smurf/Desktop/GitHubRepositories/LeveragingML/Tex/02460_poster_template/images/GA.eps
-%%CreationDate: 05/16/2014  15:39:25
-%%DocumentNeededFonts: Times-Roman
-%%+ Times-Bold
+%%Creator: MATLAB, The MathWorks, Inc. Version 8.2.0.701 (R2013b). Operating System: Microsoft Windows 8.
+%%Title: C:\Users\Julian\GitHub\LeveragingML\Data_distributions.pdf
+%%CreationDate: 05/13/2014  11:36:23
+%%DocumentNeededFonts: Helvetica
+%%+ Helvetica-Bold
 %%DocumentProcessColors: Cyan Magenta Yellow Black
 %%LanguageLevel: 2
 %%Pages: 1
-%%BoundingBox:    25   185   585   605
+%%BoundingBox:  -144   256   740   584
 %%EndComments
 
 %%BeginProlog
@@ -27283,6 +27605,14 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
 /FontSize 0 def
 /FMS {/FontSize xstore findfont [FontSize 0 0 FontSize neg 0 0]
   makefont setfont} bdef
+/ISOLatin1Encoding where {pop /WindowsLatin1Encoding 256 array bdef
+ISOLatin1Encoding WindowsLatin1Encoding copy pop
+/.notdef/.notdef/quotesinglbase/florin/quotedblbase/ellipsis/dagger
+/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE/.notdef/.notdef
+/.notdef/.notdef/quoteleft/quoteright/quotedblleft/quotedblright/bullet
+/endash/emdash/tilde/trademark/scaron/guilsinglright/oe/.notdef/.notdef
+/Ydieresis WindowsLatin1Encoding 128 32 getinterval astore pop}
+{/WindowsLatin1Encoding StandardEncoding bdef} ifelse
 /reencode {exch dup where {pop load} {pop StandardEncoding} ifelse
   exch dup 3 1 roll findfont dup length dict begin
   { 1 index /FID ne {def}{pop pop} ifelse } forall
@@ -27392,7 +27722,7 @@ end
 
 %%Page: 1 1
 %%BeginPageSetup
-%%PageBoundingBox:    25   185   585   605
+%%PageBoundingBox:  -144   256   740   584
 MathWorks begin
 bpage
 %%EndPageSetup
@@ -27401,9 +27731,9 @@ bpage
 bplot
 
 /dpi2point 12 def
-portraitMode 0300 7260 csm
+portraitMode -1728 7008 csm
 
-    0     0  6721  5039 rc
+    0     0 10613  3926 rc
 85 dict begin %Colortable dictionary
 /c0 { 0.000000 0.000000 0.000000 sr} bdef
 /c1 { 1.000000 1.000000 1.000000 sr} bdef
@@ -27415,223 +27745,1029 @@ portraitMode 0300 7260 csm
 /c7 { 0.000000 0.820000 0.820000 sr} bdef
 c0
 1 j
-6 w
-4 w
-DO
-SO
-6 w
- 874 4485 mt 6082 4485 L
- 874 4485 mt  874  984 L
-1299 4485 mt 1299 4432 L
-%%IncludeResource: font Times-Roman
-/Times-Roman /ISOLatin1Encoding 180 FMSR
-
-1209 4680 mt 
-(15) s
-1830 4485 mt 1830 4432 L
-1740 4680 mt 
-(20) s
-2362 4485 mt 2362 4432 L
-2272 4680 mt 
-(25) s
-2893 4485 mt 2893 4432 L
-2803 4680 mt 
-(30) s
-3425 4485 mt 3425 4432 L
-3335 4680 mt 
-(35) s
-3956 4485 mt 3956 4432 L
-3866 4680 mt 
-(40) s
-4488 4485 mt 4488 4432 L
-4398 4680 mt 
-(45) s
-5019 4485 mt 5019 4432 L
-4929 4680 mt 
-(50) s
-5551 4485 mt 5551 4432 L
-5461 4680 mt 
-(55) s
-6083 4485 mt 6083 4432 L
-5993 4680 mt 
-(60) s
- 874 4485 mt  926 4485 L
- 614 4549 mt 
-(4.5) s
- 874 3318 mt  926 3318 L
- 749 3382 mt 
-(5) s
- 874 2151 mt  926 2151 L
- 614 2215 mt 
-(5.5) s
- 874  984 mt  926  984 L
- 749 1048 mt 
-(6) s
-gs 874 984 5210 3502 rc
-36 w
-/c8 { 0.000000 0.000000 1.000000 sr} bdef
-c8
-106 -14 106 -4 106 66 107 -63 106 39 106 -20 107 -26 106 39 
-106 -3 107 59 106 -30 106 9 106 15 107 -67 106 42 106 21 
-107 6 106 -6 106 -3 107 44 106 5 106 -18 107 56 106 -58 
-106 32 106 2 107 35 106 57 106 -31 107 -14 106 125 106 14 
-107 -48 106 33 106 29 107 105 106 -42 106 -69 106 160 107 -28 
-106 250 106 -176 107 2 106 22 106 329 107 -74 106 464 106 43 
-106 1338 874 1573 50 MP stroke
-/c9 { 1.000000 0.000000 0.000000 sr} bdef
-c9
-106 47 106 34 106 -10 107 -36 106 31 106 -20 107 24 106 18 
-106 -10 107 21 106 -27 106 33 106 -15 107 -37 106 34 106 36 
-107 50 106 -70 106 88 107 -32 106 -5 106 28 107 40 106 25 
-106 -65 106 45 107 79 106 -91 106 38 107 10 106 92 106 -31 
-107 39 106 -62 106 84 107 47 106 120 106 -47 106 7 107 161 
-106 -34 106 104 107 73 106 -193 106 418 107 -100 106 725 106 -59 
-106 113 874 2539 50 MP stroke
-DA
-6 w
-c8
-106 30 106 -13 106 13 107 -33 106 65 106 -35 107 -23 106 2 
-106 3 107 51 106 -36 106 36 106 16 107 -61 106 8 106 63 
-107 -44 106 34 106 -10 107 43 106 -33 106 -3 107 43 106 -13 
-106 -14 106 54 107 -1 106 24 106 -6 107 -45 106 63 106 18 
-107 17 106 -29 106 109 107 -85 106 153 106 -103 106 74 107 20 
-106 95 106 -66 107 39 106 48 106 188 107 58 106 213 106 190 
-106 444 874 2731 50 MP stroke
-106 -10 106 -9 106 80 107 -51 106 15 106 -21 107 -26 106 127 
-106 -51 107 22 106 -10 106 32 106 -21 107 -5 106 14 106 9 
-107 28 106 14 106 -36 107 -13 106 115 106 -72 107 38 106 -36 
-106 49 106 -1 107 58 106 -31 106 36 107 154 106 77 106 -28 
-107 -85 106 133 106 -95 107 78 106 29 106 -39 106 124 107 131 
-106 235 106 -14 107 -182 106 229 106 153 107 -58 106 597 106 279 
-106 1117 874 1087 50 MP stroke
-c9
-106 32 106 14 106 -1 107 -39 106 15 106 -3 107 13 106 -5 
-106 32 107 13 106 -30 106 26 106 -40 107 19 106 12 106 7 
-107 42 106 -39 106 -10 107 36 106 0 106 18 107 10 106 39 
-106 -43 106 12 107 36 106 -82 106 131 107 -34 106 46 106 9 
-107 101 106 -93 106 -11 107 -43 106 154 106 -15 106 35 107 106 
-106 -41 106 114 107 -62 106 -83 106 340 107 24 106 459 106 -113 
-106 -81 874 3261 50 MP stroke
-106 56 106 -12 106 29 107 -30 106 18 106 -66 107 84 106 -3 
-106 9 107 -2 106 -35 106 40 106 13 107 -64 106 139 106 -79 
-107 47 106 -34 106 101 107 9 106 -69 106 67 107 92 106 -7 
-106 -102 106 85 107 39 106 55 106 -73 107 105 106 -48 106 99 
-107 20 106 -89 106 13 107 247 106 -8 106 73 106 8 107 75 
-106 -1 106 254 107 -171 106 65 106 349 107 282 106 850 106 -5 
-106 64 874 1695 50 MP stroke
-gr
-
-c9
-DA
-0 sg
-%%IncludeResource: font Times-Bold
-/Times-Bold /ISOLatin1Encoding 768 FMSR
-
-2902  718 mt 
-(GA) s
-%%IncludeResource: font Times-Roman
-/Times-Roman /ISOLatin1Encoding 216 FMSR
-
-3057 4881 mt 
-(#Samples) s
- 512 3543 mt  -90 rotate
-(Log-squared error) s
-90 rotate
-%%IncludeResource: font Times-Roman
-/Times-Roman /ISOLatin1Encoding 180 FMSR
-
- 851 4547 mt 
-( ) s
-6061 1045 mt 
-( ) s
-SO
 1 sg
-0 1692 1479 0 0 -1692 4545 2736 4 MP
+   0    0 10614 3927 rf
+6 w
+0 3199 2265 0 0 -3199 1380 3494 4 MP
 PP
--1479 0 0 1692 1479 0 0 -1692 4545 2736 5 MP stroke
+-2265 0 0 3199 2265 0 0 -3199 1380 3494 5 MP stroke
 4 w
 DO
 SO
 6 w
 0 sg
-4545 2736 mt 6024 2736 L
-4545 1044 mt 6024 1044 L
-4545 2736 mt 4545 1044 L
-6024 2736 mt 6024 1044 L
-4545 2736 mt 6024 2736 L
-4545 2736 mt 4545 1044 L
-4545 2736 mt 6024 2736 L
-4545 1044 mt 6024 1044 L
-4545 2736 mt 4545 1044 L
-6024 2736 mt 6024 1044 L
-%%IncludeResource: font Times-Roman
-/Times-Roman /ISOLatin1Encoding 240 FMSR
+1380  295 mt 3645  295 L
+1380 3494 mt 3645 3494 L
+3645 3494 mt 3645  295 L
+1380 3494 mt 1380  295 L
+1380 3494 mt 3645 3494 L
+1380 3494 mt 1380  295 L
+1380 3494 mt 1380 3462 L
+1380  295 mt 1380  326 L
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 120 FMSR
 
-5000 1281 mt 
-(Mean Lev) s
-gs 4545 1044 1480 1693 rc
-36 w
+1277 3639 mt 
+(-5) s
+2135 3494 mt 2135 3462 L
+2135  295 mt 2135  326 L
+2102 3639 mt 
+(0) s
+2890 3494 mt 2890 3462 L
+2890  295 mt 2890  326 L
+2857 3639 mt 
+(5) s
+3645 3494 mt 3645 3462 L
+3645  295 mt 3645  326 L
+3579 3639 mt 
+(10) s
+1380 3494 mt 1411 3494 L
+3645 3494 mt 3613 3494 L
+1279 3538 mt 
+(0) s
+1380 3037 mt 1411 3037 L
+3645 3037 mt 3613 3037 L
+1145 3081 mt 
+(500) s
+1380 2580 mt 1411 2580 L
+3645 2580 mt 3613 2580 L
+1079 2624 mt 
+(1000) s
+1380 2123 mt 1411 2123 L
+3645 2123 mt 3613 2123 L
+1079 2167 mt 
+(1500) s
+1380 1666 mt 1411 1666 L
+3645 1666 mt 3613 1666 L
+1079 1710 mt 
+(2000) s
+1380 1209 mt 1411 1209 L
+3645 1209 mt 3613 1209 L
+1079 1253 mt 
+(2500) s
+1380  752 mt 1411  752 L
+3645  752 mt 3613  752 L
+1079  796 mt 
+(3000) s
+1380  295 mt 1411  295 L
+3645  295 mt 3613  295 L
+1079  339 mt 
+(3500) s
+1380  295 mt 3645  295 L
+1380 3494 mt 3645 3494 L
+3645 3494 mt 3645  295 L
+1380 3494 mt 1380  295 L
+gs 1380 295 2266 3200 rc
+/c8 { 0.000000 0.000000 0.562500 sr} bdef
 c8
-350 0 4614 1199 2 MP stroke
+0 4 34 0 0 -4 1455 3494 4 MP
+PP
+0 sg
+-34 0 0 4 34 0 0 -4 1455 3494 5 MP stroke
+c8
+0 6 34 0 0 -6 1489 3494 4 MP
+PP
+0 sg
+-34 0 0 6 34 0 0 -6 1489 3494 5 MP stroke
+c8
+0 8 33 0 0 -8 1523 3494 4 MP
+PP
+0 sg
+-33 0 0 8 33 0 0 -8 1523 3494 5 MP stroke
+c8
+0 17 34 0 0 -17 1556 3494 4 MP
+PP
+0 sg
+-34 0 0 17 34 0 0 -17 1556 3494 5 MP stroke
+c8
+0 19 34 0 0 -19 1590 3494 4 MP
+PP
+0 sg
+-34 0 0 19 34 0 0 -19 1590 3494 5 MP stroke
+c8
+0 33 34 0 0 -33 1624 3494 4 MP
+PP
+0 sg
+-34 0 0 33 34 0 0 -33 1624 3494 5 MP stroke
+c8
+0 56 34 0 0 -56 1658 3494 4 MP
+PP
+0 sg
+-34 0 0 56 34 0 0 -56 1658 3494 5 MP stroke
+c8
+0 75 34 0 0 -75 1692 3494 4 MP
+PP
+0 sg
+-34 0 0 75 34 0 0 -75 1692 3494 5 MP stroke
+c8
+0 126 34 0 0 -126 1726 3494 4 MP
+PP
+0 sg
+-34 0 0 126 34 0 0 -126 1726 3494 5 MP stroke
+c8
+0 173 34 0 0 -173 1760 3494 4 MP
+PP
+0 sg
+-34 0 0 173 34 0 0 -173 1760 3494 5 MP stroke
+c8
+0 264 34 0 0 -264 1794 3494 4 MP
+PP
+0 sg
+-34 0 0 264 34 0 0 -264 1794 3494 5 MP stroke
+c8
+0 353 33 0 0 -353 1828 3494 4 MP
+PP
+0 sg
+-33 0 0 353 33 0 0 -353 1828 3494 5 MP stroke
+c8
+0 455 34 0 0 -455 1861 3494 4 MP
+PP
+0 sg
+-34 0 0 455 34 0 0 -455 1861 3494 5 MP stroke
+c8
+0 648 34 0 0 -648 1895 3494 4 MP
+PP
+0 sg
+-34 0 0 648 34 0 0 -648 1895 3494 5 MP stroke
+c8
+0 796 34 0 0 -796 1929 3494 4 MP
+PP
+0 sg
+-34 0 0 796 34 0 0 -796 1929 3494 5 MP stroke
+c8
+0 1066 34 0 0 -1066 1963 3494 4 MP
+PP
+0 sg
+-34 0 0 1066 34 0 0 -1066 1963 3494 5 MP stroke
+c8
+0 1298 34 0 0 -1298 1997 3494 4 MP
+PP
+0 sg
+-34 0 0 1298 34 0 0 -1298 1997 3494 5 MP stroke
+c8
+0 1528 34 0 0 -1528 2031 3494 4 MP
+PP
+0 sg
+-34 0 0 1528 34 0 0 -1528 2031 3494 5 MP stroke
+c8
+0 1868 34 0 0 -1868 2065 3494 4 MP
+PP
+0 sg
+-34 0 0 1868 34 0 0 -1868 2065 3494 5 MP stroke
+c8
+0 2144 33 0 0 -2144 2099 3494 4 MP
+PP
+0 sg
+-33 0 0 2144 33 0 0 -2144 2099 3494 5 MP stroke
+c8
+0 2330 34 0 0 -2330 2132 3494 4 MP
+PP
+0 sg
+-34 0 0 2330 34 0 0 -2330 2132 3494 5 MP stroke
+c8
+0 2573 34 0 0 -2573 2166 3494 4 MP
+PP
+0 sg
+-34 0 0 2573 34 0 0 -2573 2166 3494 5 MP stroke
+c8
+0 2699 34 0 0 -2699 2200 3494 4 MP
+PP
+0 sg
+-34 0 0 2699 34 0 0 -2699 2200 3494 5 MP stroke
+c8
+0 2803 34 0 0 -2803 2234 3494 4 MP
+PP
+0 sg
+-34 0 0 2803 34 0 0 -2803 2234 3494 5 MP stroke
+c8
+0 2858 34 0 0 -2858 2268 3494 4 MP
+PP
+0 sg
+-34 0 0 2858 34 0 0 -2858 2268 3494 5 MP stroke
+c8
+0 2873 34 0 0 -2873 2302 3494 4 MP
+PP
+0 sg
+-34 0 0 2873 34 0 0 -2873 2302 3494 5 MP stroke
+c8
+0 2812 34 0 0 -2812 2336 3494 4 MP
+PP
+0 sg
+-34 0 0 2812 34 0 0 -2812 2336 3494 5 MP stroke
+c8
+0 2639 33 0 0 -2639 2370 3494 4 MP
+PP
+0 sg
+-33 0 0 2639 33 0 0 -2639 2370 3494 5 MP stroke
+c8
+0 2378 34 0 0 -2378 2403 3494 4 MP
+PP
+0 sg
+-34 0 0 2378 34 0 0 -2378 2403 3494 5 MP stroke
+c8
+0 2084 34 0 0 -2084 2437 3494 4 MP
+PP
+0 sg
+-34 0 0 2084 34 0 0 -2084 2437 3494 5 MP stroke
+c8
+0 1871 34 0 0 -1871 2471 3494 4 MP
+PP
+0 sg
+-34 0 0 1871 34 0 0 -1871 2471 3494 5 MP stroke
+c8
+0 1564 34 0 0 -1564 2505 3494 4 MP
+PP
+0 sg
+-34 0 0 1564 34 0 0 -1564 2505 3494 5 MP stroke
+c8
+0 1264 34 0 0 -1264 2539 3494 4 MP
+PP
+0 sg
+-34 0 0 1264 34 0 0 -1264 2539 3494 5 MP stroke
+c8
+0 1063 34 0 0 -1063 2573 3494 4 MP
+PP
+0 sg
+-34 0 0 1063 34 0 0 -1063 2573 3494 5 MP stroke
+c8
+0 791 34 0 0 -791 2607 3494 4 MP
+PP
+0 sg
+-34 0 0 791 34 0 0 -791 2607 3494 5 MP stroke
+c8
+0 645 34 0 0 -645 2641 3494 4 MP
+PP
+0 sg
+-34 0 0 645 34 0 0 -645 2641 3494 5 MP stroke
+c8
+0 471 33 0 0 -471 2675 3494 4 MP
+PP
+0 sg
+-33 0 0 471 33 0 0 -471 2675 3494 5 MP stroke
+c8
+0 346 34 0 0 -346 2708 3494 4 MP
+PP
+0 sg
+-34 0 0 346 34 0 0 -346 2708 3494 5 MP stroke
+c8
+0 243 34 0 0 -243 2742 3494 4 MP
+PP
+0 sg
+-34 0 0 243 34 0 0 -243 2742 3494 5 MP stroke
+c8
+0 177 34 0 0 -177 2776 3494 4 MP
+PP
+0 sg
+-34 0 0 177 34 0 0 -177 2776 3494 5 MP stroke
+c8
+0 116 34 0 0 -116 2810 3494 4 MP
+PP
+0 sg
+-34 0 0 116 34 0 0 -116 2810 3494 5 MP stroke
+c8
+0 68 34 0 0 -68 2844 3494 4 MP
+PP
+0 sg
+-34 0 0 68 34 0 0 -68 2844 3494 5 MP stroke
+c8
+0 41 34 0 0 -41 2878 3494 4 MP
+PP
+0 sg
+-34 0 0 41 34 0 0 -41 2878 3494 5 MP stroke
+c8
+0 33 34 0 0 -33 2912 3494 4 MP
+PP
+0 sg
+-34 0 0 33 34 0 0 -33 2912 3494 5 MP stroke
+c8
+0 16 33 0 0 -16 2946 3494 4 MP
+PP
+0 sg
+-33 0 0 16 33 0 0 -16 2946 3494 5 MP stroke
+c8
+0 14 34 0 0 -14 2979 3494 4 MP
+PP
+0 sg
+-34 0 0 14 34 0 0 -14 2979 3494 5 MP stroke
+c8
+0 9 34 0 0 -9 3013 3494 4 MP
+PP
+0 sg
+-34 0 0 9 34 0 0 -9 3013 3494 5 MP stroke
+c8
+0 4 34 0 0 -4 3047 3494 4 MP
+PP
+0 sg
+-34 0 0 4 34 0 0 -4 3047 3494 5 MP stroke
+c8
+0 3 34 0 0 -3 3081 3494 4 MP
+PP
+0 sg
+-34 0 0 3 34 0 0 -3 3081 3494 5 MP stroke
+c8
+0 2 34 0 0 -2 3115 3494 4 MP
+PP
+0 sg
+-34 0 0 2 34 0 0 -2 3115 3494 5 MP stroke
 gr
 
-36 w
-c8
-0 sg
-5000 1558 mt 
-(Mean Uni) s
-gs 4545 1044 1480 1693 rc
-c9
-350 0 4614 1475 2 MP stroke
-gr
+%%IncludeResource: font Helvetica-Bold
+/Helvetica-Bold /WindowsLatin1Encoding 192 FMSR
 
-c9
-0 sg
-5000 1834 mt 
-(q25 Lev) s
-gs 4545 1044 1480 1693 rc
-DA
+2368  184 mt 
+(GA) s
+1 sg
+0 3200 2265 0 0 -3200 4360 3494 4 MP
+PP
+-2265 0 0 3200 2265 0 0 -3200 4360 3494 5 MP stroke
+4 w
+DO
+SO
 6 w
+0 sg
+4360  294 mt 6625  294 L
+4360 3494 mt 6625 3494 L
+6625 3494 mt 6625  294 L
+4360 3494 mt 4360  294 L
+4360 3494 mt 6625 3494 L
+4360 3494 mt 4360  294 L
+4360 3494 mt 4360 3462 L
+4360  295 mt 4360  326 L
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 120 FMSR
+
+4224 3639 mt 
+(-50) s
+5115 3494 mt 5115 3462 L
+5115  295 mt 5115  326 L
+5082 3639 mt 
+(0) s
+5870 3494 mt 5870 3462 L
+5870  295 mt 5870  326 L
+5804 3639 mt 
+(50) s
+6625 3494 mt 6625 3462 L
+6625  295 mt 6625  326 L
+6525 3639 mt 
+(100) s
+4360 3494 mt 4391 3494 L
+6625 3494 mt 6593 3494 L
+4259 3538 mt 
+(0) s
+4360 2854 mt 4391 2854 L
+6625 2854 mt 6593 2854 L
+4159 2898 mt 
+(0.5) s
+4360 2214 mt 4391 2214 L
+6625 2214 mt 6593 2214 L
+4259 2258 mt 
+(1) s
+4360 1574 mt 4391 1574 L
+6625 1574 mt 6593 1574 L
+4159 1618 mt 
+(1.5) s
+4360  934 mt 4391  934 L
+6625  934 mt 6593  934 L
+4259  978 mt 
+(2) s
+4360  295 mt 4391  295 L
+6625  295 mt 6593  295 L
+4159  339 mt 
+(2.5) s
+4360  241 mt 
+(x 10) s
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 80 FMSR
+
+4586  167 mt 
+(4) s
+4360  294 mt 6625  294 L
+4360 3494 mt 6625 3494 L
+6625 3494 mt 6625  294 L
+4360 3494 mt 4360  294 L
+gs 4360 295 2266 3200 rc
 c8
-350 0 4614 1751 2 MP stroke
-SO
+0 1 33 0 0 -1 4492 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 4492 3494 5 MP stroke
+c8
+0 0 33 0 0 0 4525 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 4525 3494 5 MP stroke
+c8
+0 0 33 0 0 0 4558 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 4558 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 4591 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 4591 3494 5 MP stroke
+c8
+0 0 32 0 0 0 4624 3494 4 MP
+PP
+0 sg
+-32 0 0 0 32 0 0 0 4624 3494 5 MP stroke
+c8
+0 0 33 0 0 0 4656 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 4656 3494 5 MP stroke
+c8
+0 0 33 0 0 0 4689 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 4689 3494 5 MP stroke
+c8
+0 0 33 0 0 0 4722 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 4722 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 4755 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 4755 3494 5 MP stroke
+c8
+0 1 32 0 0 -1 4788 3494 4 MP
+PP
+0 sg
+-32 0 0 1 32 0 0 -1 4788 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 4820 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 4820 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 4853 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 4853 3494 5 MP stroke
+c8
+0 2 33 0 0 -2 4886 3494 4 MP
+PP
+0 sg
+-33 0 0 2 33 0 0 -2 4886 3494 5 MP stroke
+c8
+0 4 33 0 0 -4 4919 3494 4 MP
+PP
+0 sg
+-33 0 0 4 33 0 0 -4 4919 3494 5 MP stroke
+c8
+0 5 33 0 0 -5 4952 3494 4 MP
+PP
+0 sg
+-33 0 0 5 33 0 0 -5 4952 3494 5 MP stroke
+c8
+0 15 32 0 0 -15 4985 3494 4 MP
+PP
+0 sg
+-32 0 0 15 32 0 0 -15 4985 3494 5 MP stroke
+c8
+0 51 33 0 0 -51 5017 3494 4 MP
+PP
+0 sg
+-33 0 0 51 33 0 0 -51 5017 3494 5 MP stroke
+c8
+0 339 33 0 0 -339 5050 3494 4 MP
+PP
+0 sg
+-33 0 0 339 33 0 0 -339 5050 3494 5 MP stroke
+c8
+0 3001 33 0 0 -3001 5083 3494 4 MP
+PP
+0 sg
+-33 0 0 3001 33 0 0 -3001 5083 3494 5 MP stroke
+c8
+0 2634 33 0 0 -2634 5116 3494 4 MP
+PP
+0 sg
+-33 0 0 2634 33 0 0 -2634 5116 3494 5 MP stroke
+c8
+0 279 32 0 0 -279 5149 3494 4 MP
+PP
+0 sg
+-32 0 0 279 32 0 0 -279 5149 3494 5 MP stroke
+c8
+0 49 33 0 0 -49 5181 3494 4 MP
+PP
+0 sg
+-33 0 0 49 33 0 0 -49 5181 3494 5 MP stroke
+c8
+0 12 33 0 0 -12 5214 3494 4 MP
+PP
+0 sg
+-33 0 0 12 33 0 0 -12 5214 3494 5 MP stroke
+c8
+0 5 33 0 0 -5 5247 3494 4 MP
+PP
+0 sg
+-33 0 0 5 33 0 0 -5 5247 3494 5 MP stroke
+c8
+0 3 33 0 0 -3 5280 3494 4 MP
+PP
+0 sg
+-33 0 0 3 33 0 0 -3 5280 3494 5 MP stroke
+c8
+0 2 32 0 0 -2 5313 3494 4 MP
+PP
+0 sg
+-32 0 0 2 32 0 0 -2 5313 3494 5 MP stroke
+c8
+0 2 33 0 0 -2 5345 3494 4 MP
+PP
+0 sg
+-33 0 0 2 33 0 0 -2 5345 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 5378 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 5378 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 5411 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 5411 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 5444 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 5444 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 5477 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 5477 3494 5 MP stroke
+c8
+0 1 32 0 0 -1 5510 3494 4 MP
+PP
+0 sg
+-32 0 0 1 32 0 0 -1 5510 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5542 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5542 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5575 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5575 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5608 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5608 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5641 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5641 3494 5 MP stroke
+c8
+0 0 32 0 0 0 5674 3494 4 MP
+PP
+0 sg
+-32 0 0 0 32 0 0 0 5674 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5706 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5706 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5739 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5739 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5772 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5772 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5805 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5805 3494 5 MP stroke
+c8
+0 0 32 0 0 0 5838 3494 4 MP
+PP
+0 sg
+-32 0 0 0 32 0 0 0 5838 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5870 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5870 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5903 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5903 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5936 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5936 3494 5 MP stroke
+c8
+0 0 33 0 0 0 5969 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 5969 3494 5 MP stroke
+c8
+0 0 33 0 0 0 6002 3494 4 MP
+PP
+0 sg
+-33 0 0 0 33 0 0 0 6002 3494 5 MP stroke
+c8
+0 0 32 0 0 0 6035 3494 4 MP
+PP
+0 sg
+-32 0 0 0 32 0 0 0 6035 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 6067 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 6067 3494 5 MP stroke
+c8
+0 1 33 0 0 -1 6100 3494 4 MP
+PP
+0 sg
+-33 0 0 1 33 0 0 -1 6100 3494 5 MP stroke
 gr
 
+%%IncludeResource: font Helvetica-Bold
+/Helvetica-Bold /WindowsLatin1Encoding 192 FMSR
+
+5380  184 mt 
+(T3) s
+1 sg
+0 3200 2265 0 0 -3200 7340 3494 4 MP
+PP
+-2265 0 0 3200 2265 0 0 -3200 7340 3494 5 MP stroke
+4 w
+DO
+SO
 6 w
-c8
 0 sg
-5000 2111 mt 
-(q75 Lev) s
-gs 4545 1044 1480 1693 rc
-DA
+7340  294 mt 9605  294 L
+7340 3494 mt 9605 3494 L
+9605 3494 mt 9605  294 L
+7340 3494 mt 7340  294 L
+7340 3494 mt 9605 3494 L
+7340 3494 mt 7340  294 L
+7340 3494 mt 7340 3462 L
+7340  295 mt 7340  326 L
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 120 FMSR
+
+7237 3639 mt 
+(-1) s
+7793 3494 mt 7793 3462 L
+7793  295 mt 7793  326 L
+7760 3639 mt 
+(0) s
+8246 3494 mt 8246 3462 L
+8246  295 mt 8246  326 L
+8213 3639 mt 
+(1) s
+8699 3494 mt 8699 3462 L
+8699  295 mt 8699  326 L
+8666 3639 mt 
+(2) s
+9152 3494 mt 9152 3462 L
+9152  295 mt 9152  326 L
+9119 3639 mt 
+(3) s
+9605 3494 mt 9605 3462 L
+9605  295 mt 9605  326 L
+9572 3639 mt 
+(4) s
+9335 3841 mt 
+(x 10) s
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 80 FMSR
+
+9561 3767 mt 
+(4) s
+7340 3494 mt 7371 3494 L
+9605 3494 mt 9573 3494 L
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 120 FMSR
+
+7239 3538 mt 
+(0) s
+7340 3174 mt 7371 3174 L
+9605 3174 mt 9573 3174 L
+7139 3218 mt 
+(0.5) s
+7340 2854 mt 7371 2854 L
+9605 2854 mt 9573 2854 L
+7239 2898 mt 
+(1) s
+7340 2534 mt 7371 2534 L
+9605 2534 mt 9573 2534 L
+7139 2578 mt 
+(1.5) s
+7340 2214 mt 7371 2214 L
+9605 2214 mt 9573 2214 L
+7239 2258 mt 
+(2) s
+7340 1894 mt 7371 1894 L
+9605 1894 mt 9573 1894 L
+7139 1938 mt 
+(2.5) s
+7340 1574 mt 7371 1574 L
+9605 1574 mt 9573 1574 L
+7239 1618 mt 
+(3) s
+7340 1254 mt 7371 1254 L
+9605 1254 mt 9573 1254 L
+7139 1298 mt 
+(3.5) s
+7340  934 mt 7371  934 L
+9605  934 mt 9573  934 L
+7239  978 mt 
+(4) s
+7340  614 mt 7371  614 L
+9605  614 mt 9573  614 L
+7139  658 mt 
+(4.5) s
+7340  295 mt 7371  295 L
+9605  295 mt 9573  295 L
+7239  339 mt 
+(5) s
+7340  241 mt 
+(x 10) s
+%%IncludeResource: font Helvetica
+/Helvetica /WindowsLatin1Encoding 80 FMSR
+
+7566  167 mt 
+(4) s
+7340  294 mt 9605  294 L
+7340 3494 mt 9605 3494 L
+9605 3494 mt 9605  294 L
+7340 3494 mt 7340  294 L
+gs 7340 295 2266 3200 rc
 c8
-350 0 4614 2028 2 MP stroke
-SO
+0 1 38 0 0 -1 7539 3494 4 MP
+PP
+0 sg
+-38 0 0 1 38 0 0 -1 7539 3494 5 MP stroke
+c8
+0 0 38 0 0 0 7577 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 7577 3494 5 MP stroke
+c8
+0 0 37 0 0 0 7615 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 7615 3494 5 MP stroke
+c8
+0 1 38 0 0 -1 7652 3494 4 MP
+PP
+0 sg
+-38 0 0 1 38 0 0 -1 7652 3494 5 MP stroke
+c8
+0 1 37 0 0 -1 7690 3494 4 MP
+PP
+0 sg
+-37 0 0 1 37 0 0 -1 7690 3494 5 MP stroke
+c8
+0 2 38 0 0 -2 7727 3494 4 MP
+PP
+0 sg
+-38 0 0 2 38 0 0 -2 7727 3494 5 MP stroke
+c8
+0 3193 38 0 0 -3193 7765 3494 4 MP
+PP
+0 sg
+-38 0 0 3193 38 0 0 -3193 7765 3494 5 MP stroke
+c8
+0 4 37 0 0 -4 7803 3494 4 MP
+PP
+0 sg
+-37 0 0 4 37 0 0 -4 7803 3494 5 MP stroke
+c8
+0 1 38 0 0 -1 7840 3494 4 MP
+PP
+0 sg
+-38 0 0 1 38 0 0 -1 7840 3494 5 MP stroke
+c8
+0 1 38 0 0 -1 7878 3494 4 MP
+PP
+0 sg
+-38 0 0 1 38 0 0 -1 7878 3494 5 MP stroke
+c8
+0 1 37 0 0 -1 7916 3494 4 MP
+PP
+0 sg
+-37 0 0 1 37 0 0 -1 7916 3494 5 MP stroke
+c8
+0 0 38 0 0 0 7953 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 7953 3494 5 MP stroke
+c8
+0 1 37 0 0 -1 7991 3494 4 MP
+PP
+0 sg
+-37 0 0 1 37 0 0 -1 7991 3494 5 MP stroke
+c8
+0 1 38 0 0 -1 8028 3494 4 MP
+PP
+0 sg
+-38 0 0 1 38 0 0 -1 8028 3494 5 MP stroke
+c8
+0 1 38 0 0 -1 8066 3494 4 MP
+PP
+0 sg
+-38 0 0 1 38 0 0 -1 8066 3494 5 MP stroke
+c8
+0 1 37 0 0 -1 8104 3494 4 MP
+PP
+0 sg
+-37 0 0 1 37 0 0 -1 8104 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8141 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8141 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8179 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8179 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8217 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8217 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8254 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8254 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8292 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8292 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8329 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8329 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8367 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8367 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8405 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8405 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8442 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8442 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8480 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8480 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8518 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8518 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8555 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8555 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8593 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8593 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8630 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8630 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8668 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8668 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8706 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8706 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8743 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8743 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8781 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8781 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8819 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8819 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8856 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8856 3494 5 MP stroke
+c8
+0 0 37 0 0 0 8894 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 8894 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8931 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8931 3494 5 MP stroke
+c8
+0 0 38 0 0 0 8969 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 8969 3494 5 MP stroke
+c8
+0 1 37 0 0 -1 9007 3494 4 MP
+PP
+0 sg
+-37 0 0 1 37 0 0 -1 9007 3494 5 MP stroke
+c8
+0 0 38 0 0 0 9044 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 9044 3494 5 MP stroke
+c8
+0 0 38 0 0 0 9082 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 9082 3494 5 MP stroke
+c8
+0 0 37 0 0 0 9120 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 9120 3494 5 MP stroke
+c8
+0 0 38 0 0 0 9157 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 9157 3494 5 MP stroke
+c8
+0 0 37 0 0 0 9195 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 9195 3494 5 MP stroke
+c8
+0 0 38 0 0 0 9232 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 9232 3494 5 MP stroke
+c8
+0 0 38 0 0 0 9270 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 9270 3494 5 MP stroke
+c8
+0 0 37 0 0 0 9308 3494 4 MP
+PP
+0 sg
+-37 0 0 0 37 0 0 0 9308 3494 5 MP stroke
+c8
+0 0 38 0 0 0 9345 3494 4 MP
+PP
+0 sg
+-38 0 0 0 38 0 0 0 9345 3494 5 MP stroke
+c8
+0 1 38 0 0 -1 9383 3494 4 MP
+PP
+0 sg
+-38 0 0 1 38 0 0 -1 9383 3494 5 MP stroke
 gr
 
-c8
-0 sg
-5000 2387 mt 
-(q25 Uni) s
-gs 4545 1044 1480 1693 rc
-DA
-c9
-350 0 4614 2304 2 MP stroke
-SO
-gr
+%%IncludeResource: font Helvetica-Bold
+/Helvetica-Bold /WindowsLatin1Encoding 192 FMSR
 
-c9
-0 sg
-5000 2664 mt 
-(q75 Uni) s
-gs 4545 1044 1480 1693 rc
-DA
-c9
-350 0 4614 2580 2 MP stroke
-SO
-gr
-
-c9
+8360  184 mt 
+(T1) s
 
 end %%Color Dict
 
@@ -27647,16 +28783,16 @@ showpage
 %%EOF
 
 %%EndDocument
- @endspecial 0 TeXcolorgray 8924 14725 48 12080 v 0 TeXcolorgray
+ @endspecial 0 TeXcolorgray 8924 15520 48 12875 v 0 TeXcolorgray
 9302 2800 a Fk(These)g(datasets)g(are)g(dra)-5 b(wn)61
 b(from)i(distributions)d(de\014ned)h(in)g(Ma)h(et)g(al.)f([)p
 Fi(?)p Fk(])h(and)f(ha)-5 b(v)g(e:)p 0 TeXcolorgray 9365
-3122 a Fj(\017)p 0 TeXcolorgray 42 w Fk(GA:)62 b(Nearly)g(uniform)f
-(lev)-5 b(erage-scores)p 0 TeXcolorgray 9365 3433 a Fj(\017)p
+3121 a Fj(\017)p 0 TeXcolorgray 42 w Fk(GA:)62 b(Nearly)g(uniform)f
+(lev)-5 b(erage-scores)p 0 TeXcolorgray 9365 3432 a Fj(\017)p
 0 TeXcolorgray 42 w Fk(T3:)61 b(Mildly)g(non-uniform)f(lev)-5
-b(erage-scores)p 0 TeXcolorgray 9365 3745 a Fj(\017)p
+b(erage-scores)p 0 TeXcolorgray 9365 3743 a Fj(\017)p
 0 TeXcolorgray 42 w Fk(T1:)61 b(V)-16 b(ery)63 b(non-uniform)e(lev)-5
-b(erage-scores)10072 4539 y @beginspecial @setspecial
+b(erage-scores)10072 4536 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 24.22093 neg 836.54453 36.66093 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -27670,14 +28806,14 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
 
 @endspecial 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray
 0 TeXcolorgray 1297 w Fi(Lev)f(eraging)76 b(in)i(for)f(least)g(squares)
-g(regression)9302 5260 y Fk(F)-16 b(or)58 b(an)-5 b(y)57
+g(regression)9302 5257 y Fk(F)-16 b(or)58 b(an)-5 b(y)57
 b(lev)-5 b(eraging)55 b(w)-5 b(e)57 b(w)-5 b(an)g(t)56
 b(to)h(\014nd)g(for)g(eac)-5 b(h)57 b(datap)5 b(oin)-5
 b(t)55 b(a)i(lev)-5 b(erage-score)57 b(represen)-5 b(ting)55
-b(the)i(imp)5 b(ortance)57 b(of)9302 5509 y(the)62 b(p)5
+b(the)i(imp)5 b(ortance)57 b(of)9302 5506 y(the)62 b(p)5
 b(oin)-5 b(t.)61 b(This)g(w)-5 b(e)62 b(can)g(normalize)f(in)-5
 b(to)61 b(a)h(distribution)d(to)j(sample)g(from.)10072
-6216 y @beginspecial @setspecial
+6212 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 24.22093 neg 836.54453 36.66093 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -27691,7 +28827,7 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
 @endspecial 0 TeXcolorgray
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 1664 w Fi(V)-19
 b(alidating)76 b(the)i(results)f(of)h(Ma)g(et)g(al.)p
-0 TeXcolorgray 9406 8992 a @beginspecial 25 @llx 185
+0 TeXcolorgray 9406 8987 a @beginspecial 25 @llx 185
 @lly 585 @urx 605 @ury 3196 @rwi @setspecial
 %%BeginDocument: images/GALS.eps
 %!PS-Adobe-3.0 EPSF-3.0
@@ -28984,9 +30120,9 @@ showpage
 %%EOF
 
 %%EndDocument
- @endspecial 0 TeXcolorgray 12758 9448 a Fk(Figur)61
+ @endspecial 0 TeXcolorgray 12758 9443 a Fk(Figur)61
 b(2:)h(Lal)g(di)f(la)p 0 TeXcolorgray 0 TeXcolorgray
-10072 10265 a @beginspecial @setspecial
+10072 10259 a @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 19.38318 neg 836.54453 36.66093 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -28999,29 +30135,29 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray
-2275 w Fi(LS-based)78 b(Distribution)9302 10946 y Fk(W)-16
+2275 w Fi(LS-based)78 b(Distribution)9302 10939 y Fk(W)-16
 b(e)63 b(seek)f(to)g(\014nd)g(the)g(e\013ect)g(that)g(a)g(datap)5
 b(oin)-5 b(t's)60 b(class)i(has)g(on)f(the)h(predicted)f(class)h(for)g
-(that)g(datap)5 b(oin)-5 b(t.)13314 11316 y Fh(\016)25
-b Fk(^)-112 b Fh(y)13511 11347 y Fg(n)p 13314 11408 301
-9 v 13314 11597 a Fh(\016)8 b(y)13511 11628 y Fg(n)17386
-11456 y Fk(\(1\))9302 11967 y(There)62 b(is)g(a)g(closed)g(form)g
+(that)g(datap)5 b(oin)-5 b(t.)13314 11306 y Fh(\016)25
+b Fk(^)-112 b Fh(y)13511 11337 y Fg(n)p 13314 11399 301
+9 v 13314 11588 a Fh(\016)8 b(y)13511 11619 y Fg(n)17386
+11446 y Fk(\(1\))9302 11955 y(There)62 b(is)g(a)g(closed)g(form)g
 (solution)f(whic)-5 b(h)60 b(is)i(linear)f(in)h Fh(y)11459
-12421 y Fk(^)11426 12475 y Fh(\014)11540 12522 y Fg(O)5
-b(LS)11964 12475 y Fk(=)12170 12246 y Ff(\020)12293 12475
-y Fh(X)12477 12390 y Fg(T)12604 12475 y Fh(X)12788 12246
-y Ff(\021)12911 12304 y Fe(\000)p Fd(1)13163 12475 y
-Fh(X)13347 12390 y Fg(T)13473 12475 y Fh(y)197 b Fk(where)206
-b(^)-112 b Fh(y)14542 12506 y Fg(n)14703 12475 y Fk(=)58
-b Fh(X)15078 12506 y Fg(n)15228 12475 y Fj(\003)15410
-12421 y Fk(^)15377 12475 y Fh(\014)9302 12950 y Fk(Therefore)k(the)g
+12406 y Fk(^)11426 12461 y Fh(\014)11540 12508 y Fg(O)5
+b(LS)11964 12461 y Fk(=)12170 12232 y Ff(\020)12293 12461
+y Fh(X)12477 12376 y Fg(T)12604 12461 y Fh(X)12788 12232
+y Ff(\021)12911 12290 y Fe(\000)p Fd(1)13163 12461 y
+Fh(X)13347 12376 y Fg(T)13473 12461 y Fh(y)197 b Fk(where)206
+b(^)-112 b Fh(y)14542 12492 y Fg(n)14703 12461 y Fk(=)58
+b Fh(X)15078 12492 y Fg(n)15228 12461 y Fj(\003)15410
+12406 y Fk(^)15377 12461 y Fh(\014)9302 12934 y Fk(Therefore)k(the)g
 (lev)-5 b(erage-score)61 b(\(1\))i(is)f(the)g(co)5 b(e\016cien)-5
-b(t)12422 13331 y Fh(\016)25 b Fk(^)-112 b Fh(y)12619
-13362 y Fg(n)p 12422 13423 V 12422 13612 a Fh(\016)8
-b(y)12619 13643 y Fg(n)12790 13471 y Fk(=)57 b Fh(X)13214
-13241 y Ff(\020)13338 13471 y Fh(X)13522 13385 y Fg(T)13648
-13471 y Fh(X)13832 13241 y Ff(\021)13956 13300 y Fe(\000)p
-Fd(1)14207 13471 y Fh(X)14391 13385 y Fg(T)10072 14564
+b(t)12422 13312 y Fh(\016)25 b Fk(^)-112 b Fh(y)12619
+13343 y Fg(n)p 12422 13404 V 12422 13594 a Fh(\016)8
+b(y)12619 13625 y Fg(n)12790 13452 y Fk(=)57 b Fh(X)13214
+13223 y Ff(\020)13338 13452 y Fh(X)13522 13367 y Fg(T)13648
+13452 y Fh(X)13832 13223 y Ff(\021)13956 13281 y Fe(\000)p
+Fd(1)14207 13452 y Fh(X)14391 13367 y Fg(T)10072 14542
 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 19.38318 neg 836.54453 36.66093 .5 Frame  gsave
@@ -29035,13 +30171,13 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial 0 TeXcolorgray
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 2765 w Fi(T)-19
-b(est)77 b(Results)p 0 TeXcolorgray 17957 14725 48 12080
-v 0 TeXcolorgray 18335 2800 a Fk(W)-16 b(e)121 b(compared)f(logistic)f
-(regression)h(when)g(sampling)f(from)i(a)f(LS-distribution)e(\(blue\))i
-(vs.)h(a)f(uniform-)18335 3049 y(distribution)60 b(\(red\).)i(The)g
-(mean,)f(25th)h(and)f(75th)g(quan)-5 b(tile)60 b(are)j(plotted.)18335
-5106 y @beginspecial 25 @llx 185 @lly 585 @urx 605 @ury
-3196 @rwi @setspecial
+b(est)77 b(Results)9302 15219 y Fk(W)-16 b(e)121 b(compared)f(logistic)
+f(regression)h(when)g(sampling)f(from)i(a)f(LS-distribution)e(\(blue\))
+i(vs.)h(a)f(uniform-)9302 15468 y(distribution)60 b(\(red\).)i(The)f
+(mean,)h(25th)g(and)f(75th)g(quan)-5 b(tile)60 b(are)i(plotted.)p
+0 TeXcolorgray 17957 15520 48 12875 v 0 TeXcolorgray
+18335 4643 a @beginspecial 25 @llx 185 @lly 585 @urx
+605 @ury 3196 @rwi @setspecial
 %%BeginDocument: images/GA.eps
 %!PS-Adobe-3.0 EPSF-3.0
 %%Creator: MATLAB, The MathWorks, Inc. Version 8.2.0.701 (R2013b). Operating System: Darwin 12.5.0 Darwin Kernel Version 12.5.0: Sun Sep 29 13:33:47 PDT 2013; root:xnu-2050.48.12~1/RELEASE_X86_64 x86_64.
@@ -30306,15 +31442,15 @@ showpage
 %%EOF
 
 %%EndDocument
- @endspecial 18335 5355 a(It)78 b(clearly)e(sho)-5 b(ws)77
+ @endspecial 18335 4892 a(It)78 b(clearly)e(sho)-5 b(ws)77
 b(that)g(a)h(LS-distribution)c(sample)j(sc)-5 b(heme,)77
 b(do)5 b(es)78 b(not)f(outp)5 b(erform)77 b(a)g(uniform-distribution)
-18335 5605 y(for)g(classi\014cation.)e(The)h(results)h(sho)-5
+18335 5141 y(for)g(classi\014cation.)e(The)h(results)h(sho)-5
 b(wn)75 b(are)i(for)g(dimension)e Fh(p)83 b Fk(=)g(10)76
 b(and)g Fh(N)105 b Fk(=)83 b(1000)76 b(datap)5 b(oin)-5
-b(ts,)74 b(but)i(it)h(is)18335 5854 y(consisten)-5 b(t)61
+b(ts,)74 b(but)i(it)h(is)18335 5390 y(consisten)-5 b(t)61
 b(when)h(v)-11 b(arying)61 b Fh(p)h Fk(and)f Fh(N)22
-b Fk(.)19105 6580 y @beginspecial @setspecial
+b Fk(.)19105 6156 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 24.22093 neg 836.54453 36.66093 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -30328,57 +31464,57 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
 @endspecial
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray
 1857 w Fi(Sensitivit)-6 b(y)75 b(Based)j(Distribution)18335
-7306 y Fk(Vi)c(generalisere)f(til)h(noget)f(andet,)g(og)h(derfor)f(k)
+6922 y Fk(Vi)c(generalisere)f(til)h(noget)f(andet,)g(og)h(derfor)f(k)
 -11 b(an)74 b(WLS)g(ikk)-5 b(e)74 b(bruges,)f(s)p Fi(r)p
 Fk(a)h(vi)g(la)-5 b(v)g(er)73 b(bare)h(LS.)f(The)h(target)g(is)18335
-7555 y(again)61 b(\(1\))21227 7932 y(^)-111 b Fh(y)21310
-7963 y Fg(n)21471 7932 y Fk(=)57 b Fh(p)p Fk(\()p Fh(y)7
+7171 y(again)61 b(\(1\))21227 7669 y(^)-111 b Fh(y)21310
+7700 y Fg(n)21471 7669 y Fk(=)57 b Fh(p)p Fk(\()p Fh(y)7
 b Fj(j)16 b Fk(\026)-111 b Fh(x;)80 b Fk(\026)-141 b
 Fh(w)6 b Fk(\))234 b(\026)-139 b Fh(w)67 b Fk(s.t.)23175
-7792 y Fh(\016)8 b(L)p 23169 7885 248 9 v 23169 8074
-a(\016)52 b Fk(\026)-139 b Fh(w)23484 7932 y Fk(=)57
-b(0)18335 8374 y(Since)124 b(dep)5 b(ends)61 b(b)5 b(oth)61
+7530 y Fh(\016)8 b(L)p 23169 7622 248 9 v 23169 7811
+a(\016)52 b Fk(\026)-139 b Fh(w)23484 7669 y Fk(=)57
+b(0)18335 8251 y(Since)124 b(dep)5 b(ends)61 b(b)5 b(oth)61
 b(directly)h(and)f(indirectly)f(on)i Fh(y)69 b Fk(w)-5
-b(e)62 b(see)g(that)22228 8784 y Fg(\016)p 22184 8817
-170 9 v 22184 8945 a(\016)6 b(y)22378 8784 y(\016)g(L)p
-22373 8817 207 9 v 22373 8945 a(\016)g(w)22647 8865 y
-Fk(=)57 b(0)21480 9155 y Fj(+)21758 9368 y Fg(\016)21839
-9306 y Fc(2)21902 9368 y Fg(L)p 21700 9402 376 9 v 21700
-9530 a(\016)6 b(y)g(\016)43 b Fd(\026)-116 b Fg(w)22131
-9450 y Fk(+)22457 9368 y Fg(\016)22538 9306 y Fc(2)22601
-9368 y Fg(L)p 22336 9402 502 9 v 22336 9542 a(\016)43
+b(e)62 b(see)g(that)22228 8782 y Fg(\016)p 22184 8815
+170 9 v 22184 8943 a(\016)6 b(y)22378 8782 y(\016)g(L)p
+22373 8815 207 9 v 22373 8943 a(\016)g(w)22647 8863 y
+Fk(=)57 b(0)21480 9153 y Fj(+)21758 9366 y Fg(\016)21839
+9304 y Fc(2)21902 9366 y Fg(L)p 21700 9400 376 9 v 21700
+9528 a(\016)6 b(y)g(\016)43 b Fd(\026)-116 b Fg(w)22131
+9448 y Fk(+)22457 9366 y Fg(\016)22538 9304 y Fc(2)22601
+9366 y Fg(L)p 22336 9400 502 9 v 22336 9540 a(\016)43
 b Fd(\026)-116 b Fg(w)t(\016)43 b Fd(\026)-116 b Fg(w)22749
-9492 y Fb(T)22857 9368 y Fg(\016)44 b Fd(\026)-117 b
-Fg(w)p 22857 9402 207 9 v 22875 9530 a(\016)6 b(y)23131
-9450 y Fk(=)57 b(0)18335 9968 y(and)62 b(from)g(this)g(w)-5
+9490 y Fb(T)22857 9366 y Fg(\016)44 b Fd(\026)-117 b
+Fg(w)p 22857 9400 207 9 v 22875 9528 a(\016)6 b(y)23131
+9448 y Fk(=)57 b(0)18335 10087 y(and)62 b(from)g(this)g(w)-5
 b(e)62 b(can)f(get)i(our)e(lev)-5 b(erage-score)62 b(\(1\))20061
-10527 y Fh(\016)25 b Fk(^)-112 b Fh(y)20258 10557 y Fg(n)p
-20061 10619 301 9 v 20061 10808 a Fh(\016)8 b(y)20258
-10839 y Fg(n)20429 10666 y Fk(=)20646 10527 y Fh(\016)g(p)p
-Fk(\()p Fh(y)f Fj(j)16 b Fk(\026)-111 b Fh(x)21197 10557
-y Fg(n)21301 10527 y Fh(;)79 b Fk(\026)-140 b Fh(w)5
-b Fk(\))p 20646 10619 970 9 v 20943 10821 a Fh(\016)52
-b Fk(\026)-139 b Fh(w)21192 10761 y Fg(T)21634 10527
-y Fh(\016)52 b Fk(\026)-139 b Fh(w)p 21634 10619 248
-9 v 21656 10808 a(\016)8 b(y)21949 10666 y Fk(=)57 b
-Fj(\000)22326 10527 y Fh(\016)8 b(p)p Fk(\()p Fh(y)f
-Fj(j)16 b Fk(\026)-111 b Fh(x)22877 10557 y Fg(n)22981
-10527 y Fh(;)79 b Fk(\026)-140 b Fh(w)6 b Fk(\))p 22326
-10619 970 9 v 22624 10821 a Fh(\016)51 b Fk(\026)-138
-b Fh(w)22873 10761 y Fg(T)23339 10313 y Ff(")23621 10527
-y Fh(\016)23719 10452 y Fd(2)23802 10527 y Fh(L)p 23470
-10619 622 9 v 23470 10821 a(\016)52 b Fk(\026)-139 b
-Fh(w)t(\016)52 b Fk(\026)-139 b Fh(w)23966 10761 y Fg(T)24101
-10313 y Ff(#)24222 10371 y Fe(\000)p Fd(1)24549 10527
-y Fh(\016)24647 10452 y Fd(2)24730 10527 y Fh(L)p 24483
-10619 451 9 v 24483 10808 a(\016)8 b(y)f(\016)51 b Fk(\026)-138
-b Fh(w)18335 11224 y Fk(When)70 b(ev)-11 b(aluating)69
+10765 y Fh(\016)25 b Fk(^)-112 b Fh(y)20258 10796 y Fg(n)p
+20061 10858 301 9 v 20061 11047 a Fh(\016)8 b(y)20258
+11078 y Fg(n)20429 10905 y Fk(=)20646 10765 y Fh(\016)g(p)p
+Fk(\()p Fh(y)f Fj(j)16 b Fk(\026)-111 b Fh(x)21197 10796
+y Fg(n)21301 10765 y Fh(;)79 b Fk(\026)-140 b Fh(w)5
+b Fk(\))p 20646 10858 970 9 v 20943 11060 a Fh(\016)52
+b Fk(\026)-139 b Fh(w)21192 11000 y Fg(T)21634 10765
+y Fh(\016)52 b Fk(\026)-139 b Fh(w)p 21634 10858 248
+9 v 21656 11047 a(\016)8 b(y)21949 10905 y Fk(=)57 b
+Fj(\000)22326 10765 y Fh(\016)8 b(p)p Fk(\()p Fh(y)f
+Fj(j)16 b Fk(\026)-111 b Fh(x)22877 10796 y Fg(n)22981
+10765 y Fh(;)79 b Fk(\026)-140 b Fh(w)6 b Fk(\))p 22326
+10858 970 9 v 22624 11060 a Fh(\016)51 b Fk(\026)-138
+b Fh(w)22873 11000 y Fg(T)23339 10552 y Ff(")23621 10765
+y Fh(\016)23719 10690 y Fd(2)23802 10765 y Fh(L)p 23470
+10858 622 9 v 23470 11060 a(\016)52 b Fk(\026)-139 b
+Fh(w)t(\016)52 b Fk(\026)-139 b Fh(w)23966 11000 y Fg(T)24101
+10552 y Ff(#)24222 10610 y Fe(\000)p Fd(1)24549 10765
+y Fh(\016)24647 10690 y Fd(2)24730 10765 y Fh(L)p 24483
+10858 451 9 v 24483 11047 a(\016)8 b(y)f(\016)51 b Fk(\026)-138
+b Fh(w)18335 11604 y Fk(When)70 b(ev)-11 b(aluating)69
 b(this)h(mo)5 b(del,)70 b(w)-5 b(eigh)g(ts)69 b(trained)h(on)g(a)g
 (small)h(training-set)e(is)i(used.)e(This)h(is)h(exp)5
-b(ected)70 b(to)h(b)5 b(e)18335 11473 y(b)g(etter)63
+b(ected)70 b(to)h(b)5 b(e)18335 11853 y(b)g(etter)63
 b(than)e(LS-based)g(sampling)g(since)h(it)g(in)-5 b(tro)5
 b(duces)60 b(dep)5 b(endence)60 b(on)i(class)g(information.)19105
-12199 y @beginspecial @setspecial
+12619 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 19.38318 neg 836.54453 36.66093 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -30391,15 +31527,15 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial 0 TeXcolorgray
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 2837 w Fi(Conclusion)18335
-12885 y Fk(The)76 b(LS-based)g(lev)-5 b(erage)75 b(sampling)h(giv)-5
+13345 y Fk(The)76 b(LS-based)g(lev)-5 b(erage)75 b(sampling)h(giv)-5
 b(es)75 b(no)h(adv)-11 b(an)-5 b(tage)75 b(o)-5 b(v)g(er)76
 b(uniform)g(sampling)f(and)g(generally)g(p)5 b(erforms)18335
-13134 y(w)-5 b(orse.)43 b(LS-distribution)d(is)j(based)f(on)h(what)f
+13594 y(w)-5 b(orse.)43 b(LS-distribution)d(is)j(based)f(on)h(what)f
 (is)h(imp)5 b(ortan)-5 b(t)42 b(for)h(linear)f(regression,)g(it)h(do)5
 b(es)43 b(not)g(ha)-5 b(v)g(e)41 b(an)i(adv)-11 b(an)-5
-b(tage)18335 13383 y(in)62 b(\014nding)e(imp)5 b(ortan)-5
+b(tage)18335 13843 y(in)62 b(\014nding)e(imp)5 b(ortan)-5
 b(t)62 b(p)5 b(oin)-5 b(ts)61 b(for)h(classi\014cation.)19105
-14132 y @beginspecial @setspecial
+14652 y @beginspecial @setspecial
   tx@Dict begin STP newpath 5.69054 SLW 0.349 0.376 0.431  setrgbcolor
  0.0 true 19.38318 neg 19.38318 neg 836.54453 36.66093 .5 Frame  gsave
 0.0 -45 PtoC Shadow 0.25  setgray gsave fill grestore stroke grestore
@@ -30412,7 +31548,7 @@ tx@GradientDict begin GradientFill end grestore gsave 5.69054 SLW 0.349
  
 @endspecial 0 TeXcolorgray
 0 TeXcolorgray 0 TeXcolorgray 0 TeXcolorgray 2849 w Fi(References)18335
-14683 y Fa(Litteratur)p 0 TeXcolorgray 0 TeXcolorgray
+15478 y Fa(Litteratur)p 0 TeXcolorgray 0 TeXcolorgray
 eop end
 %%Trailer
 
