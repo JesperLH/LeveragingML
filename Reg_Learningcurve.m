@@ -3,10 +3,10 @@ clear all
 close all
 clc
 N = 1000;
-p = 10; %Dimensions, must be >= 20
+p = 50; %Dimensions, must be >= 20
 R = [(p+1):(p+50)]; %Sample sizes to try
 
-type = 'T1';
+type = 'T3';
 [X,y] = generateData(N,p,type);
 
 H = X*inv(X'*X)*X';
