@@ -23,14 +23,19 @@ for i = 1:length(idx);
    Sx(idx(i),i) = 1;
 end
 
+
 %% Solving the weighted LS
-ySamp = D*Sx'*y;
-xSamp = D*Sx'*X;
+%ySamp = D*Sx'*y;
+%xSamp = D*Sx'*X;
+
+ySamp = y(idx);
+xSamp = X(idx,:);
 
 %B = (xSamp'*xSamp)^(-1)*xSamp'*ySamp;
 B = xSamp\ySamp; %Same, but faster
 
 W = Sx*D^2*Sx';
+% What is this for ?
 %B1 = inv(X'*W*X)*X'*W*y;
 
 

@@ -7,7 +7,7 @@ p = size(X,2);
 
 %% "Sensitivity" regression
 
-r_init = max(round(r/10),1);
+r_init = max(round(r/2),p/2);
 
 % sampling small initial uniformly
 [~, idx1] = WRS(X(t==1),ones(N/2,1),r_init);
@@ -17,10 +17,10 @@ idx_init = [idx1; idx2+round(N/2)];
 
 % fitting the initial model
 % 
-% svmStr = svmtrain(X(idx_init,:),t(idx_init));
+ %svmStr = svmtrain(X(idx_init,:),t(idx_init));
 % 
-% w = (svmStr.Alpha' * full(svmStr.SupportVectors));
-% w = [svmStr.Bias w];
+% w0 = (svmStr.Alpha' * full(svmStr.SupportVectors));
+ %w0 = [svmStr.Bias w0];
 
 w0 = glmfit(X(idx_init,:), t(idx_init)==1, 'binomial')';
 
@@ -70,11 +70,12 @@ Ldydw = sum(X,1)';
 % yhdy = yhdw * Ldwdw^(-1) * Ldydw
 yhdy = yhdw * (Ldwdw\Ldydw);
 
-pi = yhdy./sum(yhdy);
+pi = yhdy;
 
-if isnan(pi)
-       pi 
-end
+pi = abs(pi);
+
+pi = pi./sum(pi);
+
 
 end
 

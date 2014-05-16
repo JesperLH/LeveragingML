@@ -3,9 +3,9 @@ clear all
 close all
 clc
 
-p = 10; % number of dimensions
+p = 2; % number of dimensions
 N = 1000; % number of datapoints
-type = 'T1';
+type = 'T3';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
@@ -15,7 +15,7 @@ Generate_classData;
 
 
 %% Calculate parameters and find log(squared error)
-maxSampleSize = round(20*log(p));
+maxSampleSize = round(10*log(p));
 stepSize = 1;
 R = (p+1):stepSize:(p+maxSampleSize);
 Ew = [];
@@ -32,7 +32,13 @@ for i = 1:length(R)
     end
 end
 %%
+if p==2
+    
+    
+   illustrate2D2Class(X,t,[]); 
+end
 
+%%
 boxplot(Eu,'colors','r','plotstyle','compact')
 hold on
 boxplot(Ew,'colors','b','plotstyle','compact')

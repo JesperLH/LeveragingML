@@ -6,7 +6,7 @@ N = 1000;
 p = 10; %Dimensions, must be >= 20
 R = [(p+1):(p+50)]; %Sample sizes to try
 
-type = 'GA';
+type = 'T1';
 [X,y] = generateData(N,p,type);
 
 H = X*inv(X'*X)*X';

@@ -3,9 +3,9 @@ clear all
 close all
 clc
 
-p = 10; % number of dimensions
+p = 20; % number of dimensions
 N = 1000; % number of datapoints
-type = 'T3';
+type = 'T1';
 clusterDistribution = 0.5;
 
 distance = 1.3; % manual konstant
@@ -22,8 +22,8 @@ Ew = [];
 Eu = [];
 %hold on
 for i = 1:length(R)
-    for rep=1:10
-        r = R(i);
+    r = R(i);
+    parfor rep=1:30
         pi = Sensitivity_dist(X,t,r);
         [~,P] = SubsampleLogReg( X,t,pi,r);
         Ew(rep,i) = class_error( P,t );
@@ -32,20 +32,21 @@ for i = 1:length(R)
     end
 end
 %%
+if p==2
+    
+    r = p+20;
+   pi = Sensitivity_dist(X,t,r);
+   
+[~, idx1] = WRS(X(t==1),pi(t==1),round(r/2));
+[~, idx2] = WRS(X(t==-1),pi(t==-1),r-round(r/2));
 
-boxplot(Eu,'colors','r','plotstyle','compact')
-hold on
-boxplot(Ew,'colors','b','plotstyle','compact')
+idx = [idx1; idx2+round(size(X,1)/2)];
 
-ylabel 'Error'
-xlabel '# of samps over d '
-%legend( 'H', 'U')
-title(sprintf('N = %i, d = %i \nLeveraging sampling blue \nUniform sampling red',N,p))
-%title 'error'
-%axis auto
-hold off
+   illustrate2D2Class(X,t,idx); 
+end
 
-%% %
+
+%% 
 % Learning curves, based on mean and .25 and .75 quantile
 %%%
 figure
