@@ -10,7 +10,8 @@ subplot(1,3,1)
 hist(X,50)
 title('GA','fontweight','bold','fontsize',16);
 ylim([0 5*10^4])
-
+set(gca, 'xcolor', [0 0 0],'ycolor', [0 0 0],'color', 'none');
+set(gcf, 'color', 'none','inverthardcopy', 'off');
 
 % T3
 type = 'T3';
@@ -19,7 +20,8 @@ subplot(1,3,2)
 hist(X,50)
 title('T3','fontweight','bold','fontsize',16);
 ylim([0 5*10^4])
-
+set(gca, 'xcolor', [0 0 0],'ycolor', [0 0 0],'color', 'none');
+set(gcf, 'color', 'none','inverthardcopy', 'off');
 
 % T1
 
@@ -30,4 +32,5 @@ hist(X,50)
 title('T1','fontweight','bold','fontsize',16);
 
 ylim([0 5*10^4])
-
+set(gca, 'xcolor', [0 0 0],'ycolor', [0 0 0],'color', 'none');
+set(gcf, 'color', 'none','inverthardcopy', 'off');
