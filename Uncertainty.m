@@ -1,4 +1,4 @@
-function [ P ] = Sensitivity( X,t,r )
+function [ P ] = Uncertainty( X,t,r )
 %SENSITIVITY_DIST Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -59,12 +59,8 @@ for n = 1:N
     
 end
 
-Ldydw = sum(X,1)';
 
-% old yhdy = yhdw * Ldwdw^(-1) * Ldydw
-yhdy = yhdw * (Ldwdw\Ldydw);
-
-pi = yhdy;
+pi = diag(yhdw*inv(Ldwdw)*yhdw'); % Uncertainty
 
 pi = abs(pi);
 

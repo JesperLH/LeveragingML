@@ -17,35 +17,15 @@ N = size(X,1);
 
 idx = [idx1; idx2+round(size(X,1)/2)];
 
-%% Generating D
-%  
-% D = diag(1./sqrt(r*pi(idx)));
-% %Du = diag(ones(1,r)*sqrt(n/r));
-% Sx = zeros(N,r);
-% for i = 1:length(idx);
-%    Sx(idx(i),i) = 1;
-% end
-% 
-% ySamp = D*Sx'*t;
-% xSamp = D*Sx'*X;
-%  
-
-% Ved at udkommentere dette får vi performance som Uniform altid.
-% måske skalerer det vigtigheden pi for regression medn ikke for klass ?
-% hvad er forskellen egentlig mellem regression og klassifikation ?
-% Sigmoidfunction ?
-% Den er ikke en gang viktig for regression.
-ySamp = t(idx);
 xSamp = X(idx,:);
+ySampBin = t(idx)==1;
 
 % exercise 5.2.6 ?
 %% Fit logistic regression model and evaluate
- 
-    ySampBin = t(idx);
-    ySampBin(ySampBin == -1) = 0;
-    w_est = glmfit(xSamp, ySampBin, 'binomial','weights',1./sqrt(r*pi(idx)));
 
-    % Evaluate the logistic regression for the new data object
-    Pglm = glmval(w_est, X, 'logit');
+w_est = glmfit(xSamp, ySampBin, 'binomial','weights',1./sqrt(r*pi(idx)));
+
+% Evaluate the logistic regression for the new data object
+Pglm = glmval(w_est, X, 'logit');
 
 end

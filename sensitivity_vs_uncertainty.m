@@ -3,8 +3,8 @@ clear all
 close all
 clc
 
-p = 10; % number of dimensions
-N = 1000; % number of datapoints
+p = 50; % number of dimensions
+N = 5000; % number of datapoints
 type = 'T1';
 clusterDistribution = 0.5;
 
@@ -23,7 +23,7 @@ for i = 1:length(R)
     parfor rep=1:30
         P = Sensitivity(X,t,r);
         Ew(rep,i) = class_error( P,t );
-        [PU] = SubsampleLogReg( X,t,ones(1,N)./N,r);
+        PU = Uncertainty(X,t,r);
         Eu(rep,i)  = class_error( PU,t );
     end
 end
