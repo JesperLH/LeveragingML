@@ -147,7 +147,7 @@
 %
 \csection{Abstract}
 %
-We validate the results of leverage based sampling for Least-squares regression, shown by Ma et al. [1]. We explore the possibility of using the sampling distribution from LS-regression on 2-class classification, and introduce a new leverage distribution based on a generalization of the idea.
+We validate the results of leverage based sampling for Least-Squares regression, shown by Ma et al. [1]. We explore the possibility of using the sampling distribution from LS-regression on 2-class classification, and introduce a new leverage distribution based on a generalization of the idea.
 %
 \csection{Motivation}
 For video the importance of sampling methods is exemplified by very large and high-dimensional datasets where
@@ -158,11 +158,13 @@ For video the importance of sampling methods is exemplified by very large and hi
 \item Computational cost is rarely linear to the input size.
 \end{itemize}
 \smallskip
-We therefore want to explore alternative sampling methods, and try to identify which datapoints are important when fitting a model.
+We therefore want to explore alternative sampling methods, and try to identify datapoints which are important when fitting a model.
 %The importance of sampling methods is initiated by very large datasets where it is not feasible to use all of the available data. This is illustrated by the rise in online access to video data. These data contain many frames that are basically the same and therefore redundant. We therefore want to explore alternative sampling methods, and try to identify which datapoints are important when fitting a model.
 %
 \csection{Concept}
+\begin{center}
 \includegraphics[width=.95\linewidth]{images/ThoughtModel}
+\end{center}
 %
 \csection{Research Questions}
 \begin{itemize}
@@ -212,7 +214,7 @@ We have empirically tested and validated the results shown by Ma et al. \cite{Ma
 \includegraphics[width=.32\linewidth]{images/GALS.eps}
 \includegraphics[width=.32\linewidth]{images/T3LS.eps}
 \includegraphics[width=.32\linewidth]{images/T1LS.eps}
-\caption{Comparison of uniform vs. leverage based sampling schemes for least-squares regression. $N = 1000$, $d = 10$.}
+\caption{Comparison of uniform {\bf\color{red}(red)} vs. leverage {\bf\color{blue}(blue)} based sampling schemes for least-squares regression. $N = 1000$, $d = 10$.}
 \end{figure}
 \begin{itemize}
 \item GA: The leverage score are approximately uniform, and thus there is no significant difference between the two sampling schemes.
@@ -224,10 +226,10 @@ There results are consistent when varying $N$ and $d$, although the level of imp
 %
 \csection{LS-based Distribution for Classification}
 
-We sample from the same distribution \eqref{eq:hdist} as for least-squares regression. We use these samples to train a logistic regression model for classification.
+We sample from the same distribution \eqref{eq:hdist} as for least-squares regression. We use these samples to train a logistic regression model for 2 class classification, with equal class size.
   
 \csection{Test Results}
-We compared the LS-distribution (blue) to a uniform-distribution (red) in sampling for a logistic regression. The mean, 25th and 75th quantile are plotted.
+We compared the LS-distribution {\bf\color{blue}(blue)} to a uniform-distribution {\bf\color{red}(red)} in sampling for a logistic regression. The mean, 25th and 75th quantile are plotted.
 \begin{figure}[H]
 \centering
 \includegraphics[width=.32\linewidth]{images/GA.eps}
@@ -239,7 +241,7 @@ We compared the LS-distribution (blue) to a uniform-distribution (red) in sampli
 \item With very non-uniform leverage scores, T1, the LS-distribution slightly outperforms uniform sampling.
 \end{itemize}
 %It shows that a LS-distribution sample scheme, does not outperform a uniform-distribution for classification. 
-The results shown are for dimension $p = 10$ and $N = 1000$ datapoints, but it is consistent when varying $p$ and $N$. 
+The results shown are for dimension $p = 10$ and $N = 1000$ datapoints, but it is consistent when varying $p$ and $N$. \\
 %
 \csection{Sensitivity Based Distribution}
 
@@ -250,10 +252,9 @@ We generalize the leverage scores to other models by seeing that they can be des
 	    \end{equation}
 
 Which we call the sensitivity of the model to a specific datapoint. For a general probabilistic discriminative model this requires the following:
-    	\begin{equation*}
-    	\label{optimum}
-    	 \hat{\y}_n = p(y|\bar{\x_n},\bar{\w}) \quad \bar{\w} \  \text{s.t.} \ \frac{\delta L}{\delta\bar{\w}}=0
-    	\end{equation*}
+    	\begin{equation}
+    	 \hat{\y}_n = p(y|\bar{\x_n},\bar{\w}) \quad \bar{\w} \  \text{s.t.} \ \frac{\delta L}{\delta\bar{\w}}=0     	\label{optimum}
+    	\end{equation}
 Since \ref{optimum} depends both directly and indirectly on $y$ we see that
     	\begin{eqnarray*}
     	&\frac{\delta}{\delta \y} \frac{\delta \mathcal{L}}{\delta \w} = 0\\
@@ -279,21 +280,23 @@ Since \ref{optimum} depends both directly and indirectly on $y$ we see that
 \caption{Comparison of sensitivity vs. uniform -based sampling for logistic regression.}
 \end{figure}	
 
-We see that the Sensitivity based sampling gives us a performance exactly equivalently to that of uniform sampling.
+We see that the \emph{sensitivity based sampling} gives us a performance  equivalently to that of uniform sampling.
 %
 \csection{Future work}
 From our work several new question arise.
 \begin{itemize}
 \item How large show the initial sampling size be for sensitivity-based sampling?
+\item How should the non-linear sensitivity based leverage scores be normalised? 
 \item Should all points be sampled from the initial weights found, or should the process be iterative?
 \end{itemize}
 %
 \csection{Conclusion}
 In the case of linear regression, leverage-based sampling provides a improvement over uniform sampling when the leverage-scores are mildly or very non-uniform.
 
-Using the LS-based sampling for classification shows no improvement on datasets \emph{GA} and \emph{T3}, but for \emph{T1} with very non-uniform leverage-scores, the approach is slightly better.
+Using the LS-based sampling for classification is slightly better with very non-uniform leverage-scores, T1 data.
+%Using the LS-based sampling for classification shows no improvement on datasets \emph{GA} and \emph{T3}, but for \emph{T1} with very non-uniform leverage-scores, the approach is slightly better.
 
-We have generalized the concept of leverage-based scores to classification with logistic regression and it has led to no improvements.
+We have generalized the concept of leverage-based scores to classification with logistic regression and it has shown no improvements. However further analysis and tweaking might improved this approach.
 %The LS-based leverage sampling gives no advantage over uniform sampling and generally performs worse. LS-distribution is based on what is important for linear regression, it does not have an advantage in finding important points for classification.
 
 \csection{References}
