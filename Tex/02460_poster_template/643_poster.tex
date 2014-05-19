@@ -21,6 +21,7 @@
 \usepackage{algorithm}
 \usepackage{enumerate}
 \usepackage{tikz}
+
 \usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,fit,petri}
 
 % Definitions
@@ -206,7 +207,7 @@ This comes from the closed form expression for predictions which is linear in $y
 \begin{equation*}
 	\hat{\y}_n = \X_n*\hat{\beta} \quad \text{where} \quad \hat{\beta} = \left( \X^T \X \right)^{-1} \X^T \y 
 \end{equation*}
-\vspace{-1.2cm}
+\vspace{-1.3cm}
 \csection{Validation of the results  Ma et al.}
 We have empirically tested and validated the results shown by Ma et al. \cite{Ma}.
 \begin{figure}[H]
@@ -216,12 +217,22 @@ We have empirically tested and validated the results shown by Ma et al. \cite{Ma
 \includegraphics[width=.32\linewidth]{images/T1LS.eps}
 \caption{Comparison of uniform {\bf\color{red}(red)} vs. leverage {\bf\color{blue}(blue)} based sampling schemes for least-squares regression. $N = 1000$, $d = 10$.}
 \end{figure}
+\begin{minipage}{.55\linewidth}
 \begin{itemize}
 \item GA: The leverage score are approximately uniform, and thus there is no significant difference between the two sampling schemes.
 \item T3: Leveraging consistently provides slightly better results compared to uniform sampling.
 \item T1: With \emph{very non-uniform} leverage-scores, leveraging clearly outperforms uniform sampling.
 \end{itemize}
-\medskip
+\end{minipage}
+\hspace{.06\linewidth}
+\begin{minipage}{.35\linewidth}
+\begin{figure}[H]
+    \caption{Comparison of sampling methods}
+    \includegraphics[width=.9\linewidth]{images/selection.eps}
+
+\end{figure}
+\end{minipage}
+
 There results are consistent when varying $N$ and $d$, although the level of improvement varies.
 %
 \csection{LS-based Distribution for Classification}
@@ -243,6 +254,8 @@ We compared the LS-distribution {\bf\color{blue}(blue)} to a uniform-distributio
 %It shows that a LS-distribution sample scheme, does not outperform a uniform-distribution for classification. 
 The results shown are for dimension $p = 10$ and $N = 1000$ datapoints, but it is consistent when varying $p$ and $N$. \\
 %
+
+\newpage
 \csection{Sensitivity Based Distribution}
 
 We generalize the leverage scores to other models by seeing that they can be described as: 
@@ -256,11 +269,11 @@ Which we call the sensitivity of the model to a specific datapoint. For a genera
     	 \hat{\y}_n = p(y|\bar{\x_n},\bar{\w}) \quad \bar{\w} \  \text{s.t.} \ \frac{\delta L}{\delta\bar{\w}}=0     	\label{optimum}
     	\end{equation}
 Since \ref{optimum} depends both directly and indirectly on $y$ we see that
-    	\begin{eqnarray*}
-    	&\frac{\delta}{\delta \y} \frac{\delta \mathcal{L}}{\delta \w} = 0\\
-    &	\Downarrow  \\
-    	&\frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}} + \frac{\delta^2 \mathcal{L}}{\delta \bar{\w} \delta \bar{\w}^T} \frac{\delta \bar{\w}}{\delta \y}= 0
-    	\end{eqnarray*}
+    	\begin{equation}
+    	\frac{\delta}{\delta \y} \frac{\delta \mathcal{L}}{\delta \w} = 0 
+    	\Rightarrow
+    	\frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}} + \frac{\delta^2 \mathcal{L}}{\delta \bar{\w} \delta \bar{\w}^T} \frac{\delta \bar{\w}}{\delta \y}= 0
+    	\end{equation}
     	
     	and from this we can get our leverage-score \eqref{dyhatdy}
     	
@@ -271,7 +284,7 @@ Since \ref{optimum} depends both directly and indirectly on $y$ we see that
     	When using this model, initial weights are fitted to a small uniform sample. This is expected to be better than LS-based sampling since it introduces dependence on class information.
 %
 \csection{Test results}
-
+\vspace{-30pt}
 \begin{figure}[H]
 \centering
 \includegraphics[width=.32\linewidth]{images/GAsen.eps}
