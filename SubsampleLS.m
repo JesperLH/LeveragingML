@@ -1,4 +1,4 @@
-function [ B, sqErr ] = SubsampleLS( X,y,pi,r )
+function [ B, sqErr, idx ] = SubsampleLS( X,y,pi,r )
 % pi is the probability distribution
 %SUBSAMPLELS
 
@@ -11,8 +11,8 @@ n = numel(y);
 %for i=1:r
 %    idx(i) = find(pi>=samp(i),1,'first');
 %end
-%[sample idx] = WRS(X,pi,r);
-idx = randsample(length(pi),r,true,pi);
+[~, idx] = WRS(X,pi,r);
+%idx = randsample(length(pi),r,true,pi);
 
 %% Generating D
 
