@@ -147,7 +147,7 @@
 %
 \csection{Abstract}
 %
-We validate the results of leverage based sampling for Least-Squares regression, shown by Ma et al. [1]. We explore the possibility of using the sampling distribution from LS-regression on 2-class classification, and introduce a new leverage distribution based on a generalization of the idea.
+Ma et al. [1] has shown leverage sampling to outperform uniform sampling for Least-Squares regression. We explore the possibility of using the same sampling distribution on 2-class classification, and introduce a new leverage distribution based on a generalization of the idea.
 %
 \csection{Motivation}
 For video the importance of sampling methods is exemplified by very large and high-dimensional datasets where
@@ -268,7 +268,7 @@ Since \ref{optimum} depends both directly and indirectly on $y$ we see that
     		\frac{\delta \hat{\y}_n}{\delta \y_n}=\frac{\delta p(y|\bar{\x}_n,\bar{\w})}{\delta \bar{\w}^T} \frac{\delta \bar{\w}}{\delta \y} = - \frac{\delta p(y|\bar{\x}_n,\bar{\w})}{\delta \bar{\w}^T} \left[ \frac{\delta^2 \mathcal{L}}{\delta \bar{\w} \delta \bar{\w}^T} \right]^{-1} \frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}}
     	\end{equation*}
     	
-    	When evaluating this model, weights trained on a small initial training-set is used. This is expected to be better than LS-based sampling since it introduces dependence on class information.
+    	When using this model, initial weights are fitted to a small uniform sample. This is expected to be better than LS-based sampling since it introduces dependence on class information.
 %
 \csection{Test results}
 
