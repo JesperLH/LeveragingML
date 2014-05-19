@@ -281,7 +281,7 @@ Since \ref{optimum} depends both directly and indirectly on $y$ we see that
     		\frac{\delta \hat{\y}_n}{\delta \y_n}=\frac{\delta p(y|\bar{\x}_n,\bar{\w})}{\delta \bar{\w}^T} \frac{\delta \bar{\w}}{\delta \y} = - \frac{\delta p(y|\bar{\x}_n,\bar{\w})}{\delta \bar{\w}^T} \left[ \frac{\delta^2 \mathcal{L}}{\delta \bar{\w} \delta \bar{\w}^T} \right]^{-1} \frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}}
     	\end{equation*}
     	
-    	When using this model, initial weights are fitted to a small uniform sample. This is expected to be better than LS-based sampling since it introduces dependence on class information.
+    	When using this model, initial weights are found by fitting a small uniform sample. This is expected outperform LS-based sampling since it introduces dependence on class information.
 %
 \csection{Test results}
 \vspace{-30pt}
