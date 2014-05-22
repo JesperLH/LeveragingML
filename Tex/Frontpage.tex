@@ -1,11 +1,34 @@
 \documentclass[11pt, a4paper]{article} % A4 størrelse
 \input{Preamble}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{psfrag}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{pstricks,pst-grad,calc}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{enumerate}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,fit,petri}
+
+%\usepackage{multicol}
+%\usepackage{multirow}
+
+
+% Math definitions
+\input{02460_poster_template/miscdefs.tex}
+
 
 \title{Draft}
 
 \begin{document}
 
 \maketitle
+\input{report.tex}
 \input{sensitivity.tex}
 \input{asymptotics.tex}
 

@@ -1,11 +1,30 @@
 \documentclass[11pt, a4paper]{article} % A4 størrelse
 \input{Preamble}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{psfrag}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{pstricks,pst-grad,calc}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{enumerate}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,fit,petri}
+
+% Math definitions
+\input{02460_poster_template/miscdefs.tex}
+
 
 \title{Draft}
 
 \begin{document}
 
 \maketitle
+\input{report.tex}
 \input{sensitivity.tex}
 \input{asymptotics.tex}
 
@@ -32,13 +51,21 @@ The variance of $\Delta p$, can then be computed as
 \subsubsection{For a linear model with known $\sigma^2$}
 The prediction in a linear model is:
 \begin{equation}
-p(y|\bar{x},\bar{w}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp^{\frac{(y-f(\bar{x|}|\bar{w})}{2 \sigma^2}} \label{linearprediction}
+p(y|\bar{x},\bar{w}) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{\frac{(y-f(\bar{x|}|\bar{w})}{2 \sigma^2}} \label{linearprediction}
 \end{equation}
 Where $y$ is the target and $f(\bar{x|}|\bar{w})$ is the prediction. Differentiating \eqref{eq:linearprediction} with respect to $\bar{w}$: \emph{(Hvorfor er det vi gør det??)}
 \begin{equation}
-\frac{\delta p}{\delta w} = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp^{-\frac{(y-f(\bar{x}|\bar{w})^2}{2\sigma^2}}-(y-f(\bar{x}|\bar{w})
+\frac{\delta p}{\delta w} = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(y-f(\bar{x}|\bar{w})^2}{2\sigma^2}}-(y-f(\bar{x}|\bar{w}) \frac{\delta f(\bar{x}|\bar{w})}{\delta \bar{w}}
 \end{equation}
-Now we let $y = f
+We let $y = f(\bar{x}|\bar{w})+ \epsilon$. (Targets kan beskrives som en approximativ funktion + en fejl ..)
+\begin{equation}
+\frac{\delta p}{\delta \bar{w}} = \underbrace{ 
+\frac{1}{\sqrt{2\pi \sigma^2}}
+e^{-\frac{\epsilon^2}{2 \sigma^2}}\epsilon^2
+}_{\texttt{const. w.r.t. } \bar{x} 
+} 
+\frac{\delta f(\bar{x}|\bar{w})}{\delta \bar{w}}^T \bar{\bar{H}}_0^{-1} \frac{\delta f(\bar{x}|\bar{w})}{\delta \bar{w}}
+\end{equation}
 
 
 
