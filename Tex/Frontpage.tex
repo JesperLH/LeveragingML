@@ -34,45 +34,6 @@
 \include{sensitivity.tex}
 \include{asymptotics.tex}
 
-\subsection{Uncertainty of prediction}
-For a number of weight-vectors $\bar{w}$, we take the mean of predictions based on these weight-vectors;
-\begin{equation}
-\left\langle p \left(y \middle| \bar{x}, \bar{w} \right) \right\rangle \approx p \left(y \middle| \bar{x}, \hat{\bar{w}} \right) = p \left(y \middle| \bar{x}, \mathbf{E}(\bar{w}) \right)
-\end{equation}
-We now look at a small change in the prediction $\Delta p$, caused by a change of $\Delta \bar{w}$ in true weight vector $\bar{w}_0$. 
-\begin{equation}
-\Delta p = p \left(y \middle| \bar{x}, \bar{w}_0+\Delta \bar{w} \right)
-- p \left(y \middle| \bar{x}, \bar{w}_0 \right) 
-\approx \left.\frac{\delta p}{\delta \bar{w}} \right|_{w_0}\cdot \Delta \bar{w}
-\end{equation}
-The variance of $\Delta p$, can then be computed as
-\begin{equation}
-\left\langle (\Delta p)^2 \right\rangle = Tr\left[ 
-\frac{\delta p}{\delta \bar{w}} \left(\frac{\delta p}{\delta \bar{w}}\right)^T
-\left\langle \Delta \bar{w} \Delta \bar{W}^T \right\rangle \right]
-= \frac{1}{N} \left(\frac{\delta p}{\delta \bar{w}}\right)^T 
- \bar{\bar{H}}^{-1} \frac{\delta p}{\delta \bar{w}}
-\end{equation}
-
-\subsubsection{For a linear model with known $\sigma^2$}
-The prediction in a linear model is:
-\begin{equation}
-p(y|\bar{x},\bar{w}) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{\frac{(y-f(\bar{x|}|\bar{w})}{2 \sigma^2}} \label{linearprediction}
-\end{equation}
-Where $y$ is the target and $f(\bar{x|}|\bar{w})$ is the prediction. Differentiating \eqref{eq:linearprediction} with respect to $\bar{w}$: \emph{(Hvorfor er det vi gør det??)}
-\begin{equation}
-\frac{\delta p}{\delta w} = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(y-f(\bar{x}|\bar{w})^2}{2\sigma^2}}-(y-f(\bar{x}|\bar{w}) \frac{\delta f(\bar{x}|\bar{w})}{\delta \bar{w}}
-\end{equation}
-We let $y = f(\bar{x}|\bar{w})+ \epsilon$. (Targets kan beskrives som en approximativ funktion + en fejl ..)
-\begin{equation}
-\frac{\delta p}{\delta \bar{w}} = \underbrace{ 
-\frac{1}{\sqrt{2\pi \sigma^2}}
-e^{-\frac{\epsilon^2}{2 \sigma^2}}\epsilon^2
-}_{\texttt{const. w.r.t. } \bar{x} 
-} 
-\frac{\delta f(\bar{x}|\bar{w})}{\delta \bar{w}}^T \bar{\bar{H}}_0^{-1} \frac{\delta f(\bar{x}|\bar{w})}{\delta \bar{w}}
-\end{equation}
-
 \newpage
 \input{logbook.tex}
 
