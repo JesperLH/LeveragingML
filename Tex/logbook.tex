@@ -1,24 +1,218 @@
 \section{Logbook}
-\subsection*{Week 1 (11): 10.03.2014 - 16.03.2014}
+
+\subsection*{Learning objectives}
+
+\subsection*{Overall Project Goals/Delimitation/Hypotheses}
+
+\subsection*{General stuff}
+
+
+
+\subsection*{Week 1 (9): 24.02.2014 - 02.03.2014}
+\subsubsection*{Project meeting}
+No project meeting was possible this week, and we had yet to decided between 
+\begin{enumerate}
+\item Randomized algorithms: \\
+\emph{A Statistical Perspective on Algorithmic Leveraging, Ping Ma, Micheal W. Mahoney, Bin Yu}.  $http://arxiv.org/abs/1306.5362$
+\item Spectral learning of HMMs:\\
+\emph{A Method of Moments for Mixture Models and Hidden Markov Models}. A. Anandkumar, D. Hsu, and S.M. Kakade. Preprint, Feb. 2012 : $http://newport.eecs.uci.edu/anandkumar/pubs/AnandkumarEtal_mixtures12.pdf$
+\end{enumerate}
+
+We spend the week getting an overview of the articles and the projects.
+
+\subsection*{Week 2 (10): 03.03.2014 - 09.03.2014}
 \subsubsection*{Project meeting}
 \textbf{Questions:}\\
-asda
+\begin{itemize}
+\item What is the idea behind leveraging for least-squares regression?
+\item Can we generalise the idea to general?
+\item Can leveraging improve performance in video screen classification?
+\item Video classification e.g. faces, emotions, gender.
+\end{itemize}
 
-\textbf{Implementation:}
+\textbf{Implementation:}\\
+No implementation at this point.
 
-\subsubsection*{Overall project goals}
+\textbf{Results:}\\
+No results at this time.
 
-\subsection*{Week 2 (12): 17.03.2014 - 23.03.2014}
-\subsection*{Week 3 (13): 24.03.2014 - 30.03.2014}
-\subsection*{Week 4 (14): 31.03.2014 - 06.04.2014}
-\subsection*{Week 5 (15): 07.04.2014 - 13.04.2014}
-\subsection*{Week 6 (16): 14.04.2014 - 20.04.2014}
-\subsection*{Week 7 (17): 21.04.2014 - 27.04.2014}
-\subsection*{Week 8 (18): 28.04.2014 - 04.05.2014}
-\subsection*{Week 9 (19): 05.05.2014 - 11.05.2014}
-\subsection*{Week 10 (20): 12.05.2014 - 18.05.2014}
-\subsection*{Week 11 (21): 19.05.2014 - 25.05.2014}
-\subsection*{Week 12 (22): 26.05.2014 - 01.06.2014}
+\textbf{Decisions:}\\
+Gain a better understanding of the underlying idea of leveraging, by watching a talk on \emph{Statistical Leverage and Improved Matrix Algorithms} by M. W. Mahoney ($http://videolectures.net/icml09_mahoney_itslima/$). And analyses the results for 
+
+\subsubsection*{Updated Project Goals and Delimitation}
+\begin{itemize}
+\item Validation of the results shown by Ma. et al.
+\item Can we generalise the idea of leveraging for a general likelihood funktion?
+\end{itemize}
+
+\subsection*{Week 3 (11): 10.03.2014 - 16.03.2014}
+\subsubsection*{Project meeting}
+\textbf{Questions:}\\
+\begin{itemize}
+\item How does the leverage scores look for LS-regression? (Plotting $H_{n,n}$ vs. $||x_n||$)
+\end{itemize}
+\textbf{Implementation:}\\
+No implementation at this point.
+
+\textbf{Results:}\\
+\begin{itemize}
+\item The general idea of leveraging is to identify how the estimated value $\hat{\y}$ relates to the targeted value $\y$. Which for LS-regression is $\hat{\y} = H \y$.
+\end{itemize}
+
+\textbf{Decisions:}\\
+
+\subsubsection*{Updated Project Goals and Delimitation}
+\begin{itemize}
+\item Can we generalise the expression $\hat{\y} = H \y$ to logistic regression?
+\end{itemize}
+
+\subsection*{Week 4 (12): 17.03.2014 - 23.03.2014}
+\subsubsection*{Project meeting}
+\textbf{Questions:}\\
+\begin{itemize}
+\item How are the distributions used by Ma. et al. calculated?
+\item Finding emotional faces datasets.
+\end{itemize}
+
+\textbf{Implementation:}\\
+\begin{itemize}
+\item Finding leverage-scores for LS-regression
+\item Solving LS-regression when comparing uniform- to leverage-based sampling.
+\item Illustrating leverage scores ($H_{n,n}$ vs. $||x_n||$)
+\end{itemize}
+
+\textbf{Results:}\\
+Initial results promising, but only single run performance between uniform- and leverage-based sampling.
+
+\textbf{Decisions:}\\
+
+\subsubsection*{Updated Project Goals and Delimitation}
+\begin{itemize}
+\item We want to validate the results of Ma et. al. empirically.
+\item In video classification we want to do binary classification of \emph{happy} and \emph{sad} faces.
+\end{itemize}
+
+
+\subsection*{Week 5 (13): 24.03.2014 - 30.03.2014}
+\subsubsection*{Project meeting}
+\textbf{Questions:}\\
+\begin{itemize}
+\item Will using the leverage-scores for LS-regression improve our performance in binary classification?
+\end{itemize}
+
+\textbf{Implementation:}\\
+\begin{itemize}
+\item The three distributions $GA$,$T3$ and $T1$ are implemented, and tested for linear regression.
+\item Learning curves and test-framework for LS-regression, used for testing the results show by Ma et al.
+\end{itemize}
+
+\textbf{Results:}\\
+\begin{itemize}
+\item We get comparable results on LS-regression to those shown by Ma et al.
+\item A leverage-based sampling does not improve for GA-type data, as the leverage scores are approximately uniform, thus there are no "important" datapoints that can be sampled.
+\item A leverage-based sampling for T3-type data consistently performs better or equal to a uniform sampling. Although the performance increase modest.
+\item A leverage-based sampling for T1-type data also consistently outperforms a uniform-based sampling, this is expected as the T1 data have very non-uniform leverage scores i.e. "important" datapoints. 
+\end{itemize}
+
+\textbf{Decisions:}\\
+Generalisation of the leverage-based sampling scheme $\frac{\delta \hat{\y}}{\delta \y}$ to logistic regression, as well as a sampling distribution based on the uncertainty of the predictions (asymptotic theory) is to be done by Lars Kai.
+
+\subsubsection*{Updated Project Goals and Delimitation}
+\begin{itemize}
+\item Will using the leverage-scores for LS-regression improve our performance in binary classification?
+\item We have validated the results of Ma et al. for LS-regression on $GA$,$T3$ and $T1$ distributed data.
+\end{itemize}
+\subsection*{Week 6 (14): 31.03.2014 - 06.04.2014}
+\subsubsection*{Project meeting}
+%\textbf{Questions:}\\
+
+\textbf{Implementation:}\\
+\begin{itemize}
+\item Three distributions for binary classification data, also named $GA$, $T3$ and $T1$ which represent respectively classification data with nearly uniform, moderately non-uniform and very non-uniform leverage-scores.
+\item Learning curves for logistic regression based on uniform or LS-regression leverage-scores.
+\end{itemize}
+
+\textbf{Results:}\\
+Initial results using leverage-scores based on LS-regression shows no improvement on GA-type (expected) and performs significantly worse on T3- and T1-type data.
+
+Lars Kai has derived a generalised expression $\frac{\delta \hat{\y}}{\delta \y}$ for a general likelihood function. As well as the uncertainty based sampling approach.
+
+\textbf{Decisions:}\\
+Lars Kai gathers his scribles on the back of some insignificant article in a form that is easier to read and follow.
+
+Our full focus is now on midterm preparation.
+
+\subsubsection*{Updated Project Goals and Delimitation}
+\begin{itemize}
+\item Compare uniform sampling to a leverage based distribution (generalisation) and a uncertainty based distribution.
+\end{itemize}
+
+\subsection*{Week 7 (15): 07.04.2014 - 13.04.2014}
+\subsubsection*{Project meeting}
+Discussion about the midterm and improvements that should be done.
+
+%\textbf{Questions:}\\
+
+%\textbf{Implementation:}\\
+
+%\textbf{Results:}\\
+
+%\textbf{Decisions:}\\
+
+%\subsubsection*{Updated Project Goals and Delimitation}
+
+
+
+\subsection*{Week 8 (16): 14.04.2014 - 20.04.2014}
+Easter, no project meeting, but sporadic work was done, mostly clarification and bug-finding.
+
+
+\subsection*{Week 9 (17): 21.04.2014 - 27.04.2014}\subsubsection*{Project meeting}
+%\textbf{Questions:}\\
+
+%\textbf{Implementation:}\\
+
+\textbf{Results:}\\
+Lars Kai gives us a copy and explains the general concepts behind the generalisation of $\frac{\delta \hat{\y}}{\y}$ and uncertainty-based sampling.
+
+\textbf{Decisions:}\\
+We are to understand and digitalise the results derived.
+
+%\subsubsection*{Updated Project Goals and Delimitation}
+
+
+
+\subsection*{Week 10 (18): 28.04.2014 - 04.05.2014}
+\subsubsection*{Project meeting}
+\textbf{Questions:}\\
+
+%\textbf{Implementation:}\\
+
+\textbf{Results:}\\
+
+\textbf{Decisions:}\\
+
+%\subsubsection*{Updated Project Goals and Delimitation}
+
+
+
+\subsection*{Week 11 (19): 05.05.2014 - 11.05.2014}
+\subsubsection*{Project meeting}
+\textbf{Questions:}\\
+
+\textbf{Implementation:}\\
+
+\textbf{Results:}\\
+
+\textbf{Decisions:}\\
+
+\subsubsection*{Updated Project Goals and Delimitation}
+
+
+
+\subsection*{Week 12 (20): 12.05.2014 - 18.05.2014}
+\subsection*{Week 13 (21): 19.05.2014 - 25.05.2014}
+\subsection*{Week 14 (22): 26.05.2014 - 01.06.2014}
 
 
 
