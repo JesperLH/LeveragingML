@@ -20,7 +20,7 @@ Eu = [];
 %hold on
 for i = 1:length(R)
     r = R(i);
-    parfor rep=1:30
+    parfor rep=1:10
         P = Sensitivity(X,t,r);
         Ew(rep,i) = class_error( P,t );
         PU = Uncertainty(X,t,r);
@@ -57,9 +57,9 @@ plot(xAxis, uni(2,:), 'r', 'LineWidth', 3)
 plot(xAxis, lev(1, :) ,'--b', xAxis, lev(3,:),'--b')
 plot(xAxis, uni(1, :) ,'--r', xAxis, uni(3,:),'--r')
 
-%title(sprintf('Classification for %s distribution \n N = %i , p = %i',type,N,p), 'fontweight','bold','fontsize',16)
+title(sprintf('Classification for %s distribution \n N = %i , p = %i',type,N,p), 'fontweight','bold','fontsize',16)
 title(sprintf('Sensitivity %s',type), 'fontweight','bold','fontsize',64)
-legend('Mean Lev', 'Mean Uni', 'q25 Lev', 'q75 Lev', 'q25 Uni', 'q75 Uni')
+legend('Mean Sen', 'Mean Unc', 'q25 Lev', 'q75 Lev', 'q25 Uni', 'q75 Uni')
 ylabel('#Miss-classifications','fontsize', 14)
 xlabel('#Samples','fontsize', 14)
 xlim([xAxis(1) xAxis(end)])

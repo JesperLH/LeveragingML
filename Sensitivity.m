@@ -1,4 +1,4 @@
-function [ P ] = Sensitivity( X,t,r )
+function [ P , w_est] = Sensitivity( X,t,r )
 %SENSITIVITY_DIST Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -70,6 +70,13 @@ pi = abs(pi);
 
 pi = pi./sum(pi);
 
+%% Soft-max on the weights
+pi = exp(yhdy)/sum(exp(yhdy));
+figure
+plot(sort(pi))
+%%
+
+
 if(any(isnan(pi)))
     disp('NAN!!!!')
 end
@@ -94,7 +101,6 @@ ySampBin = t(idx)==1;
 %% Fit logistic regression model and evaluate
 
 %w_est = glmfit(xSamp, ySampBin, 'binomial','weights',1./sqrt(r*pi(idx)));
-
 w_est = glmfit(xSamp, ySampBin, 'binomial');
 
 % Evaluate the logistic regression for the new data object

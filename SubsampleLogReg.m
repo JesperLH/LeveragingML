@@ -24,6 +24,7 @@ ySampBin = t(idx)==1;
 %% Fit logistic regression model and evaluate
 
 w_est = glmfit(xSamp, ySampBin, 'binomial','weights',1./sqrt(r*pi(idx)));
+%w_est = glmfit(xSamp, ySampBin, 'binomial');
 
 % Evaluate the logistic regression for the new data object
 Pglm = glmval(w_est, X, 'logit');
