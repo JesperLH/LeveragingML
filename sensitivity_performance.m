@@ -21,7 +21,6 @@ Eu = [];
 for i = 1:length(R)
     r = R(i);
     for rep=1:10
-        Generate_classData;
         close all;
         P = Sensitivity(X,t,r);
         Ew(rep,i) = class_error( P,t );

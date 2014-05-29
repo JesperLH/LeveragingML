@@ -1,4 +1,4 @@
-function [ P , w_est] = Sensitivity( X,t,r )
+function [ P , w_est, idx] = Sensitivity( X,t,r )
 %SENSITIVITY_DIST Summary of this function goes here
 %   Detailed explanation goes here
 
