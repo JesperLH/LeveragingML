@@ -164,7 +164,7 @@ Discussion about the midterm and improvements that should be done.
 
 
 \subsection*{Week 8 (16): 14.04.2014 - 20.04.2014}
-Easter, no project meeting, but sporadic work was done, mostly clarification and bug-finding.
+Easter, no project meeting, but sporadic work was done, mostly clarification and bug-correction.
 
 
 \subsection*{Week 9 (17): 21.04.2014 - 27.04.2014}\subsubsection*{Project meeting}
@@ -199,20 +199,75 @@ We are to understand and digitalise the results derived.
 \subsection*{Week 11 (19): 05.05.2014 - 11.05.2014}
 \subsubsection*{Project meeting}
 \textbf{Questions:}\\
+\begin{itemize}
+\item How to illustrate the thought process behind our problem and  approach. Simply illustrative model.
+\end{itemize}
 
 \textbf{Implementation:}\\
+\begin{itemize}
+\item Uncertainty sampling implemented
+\item Uncertainty sampling compared to uniform on logistic regression
+\end{itemize}
 
 \textbf{Results:}\\
+\begin{itemize}
+\item Sensitivity sampling "works" on $GA$ and $T3$ data, but the program sometimes crashes on $T1$ data due to overflow errors when calculating the leverage scores.
+\item Sensitivity sampling exhibits weird behaviour as the error increases with sampling size.
+\end{itemize}
 
 \textbf{Decisions:}\\
+\begin{itemize}
+\item Debugging sensitivity sampling is postponed, and focus is put on creating an initial poster which can also be used for \emph{Vision Day}.
+\end{itemize}
 
 \subsubsection*{Updated Project Goals and Delimitation}
 
-
-
 \subsection*{Week 12 (20): 12.05.2014 - 18.05.2014}
-\subsection*{Week 13 (21): 19.05.2014 - 25.05.2014}
-\subsection*{Week 14 (22): 26.05.2014 - 01.06.2014}
+\subsubsection*{Project meeting}
+\textbf{Questions:}\\
+\begin{itemize}
+\item What is the effect of weight and unweighed logistic regression?
+\end{itemize}
+
+\textbf{Implementation:}\\
+\begin{itemize}
+\item Generating good illustrations of the problem, process and results.
+\end{itemize}
+
+\textbf{Results:}\\
+\begin{itemize}
+\item Det går fra at give virkelig lorte resultater til at være ens med uniform.
+\end{itemize}
+
+\textbf{Decisions:}\\
+
+%\subsubsection*{Updated Project Goals and Delimitation}
+
+\subsection*{After poster exam: 21.05.2014 - 03.06.2014}
+\subsubsection*{Project meeting}
+\textbf{Questions:}\\
+\begin{itemize}
+\item Will a \emph{soft-max} transformation of the leverage-scores improve sensitivity/uncertainty sampling schemes?
+\end{itemize}
+
+\textbf{Implementation:}\\
+\begin{itemize}
+\item Bug-finding and elimination.
+\item Minimizing redundant code.
+\end{itemize}
+
+\textbf{Results:}\\
+\begin{itemize}
+\item A soft-max transform improves both sensitivity and uncertainty sampling performance but not significantly compared to uniform sampling. 
+\end{itemize}
+
+\textbf{Decisions:}\\
+\begin{itemize}
+\item Hmm
+\end{itemize}
+
+\subsubsection*{Updated Project Goals and Delimitation}
+
 
 
 
