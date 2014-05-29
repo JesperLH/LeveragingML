@@ -72,8 +72,7 @@ pi = pi./sum(pi);
 
 %% Soft-max on the weights
 pi = exp(yhdy)/sum(exp(yhdy));
-figure
-plot(sort(pi))
+
 %%
 
 

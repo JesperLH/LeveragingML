@@ -20,7 +20,7 @@ Eu = [];
 %hold on
 for i = 1:length(R)
     r = R(i);
-    for rep=1:10
+    parfor rep=1:30
         close all;
         P = Sensitivity(X,t,r);
         Ew(rep,i) = class_error( P,t );

@@ -118,7 +118,7 @@ After normalizing this to a probability distribution we can sample  points that 
 
 \begin{figure}[t]
 	\centering
-    \includegraphics[width=.5\linewidth]{images/selection.eps}
+    \includegraphics[width=.6\linewidth]{images/selection.eps}
     \caption{Comparison of sampling methods}
     \label{fig:selection}
 \end{figure}
@@ -164,12 +164,13 @@ We sample from the same distribution \eqref{eq:hdist} as for least-squares regre
 We compared the LS-distribution {\bf\color{blue}(blue)} to a uniform-distribution {\bf\color{red}(red)} in sampling for a logistic regression. The mean, 25th and 75th quantile are plotted. See {\bf Fig.~ \ref{fig:LS_class}}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=.49\linewidth]{images/GA.eps}
-\includegraphics[width=.49\linewidth]{images/T3.eps}
-\includegraphics[width=.49\linewidth]{images/T1.eps}
+\includegraphics[width=.495\linewidth]{images/GA.eps}
+\includegraphics[width=.495\linewidth]{images/T3.eps}
+\includegraphics[width=.495\linewidth]{images/T1.eps}
 \caption{Comparison of uniform {\bf\color{red}(red)} vs. leverage {\bf\color{blue}(blue)} based sampling schemes for classification. $N = 1000$, $d = 10$.}
 \label{fig:LS_class}
 \end{figure}	
+
 \begin{itemize}
 \item Sampling from the LS-distribution is no better that uniform on datasets of type GA and T3.
 \item With very non-uniform leverage scores, T1, the LS-distribution slightly outperforms uniform sampling.
@@ -190,11 +191,11 @@ Which we call the sensitivity of the model to a specific datapoint. For a genera
     	 \hat{\y}_n = p(y|\bar{\x_n},\bar{\w}) \quad \bar{\w} \  \text{s.t.} \ \frac{\delta L}{\delta\bar{\w}}=0     	\label{optimum}
     	\end{equation}
 Since \eqref{optimum} depends both directly and indirectly on $y$ we see that
-    	\begin{equation}
-    	\frac{\delta}{\delta \y} \frac{\delta \mathcal{L}}{\delta \w} = 0 
-    	\Rightarrow
-    	\frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}} + \frac{\delta^2 \mathcal{L}}{\delta \bar{\w} \delta \bar{\w}^T} \frac{\delta \bar{\w}}{\delta \y}= 0
-    	\end{equation}
+    	\begin{align*}
+    	\frac{\delta}{\delta \y} \frac{\delta \mathcal{L}}{\delta \w} &= 0 \\
+    	&\Downarrow\\
+    	\frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}} + \frac{\delta^2 \mathcal{L}}{\delta \bar{\w} \delta \bar{\w}^T} \frac{\delta \bar{\w}}{\delta \y}&= 0
+    	\end{align*}
     	
     	and from this we can get an expression for our leverage-score \eqref{dyhatdy}
     	
@@ -207,24 +208,46 @@ Since \eqref{optimum} depends both directly and indirectly on $y$ we see that
     	
 \input{Sensitivity_derivations.tex}
 
-\section{Test results for sensitivity based sampling}
-
-\begin{figure}[t]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=.49\linewidth]{images/GAsen.eps}
 \includegraphics[width=.49\linewidth]{images/T3sen.eps}
 \includegraphics[width=.49\linewidth]{images/T1sen.eps}
-\caption{Comparison of uniform {\bf\color{red}(red)} vs. sensitivity {\bf\color{blue}(blue)} based sampling schemes for logistic regression.}
+\caption{Comparison of uniform {\bf\color{red}(red)} vs. sensitivity {\bf\color{blue}(blue)} based sampling schemes for classification. $N = 1000$, $d = 10$.}
 \label{fig:SENS_class}
 \end{figure}	
 
+\section{Test results for sensitivity based sampling}
+
 We see that the \emph{sensitivity based sampling} gives us a performance  equivalently to that of uniform sampling. Shown in {\bf Fig.~ \ref{fig:SENS_class}}
+
+In 2 dimensions with $N = 200$, we sample a total of 16 datapoints with the initial sampling size of 6 datapoints (3 from each class) and the rest from a sensitivity based sample, illustrated in Fig~\ref{fig:selectionSen}.
+
+Showing that it is of little importance whether one uses uniform or sensitivity based sampling. Although the sensitivity sampled point are more located in the critical region between the two classes, it does not provide a benefit when classifying our data.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=.8\linewidth]{images/selectionSen.eps}
+\caption{Comparison of points sampled by uniform (crosses) to points sampled by a sensitivity (circles) based sample.}
+\label{fig:selectionSen}
+\end{figure}	
+
+The leverage-scores are transformed by normalising, using a different transform for us the \emph{soft-max} transformation
+\[
+\pi_n = \dfrac{e^{\hat{\y_n} \cdot \y_n^{-1}}}{\sum_{j = 1}^N e^{\hat{\y_j} \cdot \y_j^{-1}}}
+\]
+does not improve on the results shown in Fig~\ref{fig:SENS_class}. 
+
+
+
+
+
 %
 \section{Future work}
 From our work several new question arise.
 \begin{itemize}
 \item How large show the initial sampling size be for sensitivity-based sampling?
-\item Should the non-linear sensitivity based leverage scores be transformed? and how?
+\item How should the non-linear sensitivity based leverage scores be transformed?
 \item Should all points be sampled from the initial weights found, or should the process be iterative?
 \end{itemize}
 %
