@@ -1,0 +1,14 @@
+\section{Sensitivity for Logistic regression}
+
+Previously it is seen that the needed expressions are:
+
+\begin{align*}
+- \frac{\delta p(y|\bar{\x}_n,\bar{\w})}{\delta \bar{\w}^T}=&
+X_n\frac{e^{-X*w_0^T}}{e^{-X*w_0^T}+1}\\
+ \left[ \frac{\delta^2 \mathcal{L}}{\delta \bar{\w} \delta \bar{\w}^T} \right]^{-1}=&
+ \sum_{n=1}^{N}  t_n X_n^T X_n \frac{e^{-X_n w_0^T}}{e^{-X_nw_0}+1}\\&+(1-t_n) \frac{X_n^T X_n}{e^{-X_nw_0}+1}\\
+ \frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}}=& \sum_{n=1}^{N} X_n
+\end{align*}
+
+
+
