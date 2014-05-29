@@ -1,8 +1,19 @@
-\section{Logbook}
+\documentclass[11pt, a4paper]{article} % A4 størrelse
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumerate}
 
-\subsection*{Learning objectives}
+\input{miscdefs.tex}
 
-\subsection*{Overall Project Goals/Delimitation/Hypotheses}
+\title{Logbook}
+
+\begin{document}
+\maketitle
+
+\section*{Logbook}
+
 
 \subsection*{General stuff}
 
@@ -25,7 +36,7 @@ We spend the week getting an overview of the articles and the projects.
 \textbf{Questions:}\\
 \begin{itemize}
 \item What is the idea behind leveraging for least-squares regression?
-\item Can we generalise the idea to general?
+\item Can we generalise the idea?
 \item Can leveraging improve performance in video screen classification?
 \item Video classification e.g. faces, emotions, gender.
 \end{itemize}
@@ -37,12 +48,14 @@ No implementation at this point.
 No results at this time.
 
 \textbf{Decisions:}\\
-Gain a better understanding of the underlying idea of leveraging, by watching a talk on \emph{Statistical Leverage and Improved Matrix Algorithms} by M. W. Mahoney ($http://videolectures.net/icml09_mahoney_itslima/$). And analyses the results for 
+To work with Randomized algorithms.
+\\
+To gain a better understanding of the underlying idea of leveraging, by watching a talk on \emph{Statistical Leverage and Improved Matrix Algorithms} by M. W. Mahoney (\emph{http://videolectures.net/icml09\_mahoney\_itslima/}).
 
 \subsubsection*{Updated Project Goals and Delimitation}
 \begin{itemize}
 \item Validation of the results shown by Ma. et al.
-\item Can we generalise the idea of leveraging for a general likelihood funktion?
+\item Can we generalize the idea of leveraging for a general likelihood function?
 \end{itemize}
 
 \subsection*{Week 3 (11): 10.03.2014 - 16.03.2014}
@@ -104,6 +117,7 @@ Initial results promising, but only single run performance between uniform- and 
 \begin{itemize}
 \item The three distributions $GA$,$T3$ and $T1$ are implemented, and tested for linear regression.
 \item Learning curves and test-framework for LS-regression, used for testing the results show by Ma et al.
+\item Three distributions for binary classification data, also named $GA$, $T3$ and $T1$ which represent respectively classification data with nearly uniform, moderately non-uniform and very non-uniform leverage-scores.
 \end{itemize}
 
 \textbf{Results:}\\
@@ -128,7 +142,6 @@ Generalisation of the leverage-based sampling scheme $\frac{\delta \hat{\y}}{\de
 
 \textbf{Implementation:}\\
 \begin{itemize}
-\item Three distributions for binary classification data, also named $GA$, $T3$ and $T1$ which represent respectively classification data with nearly uniform, moderately non-uniform and very non-uniform leverage-scores.
 \item Learning curves for logistic regression based on uniform or LS-regression leverage-scores.
 \end{itemize}
 
@@ -205,8 +218,8 @@ We are to understand and digitalise the results derived.
 
 \textbf{Implementation:}\\
 \begin{itemize}
-\item Uncertainty sampling implemented
-\item Uncertainty sampling compared to uniform on logistic regression
+\item Sensitivity sampling implemented
+\item Sensitivity sampling compared to uniform on logistic regression
 \end{itemize}
 
 \textbf{Results:}\\
@@ -236,7 +249,7 @@ We are to understand and digitalise the results derived.
 
 \textbf{Results:}\\
 \begin{itemize}
-\item Det går fra at give virkelig lorte resultater til at være ens med uniform.
+\item The results go from really crappy to as good as uniform.
 \end{itemize}
 
 \textbf{Decisions:}\\
@@ -270,4 +283,4 @@ We are to understand and digitalise the results derived.
 
 
 
-
+\end{document}
