@@ -20,7 +20,9 @@ Eu = [];
 %hold on
 for i = 1:length(R)
     r = R(i);
-    parfor rep=1:30
+    for rep=1:10
+        Generate_classData;
+        close all;
         P = Sensitivity(X,t,r);
         Ew(rep,i) = class_error( P,t );
         [PU] = SubsampleLogReg( X,t,ones(1,N)./N,r);
