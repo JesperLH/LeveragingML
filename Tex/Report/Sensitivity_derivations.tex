@@ -1,7 +1,12 @@
 \section{Sensitivity for Logistic regression}
 
-In the generalised sensitivity expression \eqref{eq:sen} we insert logistic regression and the log-likelihood function. Where we need the following expressions:
-%Previously it is seen that the needed expressions are:
+In the generalised sensitivity expression \eqref{eq:sen} we insert the class probability and log-likelihood for logistic regression.
+
+\begin{align*}
+p(y|\bar{\x}_n,\bar{\w}) = \frac{1}{1+ e^{-X_nw^T}} = \hat{y}\\
+\mathcal{L} = - \sum_{n=1}^{N} t_n \ln y_n + (1-t_n)\ln(1-y_n) \\
+\end{align*}
+Where we need the following expressions:
 
 \begin{align*}
 - \frac{\delta p(y|\bar{\x}_n,\bar{\w})}{\delta \bar{\w}^T}=&
@@ -11,5 +16,5 @@ X_n\frac{e^{-X*w_0^T}}{e^{-X*w_0^T}+1}\\
  \frac{\delta^2 \mathcal{L}}{\delta \y \delta \bar{\w}}=& \sum_{n=1}^{N} X_n
 \end{align*}
 
-
+This is unfortunately not a closed form solution so in order to implement this we need to first take a small uniform sample and based om this we can estimate $w$ for use the expressions above. 
 
